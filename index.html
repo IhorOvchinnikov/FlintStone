@@ -126,6 +126,7 @@
             margin-top: 2px;
         }
 
+        /* DESKTOP NAV LINKS */
         .nav-links {
             display: flex;
             gap: 25px;
@@ -144,6 +145,87 @@
         }
 
         .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-green);
+        }
+
+        /* MOBILE MENU TOGGLE BUTTON */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--slate-dark);
+        }
+
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #FFFFFF;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--slate-gray);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--slate-dark);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease;
+        }
+
+        .mobile-drawer a.active, .mobile-drawer a:hover {
             color: var(--neon-green);
         }
 
@@ -300,11 +382,6 @@
             transform: scale(1.08);
         }
 
-        .feature-icon-wrapper svg {
-            width: 22px;
-            height: 22px;
-        }
-
         .feature-card h3 {
             font-size: 18px;
             font-weight: 700;
@@ -318,7 +395,7 @@
             margin: 0;
         }
 
-        /* CATEGORIES SECTION WITH ACCURATE SVG ICONS */
+        /* CATEGORIES SECTION WITH SVG ICONS */
         .categories-section {
             padding: 60px 0;
             background-color: var(--card-bg);
@@ -370,7 +447,6 @@
             width: 24px;
             height: 24px;
             fill: var(--slate-dark);
-            stroke: none;
             transition: fill 0.3s ease;
         }
 
@@ -378,7 +454,6 @@
             fill: var(--neon-green);
         }
 
-        /* Специальные стили для контурных SVG */
         .category-icon-wrapper svg.stroke-icon {
             fill: none;
             stroke: var(--slate-dark);
@@ -422,12 +497,6 @@
             padding: 30px;
             border-radius: 12px;
             transition: all 0.3s ease;
-        }
-
-        .process-step:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-            border-color: #CBD5E1;
         }
 
         .step-number {
@@ -494,12 +563,6 @@
             font-family: inherit;
             font-size: 13px;
             margin-bottom: 12px;
-            transition: border-color 0.2s ease;
-        }
-
-        .intake-form input:focus, .intake-form textarea:focus {
-            outline: none;
-            border-color: var(--neon-green);
         }
 
         .btn-intake {
@@ -512,13 +575,6 @@
             width: 100%;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.25s ease;
-        }
-
-        .btn-intake:hover {
-            opacity: 0.92;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
 
         /* FOOTER */
@@ -530,9 +586,53 @@
             font-size: 12px;
             border-top: 1px solid var(--border);
         }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .btn-group-hero {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .categories-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intake-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- OVERLAY & MOBILE DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()">&times;</button>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -549,12 +649,19 @@
                         <span class="logo-text-sub">COMMERCE</span>
                     </div>
                 </a>
+
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
+
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -596,7 +703,7 @@
         </div>
     </div>
 
-    <!-- VALUE PROPOSITION / FEATURES -->
+    <!-- FEATURES -->
     <section class="features">
         <div class="container">
             <div class="section-title-block">
@@ -604,40 +711,33 @@
                 <p>We do not just buy inventory; we serve as a dedicated guardian and growth vehicle for your products across online channels.</p>
             </div>
             <div class="features-grid">
-                
-                <!-- FEATURE 1: SHIELD (MAP) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #ECFDF5;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #10B981; fill: none; stroke-width: 2;">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
                     <h3>Strict MAP Protection</h3>
                     <p>We use automated pricing safeguards tied directly to manufacturer agreements. We never breach MAP thresholds or drive price erosion.</p>
                 </div>
-
-                <!-- FEATURE 2: BOX (LOGISTICS) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #F0F9FF;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #0284C7;">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #0284C7; fill: none; stroke-width: 2;">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                     </div>
                     <h3>FBA Prep & Warehousing</h3>
                     <p>Full-service prep center processing, custom bundling, barcoding, and compliant pallet shipments directly to Amazon centers.</p>
                 </div>
-
-                <!-- FEATURE 3: CHART (RE-ORDERS) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #FEF3C7;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #D97706;">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #D97706; fill: none; stroke-width: 2;">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                     </div>
                     <h3>Predictable Re-Orders</h3>
                     <p>Algorithmic inventory planning guarantees timely, recurring wholesale purchase orders that keep product velocity consistent.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -650,8 +750,6 @@
                 <p>We specialize in fast-moving consumer goods (FMCG) with proven consumer demand in North America.</p>
             </div>
             <div class="categories-grid">
-                
-                <!-- CAT 1: HOME & KITCHEN (House Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
                         <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -661,8 +759,6 @@
                     <h4>Home & Kitchen</h4>
                     <p>Cookware, organization, seasonal goods, and small home accessories.</p>
                 </div>
-
-                <!-- CAT 2: SPORTS & OUTDOORS (Dumbbell / Fitness Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -672,8 +768,6 @@
                     <h4>Sports & Outdoors</h4>
                     <p>Fitness gear, outdoor accessories, travel, and recreation items.</p>
                 </div>
-
-                <!-- CAT 3: BEAUTY & PERSONAL CARE (Cosmetic Bottle Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -683,8 +777,6 @@
                     <h4>Beauty & Personal Care</h4>
                     <p>Skincare, grooming tools, wellness, and everyday bath essentials.</p>
                 </div>
-
-                <!-- CAT 4: PET SUPPLIES (Dog Paw Print Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -694,12 +786,11 @@
                     <h4>Pet Supplies</h4>
                     <p>Grooming supplies, feeding equipment, toys, and pet accessories.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- OUR PROCESS -->
+    <!-- PROCESS SECTION -->
     <section class="process-section">
         <div class="container">
             <div class="section-title-block">
@@ -733,7 +824,6 @@
                 <div class="intake-text">
                     <h2>Ready to Expand Your Wholesale Reach?</h2>
                     <p>Send us your product catalog or wholesale requirements. Our procurement team responds within 24 business hours.</p>
-                    <p style="font-size: 13px; color: var(--neon-green);">✔️ Quick Approval &nbsp; | &nbsp; ✔️ Resale Certificate Ready</p>
                 </div>
                 <div class="intake-form">
                     <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry received! We will contact you shortly.');">
@@ -756,5 +846,13 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
