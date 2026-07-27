@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flint & Stone Commerce LLC | Authorized U.S. Wholesale Distributor</title>
+    <!-- Подключаем современный шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* БАЗОВЫЕ СТИЛИ (CSS) */
+        :root {
+            --slate-dark: #0F172A;
+            --slate-gray: #334155;
+            --text-gray: #64748B;
+            --neon-green: #10B981;
+            --background: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--slate-dark);
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-spark {
+            width: 10px;
+            height: 22px;
+            background-color: var(--slate-dark);
+            border-radius: 3px;
+            transform: rotate(-25deg);
+            margin-right: 6px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--slate-dark);
+        }
+
+        .logo-commerce {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-green);
+        }
+
+        .btn-contact-nav {
+            background-color: var(--slate-dark);
+            color: #FFFFFF;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-contact-nav:hover {
+            opacity: 0.9;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 0 80px 0;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0 0 20px 0;
+            color: var(--slate-dark);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn-group-hero {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--slate-dark);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background-color: #FFFFFF;
+            color: var(--slate-gray);
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 60px 0 100px 0;
+            background-color: #FFFFFF;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: var(--slate-dark);
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /*FOOTER*/
+        footer {
+            background-color: var(--slate-dark);
+            color: #94A3B8;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 11px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo-group">
+                    <div class="logo-spark"></div>
+                    <div class="logo-text">Flint & Stone</div>
+                    <div class="logo-commerce">COMMERCE</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">Compliance</a></li>
+                    <li><a href="#" class="btn-contact-nav">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-tagline">AUTHORIZED U.S. WHOLESALE DISTRIBUTOR</p>
+            <h1>Connecting Quality Brands with Digital Growth</h1>
+            <p class="hero-description">Flint & Stone Commerce is a premier U.S. wholesale distributor and retail partner. We help established and emerging brands expand their reach across digital marketplaces.</p>
+            <div class="btn-group-hero">
+                <a href="#" class="btn-primary">Become a Partner</a>
+                <a href="#" class="btn-secondary">Our Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #ECFDF5;">🛡️</div>
+                    <h3>MAP Protection</h3>
+                    <p>We strictly honor brand pricing guidelines and prevent buy-box price erosion through proactive monitoring.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #F0F9FF;">📦</div>
+                    <h3>Prep & Logistics</h3>
+                    <p>Full-service prep center processing, custom bundles, and compliant FBA shipping directly to Amazon warehouses.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #FEF3C7;">📈</div>
+                    <h3>Volume Re-orders</h3>
+                    <p>Our data-driven inventory management ensures consistent purchase orders and fast stock movement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>FLINT & STONE COMMERCE LLC | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+            <p>&copy; 2026 Flint & Stone Commerce LLC. All rights reserved. Registered U.S. Wholesale Enterprise.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
