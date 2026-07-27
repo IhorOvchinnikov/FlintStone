@@ -318,7 +318,7 @@
             margin: 0;
         }
 
-        /* CATEGORIES SECTION WITH SVG ICONS */
+        /* CATEGORIES SECTION WITH ACCURATE SVG ICONS */
         .categories-section {
             padding: 60px 0;
             background-color: var(--card-bg);
@@ -369,11 +369,25 @@
         .category-icon-wrapper svg {
             width: 24px;
             height: 24px;
-            stroke: var(--slate-dark);
-            transition: stroke 0.3s ease;
+            fill: var(--slate-dark);
+            stroke: none;
+            transition: fill 0.3s ease;
         }
 
         .category-card:hover .category-icon-wrapper svg {
+            fill: var(--neon-green);
+        }
+
+        /* Специальные стили для контурных SVG */
+        .category-icon-wrapper svg.stroke-icon {
+            fill: none;
+            stroke: var(--slate-dark);
+            stroke-width: 1.8;
+            transition: stroke 0.3s ease;
+        }
+
+        .category-card:hover .category-icon-wrapper svg.stroke-icon {
+            fill: none;
             stroke: var(--neon-green);
         }
 
@@ -594,7 +608,7 @@
                 <!-- FEATURE 1: SHIELD (MAP) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #ECFDF5;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#10B981">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
@@ -605,7 +619,7 @@
                 <!-- FEATURE 2: BOX (LOGISTICS) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #F0F9FF;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#0284C7">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #0284C7;">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                     </div>
@@ -616,7 +630,7 @@
                 <!-- FEATURE 3: CHART (RE-ORDERS) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper" style="background-color: #FEF3C7;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#D97706">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #D97706;">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                     </div>
@@ -637,10 +651,10 @@
             </div>
             <div class="categories-grid">
                 
-                <!-- CAT 1: HOME -->
+                <!-- CAT 1: HOME & KITCHEN (House Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                     </div>
@@ -648,33 +662,33 @@
                     <p>Cookware, organization, seasonal goods, and small home accessories.</p>
                 </div>
 
-                <!-- CAT 2: SPORTS -->
+                <!-- CAT 2: SPORTS & OUTDOORS (Dumbbell / Fitness Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M6 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1zm12 0a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1zM3 8a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1zm18 0a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1zM7 11h10v2H7v-2z"/>
                         </svg>
                     </div>
                     <h4>Sports & Outdoors</h4>
                     <p>Fitness gear, outdoor accessories, travel, and recreation items.</p>
                 </div>
 
-                <!-- CAT 3: BEAUTY -->
+                <!-- CAT 3: BEAUTY & PERSONAL CARE (Cosmetic Bottle Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 2h4a1 1 0 011 1v2H9V3a1 1 0 011-1zm-2 5h8a1 1 0 011 1v13a2 2 0 01-2 2H9a2 2 0 01-2-2V8a1 1 0 011-1zm2 3a1 1 0 100 2h4a1 1 0 100-2h-4z"/>
                         </svg>
                     </div>
                     <h4>Beauty & Personal Care</h4>
                     <p>Skincare, grooming tools, wellness, and everyday bath essentials.</p>
                 </div>
 
-                <!-- CAT 4: PETS -->
+                <!-- CAT 4: PET SUPPLIES (Dog Paw Print Icon) -->
                 <div class="category-card">
                     <div class="category-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 11.5c-2.48 0-4.5 1.79-4.5 4 0 2.21 2.02 4 4.5 4s4.5-1.79 4.5-4c0-2.21-2.02-4-4.5-4zm-6.25-1.75c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm12.5 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-9.5-3.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6.5 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
                         </svg>
                     </div>
                     <h4>Pet Supplies</h4>
