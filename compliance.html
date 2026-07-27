@@ -59,6 +59,11 @@
             align-items: center;
             text-decoration: none;
             gap: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-group:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
@@ -135,20 +140,11 @@
             color: var(--slate-gray);
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--neon-green);
-        }
-
-        .btn-contact-nav {
-            background-color: var(--slate-dark);
-            color: #FFFFFF !important;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
         }
 
         /* PAGE HEADER */
@@ -184,29 +180,58 @@
             border-radius: 12px;
             padding: 35px;
             margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .policy-block:hover {
+            border-color: #CBD5E1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .policy-title-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            background-color: #ECFDF5;
+            border: 1px solid #A7F3D0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .title-icon-wrapper svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--neon-green);
         }
 
         .policy-block h2 {
             font-size: 22px;
             font-weight: 700;
             color: var(--slate-dark);
-            margin-top: 0;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin: 0;
         }
 
         .policy-block p {
             color: var(--text-gray);
             font-size: 15px;
             margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .policy-block p:last-child {
             margin-bottom: 0;
         }
 
+        /* COMPLIANCE GRID */
         .compliance-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -219,6 +244,14 @@
             border: 1px solid var(--border);
             padding: 25px;
             border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .compliance-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--neon-green);
+            background-color: #FFFFFF;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.06);
         }
 
         .compliance-card h3 {
@@ -255,19 +288,26 @@
 
         .contact-banner p {
             color: var(--text-gray);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 15px;
         }
 
         .btn-banner {
             background-color: var(--slate-dark);
             color: #FFFFFF;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 12px 28px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        .btn-banner:hover {
+            background-color: #1E293B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
         }
 
         /* FOOTER */
@@ -299,11 +339,11 @@
                     </div>
                 </a>
                 <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="compliance.html" class="active">MAP Compliance</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-</ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="compliance.html" class="active">MAP Compliance</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -320,14 +360,30 @@
     <section class="policy-section">
         <div class="container">
             
+            <!-- BLOCK 1: STATEMENT -->
             <div class="policy-block">
-                <h2>🛡️ Our Statement on Minimum Advertised Price (MAP)</h2>
+                <div class="policy-title-group">
+                    <div class="title-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h2>Our Statement on Minimum Advertised Price (MAP)</h2>
+                </div>
                 <p>At <strong>Flint & Stone Commerce LLC</strong>, we believe that sustainable retail growth is built on trust and price integrity. We understand that unrestricted price erosion and unauthorized discounting ruin brand equity and harm relationship with brick-and-mortar as well as online distributors.</p>
                 <p>We officially commit to strictly maintaining the Minimum Advertised Price (MAP) policies established by all our manufacturing and distribution partners across every sales channel we operate.</p>
             </div>
 
+            <!-- BLOCK 2: ENFORCEMENT -->
             <div class="policy-block">
-                <h2>⚙️ How We Enforce MAP Compliance</h2>
+                <div class="policy-title-group">
+                    <div class="title-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h2>How We Enforce MAP Compliance</h2>
+                </div>
                 <p>We do not rely on manual price adjustments or speculative repricing strategies. Our sales infrastructure incorporates systematic price controls designed to prevent accidental violations:</p>
                 
                 <div class="compliance-grid">
@@ -346,12 +402,21 @@
                 </div>
             </div>
 
+            <!-- BLOCK 3: COLLABORATION -->
             <div class="policy-block">
-                <h2>🤝 Active Brand Collaboration</h2>
+                <div class="policy-title-group">
+                    <div class="title-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h2>Active Brand Collaboration</h2>
+                </div>
                 <p>Beyond our own compliance, we actively assist our brand partners in identifying rogue sellers, counterfeit listings, and unauthorized distribution leaks on digital marketplaces.</p>
                 <p>When you partner with Flint & Stone Commerce LLC, you gain a vigilant ally dedicated to maintaining a clean, predictable, and profitable marketplace ecosystem for your products.</p>
             </div>
 
+            <!-- CTA BANNER -->
             <div class="contact-banner">
                 <h2>Have Questions Regarding Our Pricing Compliance?</h2>
                 <p>We are ready to sign your brand's formal MAP agreement or NDA prior to opening a wholesale account.</p>
