@@ -59,6 +59,11 @@
             align-items: center;
             text-decoration: none;
             gap: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-group:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
@@ -121,6 +126,7 @@
             margin-top: 2px;
         }
 
+        /* ЕДИНЫЙ СТИЛЬ МЕНЮ */
         .nav-links {
             display: flex;
             gap: 25px;
@@ -135,20 +141,11 @@
             color: var(--slate-gray);
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--neon-green);
-        }
-
-        .btn-contact-nav {
-            background-color: var(--slate-dark);
-            color: #FFFFFF !important;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
         }
 
         /* PAGE HEADER */
@@ -178,7 +175,6 @@
             padding: 60px 0;
         }
 
-        /* ВЫРОВНЕННАЯ СЕТКА КАРТОЧЕК */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -308,11 +304,12 @@
             cursor: pointer;
             width: 100%;
             margin-top: 8px;
-            transition: opacity 0.2s;
+            transition: all 0.2s ease;
         }
 
         .btn-submit:hover {
-            opacity: 0.9;
+            background-color: #1E293B;
+            transform: translateY(-1px);
         }
 
         /* MAP CONTAINER */
@@ -374,7 +371,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
-                    <li><a href="contact.html" class="active btn-contact-nav">Contact Us</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
