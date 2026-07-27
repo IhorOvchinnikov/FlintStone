@@ -59,6 +59,11 @@
             align-items: center;
             text-decoration: none;
             gap: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-group:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
@@ -135,7 +140,7 @@
             color: var(--slate-gray);
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -149,11 +154,13 @@
             border-radius: 6px;
             font-size: 13px;
             font-weight: 600;
-            transition: opacity 0.2s;
+            transition: all 0.2s ease !important;
         }
 
         .btn-contact-nav:hover {
-            opacity: 0.9;
+            background-color: var(--slate-gray);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
         }
 
         /* HERO SECTION */
@@ -190,6 +197,7 @@
             margin: 0 auto 40px auto;
         }
 
+        /* ОДИНАКОВЫЕ КНОПКИ С ЭФФЕКТОМ */
         .btn-group-hero {
             display: flex;
             gap: 15px;
@@ -199,22 +207,20 @@
         .btn-primary {
             background-color: var(--slate-dark);
             color: #FFFFFF;
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(15, 23, 42, 0.08);
+            display: inline-block;
         }
 
-        .btn-secondary {
-            background-color: #FFFFFF;
-            color: var(--slate-gray);
-            padding: 12px 24px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
+        .btn-primary:hover {
+            background-color: #1E293B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
         }
 
         /* METRICS / STATS BAR */
@@ -269,7 +275,7 @@
             margin: 0 auto;
         }
 
-        /* FEATURES SECTION */
+        /* FEATURES SECTION WITH HOVER EFFECTS */
         .features {
             padding: 20px 0 80px 0;
         }
@@ -286,6 +292,14 @@
             padding: 30px;
             border-radius: 12px;
             text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #CBD5E1;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+            background-color: #FFFFFF;
         }
 
         .feature-icon {
@@ -297,6 +311,11 @@
             justify-content: center;
             border-radius: 50%;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
         }
 
         .feature-card h3 {
@@ -312,7 +331,7 @@
             margin: 0;
         }
 
-        /* CATEGORIES SECTION */
+        /* CATEGORIES SECTION WITH HOVER EFFECTS */
         .categories-section {
             padding: 60px 0;
             background-color: var(--card-bg);
@@ -332,12 +351,23 @@
             border-radius: 10px;
             padding: 25px;
             text-align: center;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-green);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.08);
         }
 
         .category-icon {
             font-size: 32px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.15);
         }
 
         .category-card h4 {
@@ -353,7 +383,7 @@
             margin: 0;
         }
 
-        /* HOW WE WORK / PROCESS */
+        /* PROCESS SECTION */
         .process-section {
             padding: 80px 0;
         }
@@ -370,6 +400,13 @@
             border: 1px solid var(--border);
             padding: 30px;
             border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            border-color: #CBD5E1;
         }
 
         .step-number {
@@ -396,7 +433,7 @@
             margin: 0;
         }
 
-        /* INTAKE BANNER */
+        /* INTAKE BANNER FORM */
         .intake-section {
             padding: 60px 0 90px 0;
         }
@@ -410,6 +447,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
         }
 
         .intake-text h2 {
@@ -435,6 +473,7 @@
             font-family: inherit;
             font-size: 13px;
             margin-bottom: 12px;
+            transition: border-color 0.2s ease;
         }
 
         .intake-form input:focus, .intake-form textarea:focus {
@@ -452,6 +491,13 @@
             width: 100%;
             cursor: pointer;
             font-size: 14px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-intake:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
 
         /* FOOTER */
@@ -500,7 +546,7 @@
             <p class="hero-description">Flint & Stone Commerce LLC is a registered U.S. wholesale distributor and value-added retail partner. We help brand owners expand marketplace volume while rigorously enforcing price stability and brand policy.</p>
             <div class="btn-group-hero">
                 <a href="about.html" class="btn-primary">Learn About Us</a>
-                <a href="contact.html" class="btn-secondary">Partner With Us</a>
+                <a href="contact.html" class="btn-primary">Partner With Us</a>
             </div>
         </div>
     </section>
