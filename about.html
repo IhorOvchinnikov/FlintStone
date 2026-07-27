@@ -59,6 +59,11 @@
             align-items: center;
             text-decoration: none;
             gap: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-group:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
@@ -135,20 +140,11 @@
             color: var(--slate-gray);
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--neon-green);
-        }
-
-        .btn-contact-nav {
-            background-color: var(--slate-dark);
-            color: #FFFFFF !important;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
         }
 
         /* PAGE HEADER */
@@ -169,7 +165,7 @@
         .page-header p {
             color: var(--text-gray);
             font-size: 16px;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -178,13 +174,12 @@
             padding: 60px 0;
         }
 
-        /* СЕТКА С ВЫРОВНЕННЫМИ КАРТОЧКАМИ */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             align-items: stretch;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .about-card {
@@ -194,6 +189,13 @@
             border-radius: 12px;
             display: flex;
             flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            border-color: #CBD5E1;
         }
 
         .about-card h2 {
@@ -218,39 +220,138 @@
             margin-bottom: 0;
         }
 
-        /* ПРИНЦИПЫ */
         .section-title {
             text-align: center;
             font-size: 26px;
             font-weight: 700;
             color: var(--slate-dark);
-            margin: 40px 0 30px 0;
+            margin: 40px 0 10px 0;
         }
 
+        .section-subtitle {
+            text-align: center;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        /* PILLARS / VALUES GRID WITH SVG ICONS */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 25px;
+            margin-bottom: 60px;
         }
 
         .value-card {
             background: #FFFFFF;
             border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
         }
 
-        .value-card h4 {
-            margin: 0 0 10px 0;
-            font-size: 16px;
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+            border-color: var(--neon-green);
+        }
+
+        .value-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon-wrapper {
+            background-color: #ECFDF5;
+            border-color: var(--neon-green);
+        }
+
+        .value-icon-wrapper svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--slate-dark);
+            transition: stroke 0.3s ease;
+        }
+
+        .value-card:hover .value-icon-wrapper svg {
+            stroke: var(--neon-green);
+        }
+
+        .value-text h4 {
+            margin: 0 0 8px 0;
+            font-size: 17px;
             font-weight: 700;
             color: var(--slate-dark);
         }
 
-        .value-card p {
+        .value-text p {
             margin: 0;
             font-size: 13px;
             color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* INFRASTRUCTURE BANNER */
+        .infra-banner {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .infra-text h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 12px 0;
+        }
+
+        .infra-text p {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin: 0 0 15px 0;
+        }
+
+        .infra-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .infra-btn-wrapper {
+            text-align: right;
+        }
+
+        .btn-infra {
+            background-color: var(--slate-dark);
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+
+        .btn-infra:hover {
+            background-color: #1E293B;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
         }
 
         /* FOOTER */
@@ -282,11 +383,11 @@
                     </div>
                 </a>
                 <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About Us</a></li>
-    <li><a href="compliance.html">MAP Compliance</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-</ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -295,46 +396,100 @@
     <section class="page-header">
         <div class="container">
             <h1>About Flint & Stone Commerce</h1>
-            <p>Building long-term, value-driven wholesale partnerships across digital sales channels.</p>
+            <p>Building long-term, value-driven wholesale partnerships across North American digital sales channels.</p>
         </div>
     </section>
 
     <!-- ABOUT CONTENT -->
     <section class="about-section">
         <div class="container">
+            
+            <!-- OVERVIEW GRID -->
             <div class="about-grid">
                 <div class="about-card">
                     <h2>Your Trusted U.S. Distribution Partner</h2>
-                    <p><strong>Flint & Stone Commerce LLC</strong> is a registered U.S. wholesale enterprise based in Sheridan, Wyoming. We specialize in sourcing quality consumer goods directly from manufacturers, brand owners, and authorized distributors.</p>
-                    <p>Unlike traditional retailers, we operate as a full-service brand partner. We utilize advanced market analytics and streamlined logistics to expand brand availability while actively protecting market integrity.</p>
+                    <p><strong>Flint & Stone Commerce LLC</strong> is a legally registered U.S. wholesale enterprise headquartered in Sheridan, Wyoming. We specialize in sourcing high-quality consumer goods directly from manufacturers, brand owners, and primary authorized distributors.</p>
+                    <p>Unlike conventional online retailers who engage in speculative repricing, we operate as a full-service B2B distribution partner. We leverage market data and streamlined prep infrastructure to accelerate brand presence without compromising retail price integrity.</p>
                 </div>
                 <div class="about-card">
-                    <h2>Our Mission & Strategic Goal</h2>
-                    <p>Our goal is simple: to help brand owners scale their sales volume seamlessly without compromising their brand positioning or pricing standards.</p>
-                    <p>We treat every brand partner's catalog with respect, strictly adhering to Minimum Advertised Price (MAP) guidelines and providing steady, recurring wholesale orders.</p>
+                    <h2>Our Mission & Strategic Focus</h2>
+                    <p>Our core mission is straightforward: enable brand manufacturers to scale their sales volume seamlessly across top digital marketplaces while completely eliminating price erosion.</p>
+                    <p>We honor every brand partner's guidelines, enforce strict Minimum Advertised Price (MAP) compliance, and deliver consistent, recurring purchase orders that strengthen supply chain predictability.</p>
                 </div>
             </div>
 
-            <h2 class="section-title">Core Partnership Principles</h2>
+            <!-- CORE PILLARS TITLE -->
+            <h2 class="section-title">Our Operational Pillars</h2>
+            <p class="section-subtitle">How we maintain standard-setting performance for our brand partners.</p>
             
+            <!-- PILLARS GRID WITH SVG ICONS -->
             <div class="values-grid">
+                
+                <!-- PILLAR 1: SHIELD -->
                 <div class="value-card">
-                    <h4>🤝 Brand Integrity First</h4>
-                    <p>We respect your pricing policies and brand guidelines. We never compromise long-term brand health for short-term gains.</p>
+                    <div class="value-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div class="value-text">
+                        <h4>Brand Equity Protection</h4>
+                        <p>We respect your MAP policies and dealer guidelines. We never compromise long-term brand equity for short-term sales velocity.</p>
+                    </div>
                 </div>
+
+                <!-- PILLAR 2: LOGISTICS / PREP -->
                 <div class="value-card">
-                    <h4>📦 Certified Preparation</h4>
-                    <p>All products are processed through certified prep facilities, ensuring strict compliance with marketplace shipping standards.</p>
+                    <div class="value-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <div class="value-text">
+                        <h4>Certified Prep & Inspection</h4>
+                        <p>Every shipment is processed through compliant U.S. prep centers for inspection, barcoding, and marketplace-ready freight forwarding.</p>
+                    </div>
                 </div>
+
+                <!-- PILLAR 3: ANALYTICS -->
                 <div class="value-card">
-                    <h4>📊 Data-Driven Purchasing</h4>
-                    <p>Our sophisticated inventory management systems ensure predictable demand forecasting and consistent replenishment orders.</p>
+                    <div class="value-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="value-text">
+                        <h4>Data-Driven Demand Planning</h4>
+                        <p>We employ market analytics software to project inventory turnover rates, ensuring prompt re-orders before stockouts occur.</p>
+                    </div>
                 </div>
+
+                <!-- PILLAR 4: B2B RELATIONS -->
                 <div class="value-card">
-                    <h4>⚡ Fast Communication</h4>
-                    <p>We believe in transparent, reliable B2B communication. Our purchasing team is always accessible for our supply chain partners.</p>
+                    <div class="value-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <div class="value-text">
+                        <h4>Responsive B2B Communication</h4>
+                        <p>We maintain clear lines of communication with vendor accounts. Our procurement team is accessible for order coordination and updates.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- INFRASTRUCTURE BANNER -->
+            <div class="infra-banner">
+                <div class="infra-text">
+                    <h3>Ready to Authorize a New Wholesale Partner?</h3>
+                    <p>We are fully equipped with State Resale Certificates, U.S. Tax ID (EIN), and standard NDA agreements for rapid vendor onboarding.</p>
+                </div>
+                <div class="infra-btn-wrapper">
+                    <a href="contact.html" class="btn-infra">Contact Procurement</a>
                 </div>
             </div>
+
         </div>
     </section>
 
