@@ -126,7 +126,6 @@
             margin-top: 2px;
         }
 
-        /* ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ ПУНКТОВ МЕНЮ */
         .nav-links {
             display: flex;
             gap: 25px;
@@ -182,7 +181,6 @@
             margin: 0 auto 40px auto;
         }
 
-        /* ОДИНАКОВЫЕ КНОПКИ В HERO СЕКЦИИ */
         .btn-group-hero {
             display: flex;
             gap: 15px;
@@ -260,7 +258,7 @@
             margin: 0 auto;
         }
 
-        /* FEATURES SECTION WITH HOVER EFFECTS */
+        /* FEATURES SECTION WITH SVG ICONS */
         .features {
             padding: 20px 0 80px 0;
         }
@@ -287,20 +285,24 @@
             background-color: #FFFFFF;
         }
 
-        .feature-icon {
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
+        .feature-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
+        .feature-card:hover .feature-icon-wrapper {
+            transform: scale(1.08);
+        }
+
+        .feature-icon-wrapper svg {
+            width: 22px;
+            height: 22px;
         }
 
         .feature-card h3 {
@@ -316,7 +318,7 @@
             margin: 0;
         }
 
-        /* CATEGORIES SECTION WITH HOVER EFFECTS */
+        /* CATEGORIES SECTION WITH SVG ICONS */
         .categories-section {
             padding: 60px 0;
             background-color: var(--card-bg);
@@ -345,14 +347,34 @@
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.08);
         }
 
-        .category-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+        .category-icon-wrapper {
+            width: 48px;
+            height: 48px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
         }
 
-        .category-card:hover .category-icon {
-            transform: scale(1.15);
+        .category-card:hover .category-icon-wrapper {
+            background-color: #ECFDF5;
+            border-color: var(--neon-green);
+            transform: scale(1.1);
+        }
+
+        .category-icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--slate-dark);
+            transition: stroke 0.3s ease;
+        }
+
+        .category-card:hover .category-icon-wrapper svg {
+            stroke: var(--neon-green);
         }
 
         .category-card h4 {
@@ -568,21 +590,40 @@
                 <p>We do not just buy inventory; we serve as a dedicated guardian and growth vehicle for your products across online channels.</p>
             </div>
             <div class="features-grid">
+                
+                <!-- FEATURE 1: SHIELD (MAP) -->
                 <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #ECFDF5;">🛡️</div>
+                    <div class="feature-icon-wrapper" style="background-color: #ECFDF5;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#10B981">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
                     <h3>Strict MAP Protection</h3>
                     <p>We use automated pricing safeguards tied directly to manufacturer agreements. We never breach MAP thresholds or drive price erosion.</p>
                 </div>
+
+                <!-- FEATURE 2: BOX (LOGISTICS) -->
                 <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #F0F9FF;">📦</div>
+                    <div class="feature-icon-wrapper" style="background-color: #F0F9FF;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#0284C7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
                     <h3>FBA Prep & Warehousing</h3>
                     <p>Full-service prep center processing, custom bundling, barcoding, and compliant pallet shipments directly to Amazon centers.</p>
                 </div>
+
+                <!-- FEATURE 3: CHART (RE-ORDERS) -->
                 <div class="feature-card">
-                    <div class="feature-icon" style="background-color: #FEF3C7;">📈</div>
+                    <div class="feature-icon-wrapper" style="background-color: #FEF3C7;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#D97706">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
                     <h3>Predictable Re-Orders</h3>
                     <p>Algorithmic inventory planning guarantees timely, recurring wholesale purchase orders that keep product velocity consistent.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -595,26 +636,51 @@
                 <p>We specialize in fast-moving consumer goods (FMCG) with proven consumer demand in North America.</p>
             </div>
             <div class="categories-grid">
+                
+                <!-- CAT 1: HOME -->
                 <div class="category-card">
-                    <div class="category-icon">🏡</div>
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
                     <h4>Home & Kitchen</h4>
                     <p>Cookware, organization, seasonal goods, and small home accessories.</p>
                 </div>
+
+                <!-- CAT 2: SPORTS -->
                 <div class="category-card">
-                    <div class="category-icon">⚽</div>
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
                     <h4>Sports & Outdoors</h4>
                     <p>Fitness gear, outdoor accessories, travel, and recreation items.</p>
                 </div>
+
+                <!-- CAT 3: BEAUTY -->
                 <div class="category-card">
-                    <div class="category-icon">🧘</div>
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
                     <h4>Beauty & Personal Care</h4>
                     <p>Skincare, grooming tools, wellness, and everyday bath essentials.</p>
                 </div>
+
+                <!-- CAT 4: PETS -->
                 <div class="category-card">
-                    <div class="category-icon">🐾</div>
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
                     <h4>Pet Supplies</h4>
                     <p>Grooming supplies, feeding equipment, toys, and pet accessories.</p>
                 </div>
+
             </div>
         </div>
     </section>
