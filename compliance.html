@@ -4,6 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAP Compliance Policy | Flint & Stone Commerce LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-dark: #0F172A;
+            --slate-gray: #334155;
+            --text-gray: #64748B;
+            --neon-green: #10B981;
+            --background: #FFFFFF;
+            --card-bg: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: var(--slate-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-spark-1 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-dark);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 2px;
+        }
+
+        .logo-spark-2 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-gray);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 12px;
+        }
+
+        .logo-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .logo-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text-main {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-text-sub {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-gray);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-green);
+        }
+
+        .btn-contact-nav {
+            background-color: var(--slate-dark);
+            color: #FFFFFF !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 60px 0 40px 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: var(--slate-dark);
+        }
+
+        .page-header p {
+            color: var(--text-gray);
+            font-size: 16px;
             max-width: 650px;
             margin: 0 auto;
         }
@@ -103,6 +268,39 @@
             font-weight: 600;
             font-size: 14px;
             display: inline-block;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--slate-dark);
+            color: #94A3B8;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-group">
+                    <div class="logo-icon">
+                        <div class="logo-spark-1"></div>
+                        <div class="logo-spark-2"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    <div class="logo-text-block">
+                        <span class="logo-text-main">Flint & Stone</span>
+                        <span class="logo-text-sub">COMMERCE</span>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="compliance.html" class="active">MAP Compliance</a></li>
                     <li><a href="contact.html" class="btn-contact-nav">Contact Us</a></li>
                 </ul>
@@ -122,14 +320,12 @@
     <section class="policy-section">
         <div class="container">
             
-            <!-- BLOCK 1 -->
             <div class="policy-block">
                 <h2>🛡️ Our Statement on Minimum Advertised Price (MAP)</h2>
                 <p>At <strong>Flint & Stone Commerce LLC</strong>, we believe that sustainable retail growth is built on trust and price integrity. We understand that unrestricted price erosion and unauthorized discounting ruin brand equity and harm relationship with brick-and-mortar as well as online distributors.</p>
                 <p>We officially commit to strictly maintaining the Minimum Advertised Price (MAP) policies established by all our manufacturing and distribution partners across every sales channel we operate.</p>
             </div>
 
-            <!-- BLOCK 2 -->
             <div class="policy-block">
                 <h2>⚙️ How We Enforce MAP Compliance</h2>
                 <p>We do not rely on manual price adjustments or speculative repricing strategies. Our sales infrastructure incorporates systematic price controls designed to prevent accidental violations:</p>
@@ -150,14 +346,12 @@
                 </div>
             </div>
 
-            <!-- BLOCK 3 -->
             <div class="policy-block">
                 <h2>🤝 Active Brand Collaboration</h2>
                 <p>Beyond our own compliance, we actively assist our brand partners in identifying rogue sellers, counterfeit listings, and unauthorized distribution leaks on digital marketplaces.</p>
                 <p>When you partner with Flint & Stone Commerce LLC, you gain a vigilant ally dedicated to maintaining a clean, predictable, and profitable marketplace ecosystem for your products.</p>
             </div>
 
-            <!-- BANNER -->
             <div class="contact-banner">
                 <h2>Have Questions Regarding Our Pricing Compliance?</h2>
                 <p>We are ready to sign your brand's formal MAP agreement or NDA prior to opening a wholesale account.</p>
