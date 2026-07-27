@@ -147,6 +147,87 @@
             color: var(--neon-green);
         }
 
+        /* MOBILE MENU TOGGLE BUTTON */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--slate-dark);
+        }
+
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #FFFFFF;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--slate-gray);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--slate-dark);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease;
+        }
+
+        .mobile-drawer a.active, .mobile-drawer a:hover {
+            color: var(--neon-green);
+        }
+
         /* PAGE HEADER */
         .page-header {
             padding: 60px 0 40px 0;
@@ -216,10 +297,6 @@
             margin: 0 0 12px 0;
         }
 
-        .about-card p:last-child {
-            margin-bottom: 0;
-        }
-
         .section-title {
             text-align: center;
             font-size: 26px;
@@ -235,7 +312,6 @@
             margin-bottom: 40px;
         }
 
-        /* PILLARS / VALUES GRID WITH SVG ICONS */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -303,7 +379,6 @@
             line-height: 1.6;
         }
 
-        /* INFRASTRUCTURE BANNER */
         .infra-banner {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
@@ -325,11 +400,7 @@
         .infra-text p {
             color: var(--text-gray);
             font-size: 14px;
-            margin: 0 0 15px 0;
-        }
-
-        .infra-text p:last-child {
-            margin-bottom: 0;
+            margin: 0;
         }
 
         .infra-btn-wrapper {
@@ -351,7 +422,6 @@
         .btn-infra:hover {
             background-color: #1E293B;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
         }
 
         /* FOOTER */
@@ -363,9 +433,41 @@
             font-size: 12px;
             border-top: 1px solid var(--border);
         }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .about-grid,
+            .values-grid,
+            .infra-banner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .infra-btn-wrapper {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- OVERLAY & MOBILE DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -388,6 +490,12 @@
                     <li><a href="compliance.html">MAP Compliance</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
+
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -403,8 +511,6 @@
     <!-- ABOUT CONTENT -->
     <section class="about-section">
         <div class="container">
-            
-            <!-- OVERVIEW GRID -->
             <div class="about-grid">
                 <div class="about-card">
                     <h2>Your Trusted U.S. Distribution Partner</h2>
@@ -418,14 +524,10 @@
                 </div>
             </div>
 
-            <!-- CORE PILLARS TITLE -->
             <h2 class="section-title">Our Operational Pillars</h2>
             <p class="section-subtitle">How we maintain standard-setting performance for our brand partners.</p>
             
-            <!-- PILLARS GRID WITH SVG ICONS -->
             <div class="values-grid">
-                
-                <!-- PILLAR 1: SHIELD -->
                 <div class="value-card">
                     <div class="value-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
@@ -438,7 +540,6 @@
                     </div>
                 </div>
 
-                <!-- PILLAR 2: LOGISTICS / PREP -->
                 <div class="value-card">
                     <div class="value-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
@@ -451,7 +552,6 @@
                     </div>
                 </div>
 
-                <!-- PILLAR 3: ANALYTICS -->
                 <div class="value-card">
                     <div class="value-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
@@ -464,7 +564,6 @@
                     </div>
                 </div>
 
-                <!-- PILLAR 4: B2B RELATIONS -->
                 <div class="value-card">
                     <div class="value-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
@@ -476,10 +575,8 @@
                         <p>We maintain clear lines of communication with vendor accounts. Our procurement team is accessible for order coordination and updates.</p>
                     </div>
                 </div>
-
             </div>
 
-            <!-- INFRASTRUCTURE BANNER -->
             <div class="infra-banner">
                 <div class="infra-text">
                     <h3>Ready to Authorize a New Wholesale Partner?</h3>
@@ -501,5 +598,13 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
