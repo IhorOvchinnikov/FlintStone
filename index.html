@@ -14,8 +14,12 @@
             --text-gray: #64748B;
             --neon-green: #10B981;
             --background: #FFFFFF;
-            --card-bg: #FFFFFF;
+            --card-bg: #F8FAFC;
             --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -24,7 +28,7 @@
             padding: 0;
             background-color: var(--background);
             color: var(--slate-dark);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .container {
@@ -50,7 +54,6 @@
             align-items: center;
         }
 
-        /* ПОЛНЫЙ ОБНОВЛЕННЫЙ ЛОГОТИП */
         .logo-group {
             display: flex;
             align-items: center;
@@ -177,12 +180,13 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.2;
         }
 
         .hero-description {
             font-size: 17px;
             color: var(--text-gray);
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto 40px auto;
         }
 
@@ -213,10 +217,61 @@
             text-decoration: none;
         }
 
+        /* METRICS / STATS BAR */
+        .stats-bar {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 30px 0;
+            margin-bottom: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            margin: 0 0 5px 0;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* SECTION TITLES */
+        .section-title-block {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title-block h2 {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .section-title-block p {
+            color: var(--text-gray);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* FEATURES SECTION */
         .features {
-            padding: 60px 0 90px 0;
-            background-color: #FFFFFF;
+            padding: 20px 0 80px 0;
         }
 
         .features-grid {
@@ -245,16 +300,158 @@
         }
 
         .feature-card h3 {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 700;
             margin: 0 0 10px 0;
             color: var(--slate-dark);
         }
 
         .feature-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* CATEGORIES SECTION */
+        .categories-section {
+            padding: 60px 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 8px 0;
+        }
+
+        .category-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* HOW WE WORK / PROCESS */
+        .process-section {
+            padding: 80px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .process-step {
+            position: relative;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--neon-green);
+            background-color: #ECFDF5;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .process-step p {
             font-size: 13px;
             color: var(--text-gray);
             margin: 0;
+        }
+
+        /* INTAKE BANNER */
+        .intake-section {
+            padding: 60px 0 90px 0;
+        }
+
+        .intake-card {
+            background-color: var(--slate-dark);
+            color: #FFFFFF;
+            border-radius: 16px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intake-text h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            color: #FFFFFF;
+        }
+
+        .intake-text p {
+            color: #94A3B8;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .intake-form input, .intake-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background-color: #1E293B;
+            color: #FFFFFF;
+            font-family: inherit;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .intake-form input:focus, .intake-form textarea:focus {
+            outline: none;
+            border-color: var(--neon-green);
+        }
+
+        .btn-intake {
+            background-color: var(--neon-green);
+            color: var(--slate-dark);
+            font-weight: 700;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 14px;
         }
 
         /* FOOTER */
@@ -288,7 +485,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#compliance">MAP Compliance</a></li>
+                    <li><a href="compliance.html">MAP Compliance</a></li>
                     <li><a href="contact.html" class="btn-contact-nav">Contact Us</a></li>
                 </ul>
             </nav>
@@ -299,33 +496,142 @@
     <section class="hero">
         <div class="container">
             <p class="hero-tagline">AUTHORIZED U.S. WHOLESALE DISTRIBUTOR</p>
-            <h1>Connecting Quality Brands with Digital Growth</h1>
-            <p class="hero-description">Flint & Stone Commerce LLC is a premier U.S. wholesale distributor and retail partner. We help established and emerging brands expand their reach across digital marketplaces while preserving brand value.</p>
+            <h1>Connecting Quality Brands with Scalable Digital Growth</h1>
+            <p class="hero-description">Flint & Stone Commerce LLC is a registered U.S. wholesale distributor and value-added retail partner. We help brand owners expand marketplace volume while rigorously enforcing price stability and brand policy.</p>
             <div class="btn-group-hero">
                 <a href="about.html" class="btn-primary">Learn About Us</a>
-                <a href="#contact" class="btn-secondary">Become a Partner</a>
+                <a href="contact.html" class="btn-secondary">Partner With Us</a>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES SECTION -->
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>MAP Compliant</p>
+                </div>
+                <div class="stat-item">
+                    <h3>U.S. Based</h3>
+                    <p>Registered Enterprise</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24-48h</h3>
+                    <p>Order Processing</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Direct B2B</h3>
+                    <p>Supply Chain Logistics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALUE PROPOSITION / FEATURES -->
     <section class="features">
         <div class="container">
+            <div class="section-title-block">
+                <h2>Why Brand Owners Partner With Us</h2>
+                <p>We do not just buy inventory; we serve as a dedicated guardian and growth vehicle for your products across online channels.</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon" style="background-color: #ECFDF5;">🛡️</div>
-                    <h3>MAP Protection</h3>
-                    <p>We strictly honor Minimum Advertised Price guidelines to protect your brand equity and prevent price erosion.</p>
+                    <h3>Strict MAP Protection</h3>
+                    <p>We use automated pricing safeguards tied directly to manufacturer agreements. We never breach MAP thresholds or drive price erosion.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon" style="background-color: #F0F9FF;">📦</div>
-                    <h3>Prep & Logistics</h3>
-                    <p>Certified FBA processing, custom bundles, and full logistical support straight to major U.S. fulfillment centers.</p>
+                    <h3>FBA Prep & Warehousing</h3>
+                    <p>Full-service prep center processing, custom bundling, barcoding, and compliant pallet shipments directly to Amazon centers.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon" style="background-color: #FEF3C7;">📈</div>
-                    <h3>Volume Re-orders</h3>
-                    <p>Data-driven inventory forecasting ensures high turnover and consistent, recurring wholesale orders.</p>
+                    <h3>Predictable Re-Orders</h3>
+                    <p>Algorithmic inventory planning guarantees timely, recurring wholesale purchase orders that keep product velocity consistent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2>Core Wholesale Categories</h2>
+                <p>We specialize in fast-moving consumer goods (FMCG) with proven consumer demand in North America.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">🏡</div>
+                    <h4>Home & Kitchen</h4>
+                    <p>Cookware, organization, seasonal goods, and small home accessories.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚽</div>
+                    <h4>Sports & Outdoors</h4>
+                    <p>Fitness gear, outdoor accessories, travel, and recreation items.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧘</div>
+                    <h4>Beauty & Personal Care</h4>
+                    <p>Skincare, grooming tools, wellness, and everyday bath essentials.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🐾</div>
+                    <h4>Pet Supplies</h4>
+                    <p>Grooming supplies, feeding equipment, toys, and pet accessories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PROCESS -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2>Our Seamless Partnership Process</h2>
+                <p>How we onboard new brands and transition into long-term wholesale purchasing.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <span class="step-number">STEP 01</span>
+                    <h3>Account & MAP Setup</h3>
+                    <p>We review your product catalog, sign your dealer agreements, and formalize MAP policies before placing initial orders.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">STEP 02</span>
+                    <h3>Wholesale Purchase Order</h3>
+                    <p>We submit opening Purchase Orders (PO) with rapid payment terms and direct freight routing to our logistics hubs.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">STEP 03</span>
+                    <h3>Market Optimization</h3>
+                    <p>We inspect, package, and list inventory in accordance with strict marketplace standards, ensuring steady re-order volume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTAKE BANNER FORM -->
+    <section class="intake-section">
+        <div class="container">
+            <div class="intake-card">
+                <div class="intake-text">
+                    <h2>Ready to Expand Your Wholesale Reach?</h2>
+                    <p>Send us your product catalog or wholesale requirements. Our procurement team responds within 24 business hours.</p>
+                    <p style="font-size: 13px; color: var(--neon-green);">✔️ Quick Approval &nbsp; | &nbsp; ✔️ Resale Certificate Ready</p>
+                </div>
+                <div class="intake-form">
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry received! We will contact you shortly.');">
+                        <input type="text" placeholder="Your Name / Title" required>
+                        <input type="text" placeholder="Brand / Company Name" required>
+                        <input type="email" placeholder="Work Email" required>
+                        <textarea rows="3" placeholder="Brief catalog description or inquiry..." required></textarea>
+                        <button type="submit" class="btn-intake">Request Wholesale Account</button>
+                    </form>
                 </div>
             </div>
         </div>
