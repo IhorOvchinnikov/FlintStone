@@ -126,7 +126,6 @@
             margin-top: 2px;
         }
 
-        /* ЕДИНЫЙ СТИЛЬ МЕНЮ */
         .nav-links {
             display: flex;
             gap: 25px;
@@ -145,6 +144,87 @@
         }
 
         .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-green);
+        }
+
+        /* MOBILE MENU TOGGLE BUTTON */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--slate-dark);
+        }
+
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #FFFFFF;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--slate-gray);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--slate-dark);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease;
+        }
+
+        .mobile-drawer a.active, .mobile-drawer a:hover {
             color: var(--neon-green);
         }
 
@@ -210,10 +290,6 @@
             margin-bottom: 22px;
         }
 
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
         .info-icon {
             background-color: #FFFFFF;
             border: 1px solid var(--border);
@@ -251,7 +327,6 @@
             color: var(--neon-green);
         }
 
-        /* FORM */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -283,16 +358,6 @@
             background-color: #FFFFFF;
         }
 
-        .contact-form textarea {
-            resize: vertical;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--slate-dark);
-        }
-
         .btn-submit {
             background-color: var(--slate-dark);
             color: #FFFFFF;
@@ -305,16 +370,6 @@
             width: 100%;
             margin-top: 8px;
             transition: all 0.2s ease;
-        }
-
-        .btn-submit:hover {
-            background-color: #1E293B;
-            transform: translateY(-1px);
-        }
-
-        /* MAP CONTAINER */
-        .map-section {
-            margin-top: 20px;
         }
 
         .map-section h2 {
@@ -348,9 +403,38 @@
             font-size: 12px;
             border-top: 1px solid var(--border);
         }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 280px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- OVERLAY & MOBILE DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html" class="active">Contact Us</a>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -373,6 +457,12 @@
                     <li><a href="compliance.html">MAP Compliance</a></li>
                     <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
+
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -389,8 +479,6 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                
-                <!-- LEFT CARD: INFO -->
                 <div class="contact-card">
                     <h2>Corporate Headquarters</h2>
                     
@@ -428,7 +516,6 @@
                     </div>
                 </div>
 
-                <!-- RIGHT CARD: FORM -->
                 <div class="contact-card">
                     <h2>Send Us a Message</h2>
                     <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
@@ -451,10 +538,8 @@
                         <button type="submit" class="btn-submit">Submit Inquiry</button>
                     </form>
                 </div>
-
             </div>
 
-            <!-- GOOGLE MAPS -->
             <div class="map-section">
                 <h2>Our Location on Map</h2>
                 <div class="map-container">
@@ -466,7 +551,6 @@
                     </iframe>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -478,5 +562,13 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
