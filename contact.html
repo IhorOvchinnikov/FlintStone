@@ -47,16 +47,17 @@
             padding: 0 20px;
         }
 
-        /* HEADER & NAV (GLASSMORPHISM STYLE) */
+        /* HEADER & NAV (GLASSMORPHISM FIXED OVERLAY) */
         header {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
             padding: 16px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 9999; /* Вынесено поверх всех карт и интерактивных блоков */
+            transform: translateZ(0); /* Защита от перекрытия iframe */
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
 
@@ -166,7 +167,7 @@
             border: none;
             cursor: pointer;
             padding: 5px;
-            z-index: 101;
+            z-index: 10001;
         }
 
         .menu-toggle svg {
@@ -184,7 +185,7 @@
             height: 100%;
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(4px);
-            z-index: 998;
+            z-index: 10000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -202,7 +203,7 @@
             width: 280px;
             height: 100%;
             background-color: #FFFFFF;
-            z-index: 999;
+            z-index: 10002;
             box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             padding: 80px 30px 30px 30px;
             display: flex;
@@ -265,6 +266,8 @@
         /* CONTACT SECTION */
         .contact-section {
             padding: 60px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-grid {
@@ -427,6 +430,8 @@
             overflow: hidden;
             border: 1px solid var(--border);
             box-sizing: border-box;
+            position: relative;
+            z-index: 1;
         }
 
         .map-container iframe {
@@ -670,3 +675,4 @@
     </script>
 </body>
 </html>
+
