@@ -38,93 +38,63 @@
             padding: 0 20px;
         }
 
-        /* HEADER & NAV */
-        header {
-            background-color: #FFFFFF;
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        /* HEADER & NAV (DARK EXECUTIVE STYLE) */
+header {
+    background-color: var(--slate-dark);
+    border-bottom: 2px solid var(--neon-green);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .logo-group {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 12px;
-            transition: transform 0.2s ease;
-        }
+/* Изменения для текста логотипа в темной шапке */
+.logo-text-main {
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFFFFF; /* Белый цвет текста */
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
 
-        .logo-group:hover {
-            transform: scale(1.02);
-        }
+.logo-text-sub {
+    font-size: 9px;
+    font-weight: 700;
+    color: #94A3B8; /* Светло-серый подзаголовок */
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
 
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            position: relative;
-            width: 28px;
-            height: 28px;
-        }
+.logo-spark-1 {
+    background-color: #FFFFFF; /* Белая искорка */
+}
 
-        .logo-spark-1 {
-            width: 8px;
-            height: 20px;
-            background-color: var(--slate-dark);
-            border-radius: 2px;
-            transform: rotate(-20deg);
-            position: absolute;
-            left: 2px;
-        }
+/* Изменения для пунктов меню в темной шапке */
+.nav-links a {
+    text-decoration: none;
+    color: #94A3B8; /* Светло-серые ссылки */
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
 
-        .logo-spark-2 {
-            width: 8px;
-            height: 20px;
-            background-color: var(--slate-gray);
-            border-radius: 2px;
-            transform: rotate(-20deg);
-            position: absolute;
-            left: 12px;
-        }
+.nav-links a:hover, .nav-links a.active {
+    color: var(--neon-green); /* Ярко-зеленый при наведении */
+}
 
-        .logo-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--neon-green);
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
+/* Иконка гамбургера для мобильных */
+.menu-toggle svg {
+    stroke: #FFFFFF;
+}
 
-        .logo-text-block {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text-main {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--slate-dark);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-
-        .logo-text-sub {
-            font-size: 9px;
-            font-weight: 700;
-            color: var(--text-gray);
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
 
         /* DESKTOP NAV LINKS */
         .nav-links {
