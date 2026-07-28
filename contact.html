@@ -43,14 +43,17 @@
             padding: 0 20px;
         }
 
-        /* HEADER */
+                /* HEADER & NAV (GLASSMORPHISM STYLE) */
         header {
-            background-color: #FFFFFF;
-            border-bottom: 1px solid var(--border);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* Для поддержки Safari */
+            border-bottom: 2px solid var(--neon-green);
             padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
 
         nav {
@@ -151,6 +154,22 @@
         .nav-links a:hover, .nav-links a.active {
             color: var(--neon-green);
         }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--slate-dark);
+        }
+
 
         /* MOBILE MENU TOGGLE BUTTON */
         .menu-toggle {
