@@ -257,7 +257,7 @@
             margin: 0 auto;
         }
 
-        /* CONTENT SECTION */
+        /* ABOUT CONTENT */
         .about-section {
             padding: 60px 0;
         }
@@ -304,21 +304,129 @@
             margin: 0 0 12px 0;
         }
 
+        /* NEW SECTION: STEPS WITH EFFECTS */
+        .steps-wrapper {
+            margin: 60px 0;
+            padding: 50px 0;
+            background-color: #FFFFFF;
+            position: relative;
+        }
+
         .section-title {
             text-align: center;
-            font-size: 26px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--slate-dark);
-            margin: 40px 0 10px 0;
+            margin: 0 0 10px 0;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 15px;
             color: var(--text-gray);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
+        .animated-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .interactive-step-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px 26px;
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        /* HOVER EFFECTS FOR STEPS */
+        .interactive-step-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-green);
+            background-color: #FFFFFF;
+            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.12);
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ECFDF5;
+            color: var(--neon-green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .interactive-step-card:hover .step-badge {
+            background-color: var(--neon-green);
+            color: var(--slate-dark);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .step-icon-container {
+            width: 48px;
+            height: 48px;
+            background-color: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-step-card:hover .step-icon-container {
+            border-color: var(--neon-green);
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .step-icon-container svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--slate-dark);
+            transition: stroke 0.3s ease;
+        }
+
+        .interactive-step-card:hover .step-icon-container svg {
+            stroke: var(--neon-green);
+        }
+
+        .interactive-step-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .interactive-step-card:hover h3 {
+            color: var(--slate-dark);
+        }
+
+        .interactive-step-card p {
+            font-size: 13.5px;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* PILLARS / VALUES SECTION */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -442,6 +550,12 @@
         }
 
         /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 868px) {
+            .animated-steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -531,6 +645,53 @@
                 </div>
             </div>
 
+            <!-- STEP 1, STEP 2, STEP 3 WITH HOVER & GLOW EFFECTS -->
+            <div class="steps-wrapper">
+                <h2 class="section-title">Our Strategic Partnership Journey</h2>
+                <p class="section-subtitle">How we integrate new brand partners into our compliant supply chain network.</p>
+
+                <div class="animated-steps-grid">
+                    
+                    <!-- STEP 01 -->
+                    <div class="interactive-step-card">
+                        <span class="step-badge">STEP 01</span>
+                        <div class="step-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3>Vendor Alignment & MAP Setup</h3>
+                        <p>We start by onboarding your catalog, executing dealer agreements, and locking in your MAP policy thresholds in our pricing infrastructure.</p>
+                    </div>
+
+                    <!-- STEP 02 -->
+                    <div class="interactive-step-card">
+                        <span class="step-badge">STEP 02</span>
+                        <div class="step-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                            </svg>
+                        </div>
+                        <h3>Wholesale Order Placement</h3>
+                        <p>We place direct wholesale Purchase Orders (PO) with rapid payment settlement, receiving inventory through verified U.S. prep channels.</p>
+                    </div>
+
+                    <!-- STEP 03 -->
+                    <div class="interactive-step-card">
+                        <span class="step-badge">STEP 03</span>
+                        <div class="step-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3>Market Scaling & Re-orders</h3>
+                        <p>We continuously optimize sales listing health and maintain predictable automated re-ordering to ensure stable, growing brand volume.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- OPERATIONAL PILLARS -->
             <h2 class="section-title">Our Operational Pillars</h2>
             <p class="section-subtitle">How we maintain standard-setting performance for our brand partners.</p>
             
