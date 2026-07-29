@@ -35,7 +35,6 @@
             line-height: 1.6;
         }
 
-        /* Защитный контейнер от бокового сдвига без поломки sticky */
         .page-wrapper {
             width: 100%;
             overflow-x: hidden;
@@ -411,30 +410,82 @@
             transform: translateY(-1px);
         }
 
-        /* MAP CONTAINER */
-        .map-section h2 {
+        /* NEW LOGISTICS NETWORK SECTION (REPLACES MAP) */
+        .network-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 45px;
+            margin-top: 10px;
+        }
+
+        .network-title {
+            text-align: center;
             font-size: 24px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .network-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 35px;
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .network-box {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .network-box:hover {
+            transform: translateY(-3px);
+            border-color: var(--neon-green);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.06);
+        }
+
+        .network-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #ECFDF5;
+            border: 1px solid #A7F3D0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .network-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--neon-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .network-box h4 {
+            font-size: 16px;
             font-weight: 700;
             color: var(--slate-dark);
-            margin-bottom: 20px;
-            text-align: center;
+            margin: 0 0 8px 0;
         }
 
-        .map-container {
-            width: 100%;
-            max-width: 100%;
-            height: 380px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-sizing: border-box;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
+        .network-box p {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.5;
         }
 
         /* FOOTER */
@@ -445,6 +496,7 @@
             text-align: center;
             font-size: 12px;
             border-top: 1px solid var(--border);
+            margin-top: 60px;
         }
 
         /* RESPONSIVE MEDIA QUERIES */
@@ -490,8 +542,13 @@
                 margin-bottom: 20px;
             }
 
-            .map-container {
-                height: 260px;
+            .network-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .network-section {
+                padding: 25px 15px;
             }
         }
     </style>
@@ -638,16 +695,33 @@
 
                 </div>
 
-                <!-- GOOGLE MAPS SECTION -->
-                <div class="map-section">
-                    <h2>Our Location on Map</h2>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2825.863124508929!2d-106.94857412351234!3d44.77338877107122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fab43b740e53%3A0x6b2b41212fb94711!2s1309%20Coffeen%20Ave%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                <!-- NEW LOGISTICS INFRASTRUCTURE SECTION -->
+                <div class="network-section">
+                    <h3 class="network-title">U.S. Operational Infrastructure</h3>
+                    <p class="network-subtitle">Designed for fast vendor onboarding, secure compliance, and smooth supply chain execution.</p>
+                    
+                    <div class="network-grid">
+                        <div class="network-box">
+                            <div class="network-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            </div>
+                            <h4>Registered Corporate HQ</h4>
+                            <p>Official U.S. entity based in Sheridan, Wyoming, fully authorized for state commerce and commercial agreements.</p>
+                        </div>
+                        <div class="network-box">
+                            <div class="network-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                            </div>
+                            <h4>FBA Prep & 3PL Network</h4>
+                            <p>Strategic logistics partnerships across North America ensuring compliant barcoding, packaging, and freight intake.</p>
+                        </div>
+                        <div class="network-box">
+                            <div class="network-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <h4>Rapid PO Execution</h4>
+                            <p>Reliable procurement cycles with guaranteed 24–48 hour order processing and clear communication channels.</p>
+                        </div>
                     </div>
                 </div>
 
