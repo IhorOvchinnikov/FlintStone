@@ -304,12 +304,10 @@
             margin: 0 0 12px 0;
         }
 
-        /* NEW SECTION: STEPS WITH EFFECTS */
+        /* INTERACTIVE STEPS SECTION WITH EFFECTS */
         .steps-wrapper {
-            margin: 60px 0;
-            padding: 50px 0;
-            background-color: #FFFFFF;
-            position: relative;
+            margin: 40px 0 60px 0;
+            padding: 40px 0;
         }
 
         .section-title {
@@ -324,14 +322,13 @@
             text-align: center;
             font-size: 15px;
             color: var(--text-gray);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .animated-steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            position: relative;
+            gap: 25px;
         }
 
         .interactive-step-card {
@@ -343,7 +340,6 @@
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
-            z-index: 2;
             cursor: pointer;
         }
 
@@ -352,7 +348,7 @@
             transform: translateY(-8px);
             border-color: var(--neon-green);
             background-color: #FFFFFF;
-            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.12);
+            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.15);
         }
 
         .step-badge {
@@ -374,7 +370,7 @@
 
         .interactive-step-card:hover .step-badge {
             background-color: var(--neon-green);
-            color: var(--slate-dark);
+            color: #FFFFFF;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
@@ -394,6 +390,7 @@
         .interactive-step-card:hover .step-icon-container {
             border-color: var(--neon-green);
             transform: scale(1.08) rotate(3deg);
+            background-color: #ECFDF5;
         }
 
         .step-icon-container svg {
@@ -413,10 +410,6 @@
             color: var(--slate-dark);
             margin: 0 0 10px 0;
             transition: color 0.3s ease;
-        }
-
-        .interactive-step-card:hover h3 {
-            color: var(--slate-dark);
         }
 
         .interactive-step-card p {
@@ -645,7 +638,7 @@
                 </div>
             </div>
 
-            <!-- STEP 1, STEP 2, STEP 3 WITH HOVER & GLOW EFFECTS -->
+            <!-- STEP 01, STEP 02, STEP 03 INTERACTIVE BLOCK -->
             <div class="steps-wrapper">
                 <h2 class="section-title">Our Strategic Partnership Journey</h2>
                 <p class="section-subtitle">How we integrate new brand partners into our compliant supply chain network.</p>
