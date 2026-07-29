@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Flint & Stone Commerce LLC</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F172A'/><rect x='8' y='8' width='5' height='16' rx='2' fill='%23FFFFFF' transform='rotate(-20 10.5 16)'/><rect x='15' y='8' width='5' height='16' rx='2' fill='%2394A3B8' transform='rotate(-20 17.5 16)'/><circle cx='24' cy='7' r='3.5' fill='%2310B981'/></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,16 +42,17 @@
             padding: 0 20px;
         }
 
-                /* HEADER & NAV (GLASSMORPHISM STYLE) */
+        /* HEADER & NAV */
         header {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Для поддержки Safari */
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
             padding: 16px 0;
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
 
@@ -156,24 +161,7 @@
             border: none;
             cursor: pointer;
             padding: 5px;
-            z-index: 101;
-        }
-
-        .menu-toggle svg {
-            width: 26px;
-            height: 26px;
-            stroke: var(--slate-dark);
-        }
-
-
-        /* MOBILE MENU TOGGLE BUTTON */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            z-index: 101;
+            z-index: 1001;
         }
 
         .menu-toggle svg {
@@ -191,7 +179,7 @@
             height: 100%;
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(4px);
-            z-index: 998;
+            z-index: 1002;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -209,7 +197,7 @@
             width: 280px;
             height: 100%;
             background-color: #FFFFFF;
-            z-index: 999;
+            z-index: 1003;
             box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             padding: 80px 30px 30px 30px;
             display: flex;
