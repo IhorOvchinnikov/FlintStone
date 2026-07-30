@@ -304,8 +304,8 @@
             margin: 0 0 12px 0;
         }
 
-        /* INTERACTIVE STEPS SECTION WITH EFFECTS */
-        .steps-wrapper {
+        /* UNIQUE BRAND SAFEGUARDS SECTION WITH ANIMATIONS */
+        .safeguards-wrapper {
             margin: 40px 0 60px 0;
             padding: 40px 0;
         }
@@ -325,13 +325,13 @@
             margin-bottom: 40px;
         }
 
-        .animated-steps-grid {
+        .safeguards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .interactive-step-card {
+        .safeguard-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 14px;
@@ -343,38 +343,38 @@
             cursor: pointer;
         }
 
-        /* HOVER EFFECTS FOR STEPS */
-        .interactive-step-card:hover {
+        .safeguard-card:hover {
             transform: translateY(-8px);
             border-color: var(--neon-green);
             background-color: #FFFFFF;
             box-shadow: 0 16px 32px rgba(16, 185, 129, 0.15);
         }
 
-        .step-badge {
+        .safeguard-badge {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background-color: #ECFDF5;
             color: var(--neon-green);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1px;
-            padding: 6px 14px;
+            letter-spacing: 1.2px;
+            padding: 5px 12px;
             border-radius: 20px;
             width: fit-content;
             margin-bottom: 20px;
             transition: all 0.3s ease;
             border: 1px solid rgba(16, 185, 129, 0.2);
+            text-transform: uppercase;
         }
 
-        .interactive-step-card:hover .step-badge {
+        .safeguard-card:hover .safeguard-badge {
             background-color: var(--neon-green);
             color: #FFFFFF;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
-        .step-icon-container {
+        .safeguard-icon {
             width: 48px;
             height: 48px;
             background-color: #FFFFFF;
@@ -387,32 +387,31 @@
             transition: all 0.3s ease;
         }
 
-        .interactive-step-card:hover .step-icon-container {
+        .safeguard-card:hover .safeguard-icon {
             border-color: var(--neon-green);
             transform: scale(1.08) rotate(3deg);
             background-color: #ECFDF5;
         }
 
-        .step-icon-container svg {
+        .safeguard-icon svg {
             width: 24px;
             height: 24px;
             stroke: var(--slate-dark);
             transition: stroke 0.3s ease;
         }
 
-        .interactive-step-card:hover .step-icon-container svg {
+        .safeguard-card:hover .safeguard-icon svg {
             stroke: var(--neon-green);
         }
 
-        .interactive-step-card h3 {
-            font-size: 19px;
+        .safeguard-card h3 {
+            font-size: 18px;
             font-weight: 700;
             color: var(--slate-dark);
             margin: 0 0 10px 0;
-            transition: color 0.3s ease;
         }
 
-        .interactive-step-card p {
+        .safeguard-card p {
             font-size: 13.5px;
             color: var(--text-gray);
             margin: 0;
@@ -544,7 +543,7 @@
 
         /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 868px) {
-            .animated-steps-grid {
+            .safeguards-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -638,47 +637,44 @@
                 </div>
             </div>
 
-            <!-- STEP 01, STEP 02, STEP 03 INTERACTIVE BLOCK -->
-            <div class="steps-wrapper">
-                <h2 class="section-title">Our Strategic Partnership Journey</h2>
-                <p class="section-subtitle">How we integrate new brand partners into our compliant supply chain network.</p>
+            <!-- BRAND SAFEGUARDS SECTION WITH ANIMATIONS -->
+            <div class="safeguards-wrapper">
+                <h2 class="section-title">Why Brands Trust Our Infrastructure</h2>
+                <p class="section-subtitle">How we protect your market presence while driving recurring B2B purchase volume.</p>
 
-                <div class="animated-steps-grid">
+                <div class="safeguards-grid">
                     
-                    <!-- STEP 01 -->
-                    <div class="interactive-step-card">
-                        <span class="step-badge">STEP 01</span>
-                        <div class="step-icon-container">
+                    <div class="safeguard-card">
+                        <span class="safeguard-badge">Protection</span>
+                        <div class="safeguard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                         </div>
-                        <h3>Vendor Alignment & MAP Setup</h3>
-                        <p>We start by onboarding your catalog, executing dealer agreements, and locking in your MAP policy thresholds in our pricing infrastructure.</p>
+                        <h3>100% Price Discipline</h3>
+                        <p>We lock price floors algorithmically. Your brand equity is protected against price erosion and unauthorized race-to-the-bottom repricing.</p>
                     </div>
 
-                    <!-- STEP 02 -->
-                    <div class="interactive-step-card">
-                        <span class="step-badge">STEP 02</span>
-                        <div class="step-icon-container">
+                    <div class="safeguard-card">
+                        <span class="safeguard-badge">Logistics</span>
+                        <div class="safeguard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                             </svg>
                         </div>
-                        <h3>Wholesale Order Placement</h3>
-                        <p>We place direct wholesale Purchase Orders (PO) with rapid payment settlement, receiving inventory through verified U.S. prep channels.</p>
+                        <h3>Compliant U.S. 3PL Network</h3>
+                        <p>Inventory moves directly to certified prep centers for inspection, FN-SKU labeling, and compliant FBA/FBM marketplace routing.</p>
                     </div>
 
-                    <!-- STEP 03 -->
-                    <div class="interactive-step-card">
-                        <span class="step-badge">STEP 03</span>
-                        <div class="step-icon-container">
+                    <div class="safeguard-card">
+                        <span class="safeguard-badge">Growth</span>
+                        <div class="safeguard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                             </svg>
                         </div>
-                        <h3>Market Scaling & Re-orders</h3>
-                        <p>We continuously optimize sales listing health and maintain predictable automated re-ordering to ensure stable, growing brand volume.</p>
+                        <h3>Predictable Re-orders</h3>
+                        <p>We maintain automated demand planning so your brand receives consistent, steady purchase orders without supply chain gaps.</p>
                     </div>
 
                 </div>
