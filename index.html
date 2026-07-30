@@ -457,10 +457,9 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ЛОГОТИП С ИДЕАЛЬНЫМ ВЫРЕЗОМ И ОТЦЕНТРИРОВАННОЙ ТОЧКОЙ -->
+                    <!-- ТОЧКА НА МЕСТЕ СВЕРХУ СПРАВА, ПРЕРИВАЕТ КОНТУР НАСКВОЗЬ -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        
-                        <!-- Точка над буквой I идеально по центру стойки (cx=8) -->
+                        <!-- Точка над I строго центрирована -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
@@ -468,13 +467,14 @@
                             <!-- Базовая буква O -->
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             
-                            <!-- Разрывающий вырез: расположен строго посередине правой стороны буквы (cy=17).
-                                 Радиус специально сделан чуть больше (2.6), чтобы разрыв 100% прошел насквозь через всю толщину жирного шрифта, не оставляя "нитей" по краям -->
-                            <circle cx="26.5" cy="17" r="2.6" fill="black"/>
+                            <!-- Внутренний вырез О -->
+                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            
+                            <!-- Верхний правый разрывающий вырез (на прежнем месте, но с увеличенным радиусом r=2.6 для чистого сквозного разрыва) -->
+                            <circle cx="26" cy="12" r="2.6" fill="black"/>
                         </mask>
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
-                        <!-- Надпись Wholesale Group -->
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
