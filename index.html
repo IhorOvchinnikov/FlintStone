@@ -457,25 +457,24 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ТОЧКА ВЫРОВНЕНА, КОНТУР 'O' ЧИСТО РАЗОРВАН СМЕЩЕННЫМ ВЫРЕЗОМ r=2.2 -->
+                    <!-- ЛОГОТИП С ИДЕАЛЬНЫМ ВЫРЕЗОМ И ОТЦЕНТРИРОВАННОЙ ТОЧКОЙ -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Точка над I -->
+                        
+                        <!-- Точка над буквой I идеально по центру стойки (cx=8) -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
                         <mask id="text-o-cut-index">
+                            <!-- Базовая буква O -->
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             
-                            <!-- Внутренний вырез О -->
-                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                            
-                            <!-- Разрывающий контур вырез. 
-                                 Радиус сохранен (r=2.2), но круг смещен внутрь (cx=24.5, cy=13.5), 
-                                 чтобы он чисто прорезал край шрифта и сливался с пустотой -->
-                            <circle cx="24.8" cy="13.5" r="2.2" fill="black"/>
+                            <!-- Разрывающий вырез: расположен строго посередине правой стороны буквы (cy=17).
+                                 Радиус специально сделан чуть больше (2.6), чтобы разрыв 100% прошел насквозь через всю толщину жирного шрифта, не оставляя "нитей" по краям -->
+                            <circle cx="26.5" cy="17" r="2.6" fill="black"/>
                         </mask>
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
+                        <!-- Надпись Wholesale Group -->
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
