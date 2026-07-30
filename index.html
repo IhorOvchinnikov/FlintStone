@@ -22,9 +22,7 @@
             --border: #E2E8F0;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -64,9 +62,8 @@
 
         /* BRAND LOGO INLINE BLOCK */
         .brand-logo-block {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5ch;
             text-decoration: none;
             transition: transform 0.2s ease;
         }
@@ -76,12 +73,13 @@
         }
 
         .brand-inline-title {
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--slate-dark);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            margin-left: 0.5ch;
             line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
         }
 
         .nav-links {
@@ -156,9 +154,7 @@
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mobile-drawer.active {
-            right: 0;
-        }
+        .mobile-drawer.active { right: 0; }
 
         .mobile-drawer-close {
             position: absolute;
@@ -277,9 +273,7 @@
         }
 
         /* FEATURES SECTION */
-        .features {
-            padding: 20px 0 80px 0;
-        }
+        .features { padding: 20px 0 80px 0; }
 
         .section-title-block {
             text-align: center;
@@ -351,9 +345,7 @@
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover .feature-icon-wrapper svg {
-            stroke: #FFFFFF;
-        }
+        .feature-card:hover .feature-icon-wrapper svg { stroke: #FFFFFF; }
 
         .feature-card h3 {
             font-size: 19px;
@@ -370,9 +362,7 @@
         }
 
         /* INTAKE BANNER FORM */
-        .intake-section {
-            padding: 60px 0 90px 0;
-        }
+        .intake-section { padding: 60px 0 90px 0; }
 
         .intake-card {
             background-color: var(--slate-dark);
@@ -475,8 +465,8 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- 1. ЗНАЧОК iO -->
-                    <svg width="50" height="34" viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 1. ЗНАЧОК LOGO iO -->
+                    <svg width="48" height="34" viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="35" cy="16" r="5" fill="#10B981"/>
                         <rect x="30" y="30" width="10" height="42" fill="#0F172A"/>
                         <mask id="brand-o-cut-index">
@@ -487,8 +477,8 @@
                         <circle cx="70" cy="51" r="21" fill="#0F172A" mask="url(#brand-o-cut-index)"/>
                     </svg>
 
-                    <!-- 2. WHOLESALE GROUP В ОДНУ СТРОКУ -->
-                    <span class="brand-inline-title">WHOLESALE GROUP</span>
+                    <!-- 2. WHOLESALE GROUP (В одну строку, ровное выравнивание по центру) -->
+                    <span class="brand-inline-title">Wholesale Group</span>
                 </a>
 
                 <ul class="nav-links">
