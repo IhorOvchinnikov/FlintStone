@@ -405,7 +405,7 @@
             color: var(--slate-dark);
             font-weight: 700;
             padding: 12px;
-            border: none;
+            border: none; сквозной разрыв
             border-radius: 6px;
             width: 100%;
             cursor: pointer;
@@ -457,9 +457,9 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ТОЧКА НА МЕСТЕ СВЕРХУ СПРАВА, ПРЕРИВАЕТ КОНТУР НАСКВОЗЬ -->
+                    <!-- ЛОГОТИП С ЧИСТЫМ СКВОЗНЫМ РАЗРЫВОМ КОНТУРА -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Точка над I строго центрирована -->
+                        <!-- Точка над I строго по центру -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
@@ -470,8 +470,8 @@
                             <!-- Внутренний вырез О -->
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
                             
-                            <!-- Верхний правый разрывающий вырез (на прежнем месте, но с увеличенным радиусом r=2.6 для чистого сквозного разрыва) -->
-                            <circle cx="26" cy="12" r="2.6" fill="black"/>
+                            <!-- Смещенный верхний правый разрыв: радиус r=2.8 и слегка наружу (cx=27.2, cy=11.2), чтобы полностью рассечь толстую линию шрифта -->
+                            <circle cx="27.2" cy="11.2" r="2.8" fill="black"/>
                         </mask>
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
