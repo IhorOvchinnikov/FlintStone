@@ -6,7 +6,7 @@
     <title>IO Wholesale Group LLC | Authorized U.S. Wholesale Distributor</title>
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F172A'/><rect x='8' y='8' width='5' height='16' rx='2' fill='%23FFFFFF' transform='rotate(-20 10.5 16)'/><rect x='15' y='8' width='5' height='16' rx='2' fill='%2394A3B8' transform='rotate(-20 17.5 16)'/><circle cx='24' cy='7' r='3.5' fill='%2310B981'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='10' cy='6' r='2.5' fill='%2310B981'/><rect x='8' y='11' width='4' height='16' fill='%230F172A'/><mask id='m'><circle cx='22' cy='19' r='8' fill='white'/><circle cx='22' cy='19' r='4' fill='black'/><circle cx='26.5' cy='14.5' r='2' fill='black'/></mask><circle cx='22' cy='19' r='8' fill='%230F172A' mask='url(%23m)'/></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +44,16 @@
 
         /* HEADER & NAV */
         header {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
-            padding: 16px 0;
+            padding: 12px 0;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
         }
 
         nav {
@@ -62,81 +62,22 @@
             align-items: center;
         }
 
-        .logo-group {
+        /* NEW BRAND LOGO */
+        .brand-logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
             text-decoration: none;
-            gap: 12px;
             transition: transform 0.2s ease;
         }
 
-        .logo-group:hover {
+        .brand-logo:hover {
             transform: scale(1.02);
-        }
-
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            position: relative;
-            width: 28px;
-            height: 28px;
-        }
-
-        .logo-spark-1 {
-            width: 8px;
-            height: 20px;
-            background-color: var(--slate-dark);
-            border-radius: 2px;
-            transform: rotate(-20deg);
-            position: absolute;
-            left: 2px;
-        }
-
-        .logo-spark-2 {
-            width: 8px;
-            height: 20px;
-            background-color: var(--slate-gray);
-            border-radius: 2px;
-            transform: rotate(-20deg);
-            position: absolute;
-            left: 12px;
-        }
-
-        .logo-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--neon-green);
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .logo-text-block {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text-main {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--slate-dark);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-
-        .logo-text-sub {
-            font-size: 9px;
-            font-weight: 700;
-            color: var(--text-gray);
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 28px;
             list-style: none;
             margin: 0;
             padding: 0;
@@ -147,7 +88,7 @@
             text-decoration: none;
             color: var(--slate-gray);
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.2s ease;
         }
 
@@ -695,16 +636,20 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo-group">
-                    <div class="logo-icon">
-                        <div class="logo-spark-1"></div>
-                        <div class="logo-spark-2"></div>
-                        <div class="logo-dot"></div>
-                    </div>
-                    <div class="logo-text-block">
-                        <span class="logo-text-main">IO Wholesale</span>
-                        <span class="logo-text-sub">GROUP</span>
-                    </div>
+                <a href="index.html" class="brand-logo" title="IO Wholesale Group LLC">
+                    <svg width="70" height="42" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="18" r="5" fill="#10B981"/>
+                        <rect x="35" y="32" width="10" height="42" fill="#0F172A"/>
+                        <mask id="nav-o-cut">
+                            <circle cx="75" cy="53" r="21" fill="white"/>
+                            <circle cx="75" cy="53" r="12" fill="black"/>
+                            <circle cx="87" cy="41" r="5" fill="black"/>
+                        </mask>
+                        <circle cx="75" cy="53" r="21" fill="#0F172A" mask="url(#nav-o-cut)"/>
+                    </svg>
+                    <span style="font-size: 9px; font-weight: 800; color: #0F172A; letter-spacing: 2px; text-transform: uppercase; margin-top: 1px;">
+                        WHOLESALE
+                    </span>
                 </a>
 
                 <ul class="nav-links">
