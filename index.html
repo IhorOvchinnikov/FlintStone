@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IO Wholesale Group LLC | Authorized U.S. Wholesale Distributor</title>
     
-    <!-- FAVICON (Исправлен, чтобы соответствовать логотипу: точка опущена ниже) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='7.25' cy='9.5' r='2' fill='%2310B981'/><text x='5.5' y='23' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='18'>I</text><text x='11.5' y='23' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='18'>O</text></svg>">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='7.5' cy='7.5' r='2' fill='%2310B981'/><text x='5.5' y='23' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='18'>I</text><text x='11.5' y='23' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='18'>O</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --slate-dark: #0F172A;
@@ -20,6 +21,10 @@
             --background: #FFFFFF;
             --card-bg: #F8FAFC;
             --border: #E2E8F0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -49,7 +54,6 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
             padding: 14px 0;
-            position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -62,7 +66,6 @@
             align-items: center;
         }
 
-        /* BRAND LOGO SVG WRAPPER */
         .brand-logo-block {
             display: flex;
             align-items: center;
@@ -91,7 +94,8 @@
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover, 
+        .nav-links a.active {
             color: var(--neon-green);
         }
 
@@ -119,6 +123,7 @@
             height: 100%;
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             z-index: 1002;
             opacity: 0;
             visibility: hidden;
@@ -146,7 +151,9 @@
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mobile-drawer.active { right: 0; }
+        .mobile-drawer.active { 
+            right: 0; 
+        }
 
         .mobile-drawer-close {
             position: absolute;
@@ -155,8 +162,10 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 28px;
+            line-height: 1;
             color: var(--slate-gray);
+            padding: 5px;
         }
 
         .mobile-drawer a {
@@ -169,7 +178,8 @@
             transition: color 0.2s ease;
         }
 
-        .mobile-drawer a.active, .mobile-drawer a:hover {
+        .mobile-drawer a.active, 
+        .mobile-drawer a:hover {
             color: var(--neon-green);
         }
 
@@ -265,7 +275,9 @@
         }
 
         /* FEATURES SECTION */
-        .features { padding: 20px 0 80px 0; }
+        .features { 
+            padding: 20px 0 80px 0; 
+        }
 
         .section-title-block {
             text-align: center;
@@ -299,7 +311,6 @@
             border-radius: 14px;
             text-align: left;
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
         }
 
         .feature-card:hover {
@@ -337,7 +348,9 @@
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover .feature-icon-wrapper svg { stroke: #FFFFFF; }
+        .feature-card:hover .feature-icon-wrapper svg { 
+            stroke: #FFFFFF; 
+        }
 
         .feature-card h3 {
             font-size: 19px;
@@ -354,7 +367,9 @@
         }
 
         /* INTAKE BANNER FORM */
-        .intake-section { padding: 60px 0 90px 0; }
+        .intake-section { 
+            padding: 60px 0 90px 0; 
+        }
 
         .intake-card {
             background-color: var(--slate-dark);
@@ -381,7 +396,8 @@
             margin-bottom: 20px;
         }
 
-        .intake-form input, .intake-form textarea {
+        .intake-form input, 
+        .intake-form textarea {
             width: 100%;
             padding: 12px;
             border-radius: 6px;
@@ -394,7 +410,8 @@
             transition: all 0.2s ease;
         }
 
-        .intake-form input:focus, .intake-form textarea:focus {
+        .intake-form input:focus, 
+        .intake-form textarea:focus {
             outline: none;
             border-color: var(--neon-green);
             box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
@@ -429,6 +446,7 @@
             border-top: 1px solid var(--border);
         }
 
+        /* MEDIA QUERIES */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
@@ -444,30 +462,26 @@
 
     <!-- OVERLAY & MOBILE DRAWER -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
-    <div class="mobile-drawer" id="mobileDrawer">
+    <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="compliance.html">MAP Compliance</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
+        <a href="index.html" class="active" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About Us</a>
+        <a href="compliance.html" onclick="toggleMenu()">MAP Compliance</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact Us</a>
+    </aside>
 
     <!-- HEADER -->
     <header>
         <div class="container">
-            <nav>
+            <nav aria-label="Main Navigation">
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ИСПРАВЛЕНО: Точка выровнена по центру 'I' (cx="7.25") и опущена ниже (cy="9.5") -->
-                    <svg width="195" height="34" viewBox="0 0 195 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="7.25" cy="9.5" r="2" fill="#10B981"/>
+                    <!-- ЛОГОТИП С ТОЧКОЙ ПО ЦЕНТРУ БУКВЫ I -->
+                    <svg width="220" height="34" viewBox="0 0 220 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Точка над буквой I (сдвинута по центру буквы) -->
+                        <circle cx="8.5" cy="6.5" r="2" fill="#10B981"/>
                         <text x="5.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px">I</text>
-                        <mask id="text-o-cut-index">
-                            <text x="11.5" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px">O</text>
-                            <circle cx="17.5" cy="19.5" r="2" fill="black"/>
-                            <circle cx="22.5" cy="14.5" r="2" fill="black"/>
-                        </mask>
-                        <text x="11.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px" mask="url(#text-o-cut-index)">O</text>
-                        <text x="33" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
+                        <text x="14.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px">O</text>
+                        <text x="36" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
 
@@ -478,7 +492,7 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
 
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                <button class="menu-toggle" id="menuToggleBtn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -575,9 +589,9 @@
                 </div>
                 <div class="intake-form">
                     <form action="#" method="POST" onsubmit="handleIntakeSubmit(event)">
-                        <input type="text" placeholder="Your Name / Title" required>
-                        <input type="text" placeholder="Brand / Company Name" required>
-                        <input type="email" placeholder="Work Email" required>
+                        <input type="text" placeholder="Your Name / Title" autocomplete="name" required>
+                        <input type="text" placeholder="Brand / Company Name" autocomplete="organization" required>
+                        <input type="email" placeholder="Work Email" autocomplete="email" required>
                         <textarea rows="3" placeholder="Brief catalog description or inquiry..." required></textarea>
                         <button type="submit" class="btn-intake">Request Wholesale Account</button>
                     </form>
@@ -598,8 +612,11 @@
         function toggleMenu() {
             const drawer = document.getElementById('mobileDrawer');
             const overlay = document.getElementById('mobileOverlay');
-            drawer.classList.toggle('active');
+            const btn = document.getElementById('menuToggleBtn');
+            
+            const isActive = drawer.classList.toggle('active');
             overlay.classList.toggle('active');
+            btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         }
 
         function handleIntakeSubmit(e) {
