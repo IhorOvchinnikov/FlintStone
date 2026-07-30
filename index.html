@@ -457,24 +457,31 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ФИНАЛЬНЫЙ СУПЕР-ТОЧНЫЙ ЛОГОТИП С ИДЕАЛЬНЫМ РАЗРЫВОМ -->
+                    <!-- ЛОГОТИП С ИДЕАЛЬНЫМ ВЕКТОРНЫМ РАЗРЫВОМ КОНТУРА О -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Точка над буквой I строго по центру -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
-                        <mask id="text-o-cut-index">
-                            <!-- Базовая буква O -->
-                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                            
-                            <!-- Внутренний вырез О -->
-                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                            
-                            <!-- Финальный разрывающий круг, сдвинутый чуть выше и правее (cx="25.8", cy="11.8") -->
-                            <circle cx="25.8" cy="11.8" r="2.5" fill="black"/>
-                        </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
+                        <!-- Буква O переведена в геометрический путь (path) с точным векторным сквозным разрывом контура вверху-справа -->
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="
+                            M 23.5 11 
+                            C 26 11 28.5 13 29.5 16.5 
+                            C 30.5 20 29.5 23.5 27 25.5 
+                            C 24.5 27.5 21 28 18 26.5 
+                            C 15 25 13.5 22 13.5 18.5 
+                            C 13.5 15 15 11.5 18 10 
+                            C 19.5 9.2 21.5 9 23.5 11 
+                            Z 
+                            M 21.5 13.5 
+                            C 19 13.5 17 15.5 17 18.5 
+                            C 17 21.5 19 23.5 21.5 23.5 
+                            C 24 23.5 26 21.5 26 18.5 
+                            C 26 15.5 24 13.5 21.5 13.5 
+                            Z" 
+                            fill="#0F172A"/>
                         
+                        <!-- Текст Wholesale Group -->
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
