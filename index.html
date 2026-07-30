@@ -457,20 +457,22 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- РАДИУС ВЫРЕЗА НА КОНТУРЕ О УВЕЛИЧЕН ДЛЯ ПОЛНОГО РАЗРЫВА -->
+                    <!-- ТОЧКА ВЫРОВНЕНА, КОНТУР 'O' ЧИСТО РАЗОРВАН СМЕЩЕННЫМ ВЫРЕЗОМ r=2.2 -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Точка над I строго центрирована -->
+                        <!-- Точка над I -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
                         <mask id="text-o-cut-index">
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             
-                            <!-- Вырез внутри О -->
+                            <!-- Внутренний вырез О -->
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
                             
-                            <!-- Разрывающий контур вырез. Радиус увеличен до 4.5, чтобы стопроцентно прорезать толщину шрифта -->
-                            <circle cx="26.5" cy="11.5" r="4.5" fill="black"/>
+                            <!-- Разрывающий контур вырез. 
+                                 Радиус сохранен (r=2.2), но круг смещен внутрь (cx=24.5, cy=13.5), 
+                                 чтобы он чисто прорезал край шрифта и сливался с пустотой -->
+                            <circle cx="24.8" cy="13.5" r="2.2" fill="black"/>
                         </mask>
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
