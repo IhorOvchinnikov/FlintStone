@@ -1,20 +1,25 @@
 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
     <svg width="225" height="34" viewBox="0 0 225 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- 1. Точка над буквой I -->
+        <!-- 1. Изумрудная точка над буквой I -->
         <circle cx="7" cy="4.5" r="2" fill="#10B981"/>
 
         <!-- 2. Буква I -->
         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px">I</text>
 
-        <!-- 3. Буква O со стандартным шрифтовым интервалом и точным вырезом-точкой -->
-        <mask id="text-o-cut-index">
+        <!-- 3. Буква O с двойным вырезом (внутренний + вырез на самом теле буквы, равные точке над I) -->
+        <mask id="text-o-cut-double">
+            <!-- Сама буква O -->
             <text x="17" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px">O</text>
-            <!-- Круглый вырез внутри буквы O, идентичный по размеру точке над I (r=2) -->
+            
+            <!-- Первый вырез: внутреннее отверстие буквы O -->
             <circle cx="23.5" cy="19.5" r="2" fill="black"/>
+            
+            <!-- Второй вырез: фирменный акцент на теле самой буквы O (размером с точку) -->
+            <circle cx="28.5" cy="14.5" r="2" fill="black"/>
         </mask>
-        <text x="17" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" mask="url(#text-o-cut-index)">O</text>
+        <text x="17" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" mask="url(#text-o-cut-double)">O</text>
 
-        <!-- 4. Название Wholesale Group -->
+        <!-- 4. Название Wholesale Group справа -->
         <text x="43" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
     </svg>
 </a>
