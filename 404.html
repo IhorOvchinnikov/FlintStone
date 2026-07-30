@@ -238,14 +238,21 @@
             color: var(--neon-green);
         }
 
-        /* 404 ERROR HERO SECTION */
+        /* 404 ERROR HERO SECTION (PERFECTLY CENTERED) */
         .error-section {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
+        }
+
+        .error-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
         .error-card {
@@ -255,6 +262,7 @@
             padding: 60px 40px;
             max-width: 620px;
             width: 100%;
+            margin: 0 auto;
             box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04);
             transition: all 0.3s ease;
         }
@@ -417,7 +425,7 @@
 
     <!-- 404 SECTION -->
     <section class="error-section">
-        <div class="container">
+        <div class="container error-container">
             <div class="error-card">
                 <div class="error-code">4<span>0</span>4</div>
                 <h1 class="error-title">Page Not Found</h1>
