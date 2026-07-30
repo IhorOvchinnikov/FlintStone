@@ -1,18 +1,20 @@
-<svg width="225" height="34" viewBox="0 0 225 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- 1. Изумрудная точка над буквой I -->
-    <circle cx="7" cy="4.5" r="2" fill="#10B981"/>
-    
-    <!-- 2. Буква I -->
-    <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px">I</text>
-    
-    <!-- 3. Буква O с двойным вырезом (внутренний + акцентный на теле буквы, равные точке над I) -->
-    <mask id="text-o-cut-file">
-        <text x="17" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px">O</text>
-        <circle cx="23.5" cy="19.5" r="2" fill="black"/>
-        <circle cx="28.5" cy="14.5" r="2" fill="black"/>
-    </mask>
-    <text x="17" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" mask="url(#text-o-cut-file)">O</text>
-    
-    <!-- 4. Название Wholesale Group -->
-    <text x="43" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
-</svg>
+<a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
+    <svg width="215" height="34" viewBox="0 0 215 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 1. Изумрудная точка над буквой I -->
+        <circle cx="6.5" cy="4.5" r="2" fill="#10B981"/>
+        
+        <!-- 2. Буква I (утолщенная) -->
+        <text x="4.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px">I</text>
+        
+        <!-- 3. Буква O (утолщенная, сдвинута ближе к I, с двойным вырезом в размер точки) -->
+        <mask id="text-o-cut-bold">
+            <text x="15" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px">O</text>
+            <circle cx="21" cy="19.5" r="2" fill="black"/>
+            <circle cx="26" cy="14.5" r="2" fill="black"/>
+        </mask>
+        <text x="15" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="18.5px" mask="url(#text-o-cut-bold)">O</text>
+        
+        <!-- 4. Название Wholesale Group справа -->
+        <text x="40" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
+    </svg>
+</a>
