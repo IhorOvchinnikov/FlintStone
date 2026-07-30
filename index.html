@@ -62,9 +62,9 @@
             align-items: center;
         }
 
-        /* BRAND LOGO INLINE BLOCK (ИДЕАЛЬНОЕ ВЫРАВНИВАНИЕ) */
+        /* BRAND LOGO SVG WRAPPER */
         .brand-logo-block {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             text-decoration: none;
             transition: transform 0.2s ease;
@@ -72,17 +72,6 @@
 
         .brand-logo-block:hover {
             transform: scale(1.02);
-        }
-
-        .brand-inline-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--slate-dark);
-            margin-left: 12px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            transform: translateY(2px);
         }
 
         .nav-links {
@@ -468,20 +457,18 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ИДЕАЛЬНО КАДРИРОВАННЫЙ ЗНАЧОК LOGO iO -->
-                    <svg width="46" height="34" viewBox="0 0 70 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="6" r="5" fill="#10B981"/>
-                        <rect x="7" y="17" width="10" height="35" fill="#0F172A"/>
-                        <mask id="brand-o-cut-index">
-                            <circle cx="45" cy="34.5" r="17.5" fill="white"/>
-                            <circle cx="45" cy="34.5" r="10" fill="black"/>
-                            <circle cx="55" cy="24.5" r="4.5" fill="black"/>
+                    <!-- ЕДИНООБРАЗНЫЙ ЛОГОТИП С ИДЕАЛЬНО ВЫРАВНЕННЫМ ТЕКСТОМ ПО БАЗОВОЙ ЛИНИИ -->
+                    <svg width="220" height="34" viewBox="0 0 220 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5" cy="4" r="3.5" fill="#10B981"/>
+                        <rect x="2" y="11" width="6" height="21" rx="1" fill="#0F172A"/>
+                        <mask id="logo-o-cut-index">
+                            <circle cx="28" cy="21.5" r="10.5" fill="white"/>
+                            <circle cx="28" cy="21.5" r="5.5" fill="black"/>
+                            <circle cx="34.5" cy="15" r="2.5" fill="black"/>
                         </mask>
-                        <circle cx="45" cy="34.5" r="17.5" fill="#0F172A" mask="url(#brand-o-cut-index)"/>
+                        <circle cx="28" cy="21.5" r="10.5" fill="#0F172A" mask="url(#logo-o-cut-index)"/>
+                        <text x="48" y="30" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
-
-                    <!-- НАДПИСЬ WHOLESALE GROUP С МИКРО-КОРРЕКЦИЕЙ ВЫСОТЫ -->
-                    <span class="brand-inline-title">Wholesale Group</span>
                 </a>
 
                 <ul class="nav-links">
