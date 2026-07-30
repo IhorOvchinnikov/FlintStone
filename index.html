@@ -62,11 +62,11 @@
             align-items: center;
         }
 
-        /* BRAND LOGO HEADER BLOCK */
+        /* BRAND LOGO INLINE BLOCK */
         .brand-logo-block {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 0.5ch;
             text-decoration: none;
             transition: transform 0.2s ease;
         }
@@ -75,16 +75,12 @@
             transform: scale(1.02);
         }
 
-        .brand-text-block {
-            display: flex;
-            align-items: center;
-        }
-
-        .brand-main-title {
-            font-size: 20px;
+        .brand-inline-title {
+            font-size: 18px;
             font-weight: 800;
             color: var(--slate-dark);
-            letter-spacing: -0.3px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             line-height: 1;
         }
 
@@ -480,7 +476,7 @@
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
                     <!-- 1. ЗНАЧОК iO -->
-                    <svg width="55" height="38" viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="50" height="34" viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="35" cy="16" r="5" fill="#10B981"/>
                         <rect x="30" y="30" width="10" height="42" fill="#0F172A"/>
                         <mask id="brand-o-cut-index">
@@ -491,10 +487,8 @@
                         <circle cx="70" cy="51" r="21" fill="#0F172A" mask="url(#brand-o-cut-index)"/>
                     </svg>
 
-                    <!-- 2. ТОЛЬКО WHOLESALE GROUP СПРАВА -->
-                    <div class="brand-text-block">
-                        <span class="brand-main-title">Wholesale Group</span>
-                    </div>
+                    <!-- 2. WHOLESALE GROUP В ОДНУ СТРОКУ -->
+                    <span class="brand-inline-title">WHOLESALE GROUP</span>
                 </a>
 
                 <ul class="nav-links">
