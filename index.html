@@ -346,7 +346,7 @@
             margin: 0 auto;
         }
 
-        /* FEATURES SECTION */
+        /* FEATURES SECTION - IMPROVED ICONS & EFFECTS */
         .features {
             padding: 20px 0 80px 0;
         }
@@ -360,36 +360,54 @@
         .feature-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 32px 26px;
+            border-radius: 14px;
             text-align: left;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: #CBD5E1;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+            transform: translateY(-6px);
+            border-color: var(--neon-green);
+            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.12);
             background-color: #FFFFFF;
         }
 
         .feature-icon-wrapper {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background-color: #ECFDF5;
+            border: 1px solid rgba(16, 185, 129, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            margin-bottom: 22px;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover .feature-icon-wrapper {
-            transform: scale(1.08);
+            transform: scale(1.1) rotate(3deg);
+            background-color: var(--neon-green);
+            border-color: var(--neon-green);
+        }
+
+        .feature-icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--neon-green);
+            fill: none;
+            stroke-width: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon-wrapper svg {
+            stroke: #FFFFFF;
         }
 
         .feature-card h3 {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
             margin: 0 0 10px 0;
             color: var(--slate-dark);
@@ -399,6 +417,7 @@
             font-size: 14px;
             color: var(--text-gray);
             margin: 0;
+            line-height: 1.6;
         }
 
         /* CATEGORIES SECTION */
@@ -485,7 +504,7 @@
             margin: 0;
         }
 
-        /* PROCESS SECTION */
+        /* PROCESS SECTION - ANIMATED STEP CARDS */
         .process-section {
             padding: 80px 0;
         }
@@ -498,11 +517,19 @@
 
         .process-step {
             position: relative;
-            background: #FFFFFF;
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            padding: 32px 26px;
+            border-radius: 14px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .process-step:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-green);
+            background-color: #FFFFFF;
+            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.14);
         }
 
         .step-number {
@@ -510,23 +537,33 @@
             font-weight: 800;
             color: var(--neon-green);
             background-color: #ECFDF5;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .process-step:hover .step-number {
+            background-color: var(--neon-green);
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         .process-step h3 {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--slate-dark);
             margin: 0 0 10px 0;
         }
 
         .process-step p {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--text-gray);
             margin: 0;
+            line-height: 1.6;
         }
 
         /* INTAKE BANNER FORM */
@@ -569,6 +606,13 @@
             font-family: inherit;
             font-size: 13px;
             margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .intake-form input:focus, .intake-form textarea:focus {
+            outline: none;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
         }
 
         .btn-intake {
@@ -581,12 +625,13 @@
             width: 100%;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .btn-intake:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+            opacity: 0.95;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
         }
 
         /* FOOTER */
@@ -715,7 +760,7 @@
         </div>
     </div>
 
-    <!-- FEATURES -->
+    <!-- FEATURES - WITH PREMIUM ICONS & HOVER EFFECTS -->
     <section class="features">
         <div class="container">
             <div class="section-title-block">
@@ -723,33 +768,40 @@
                 <p>We do not just buy inventory; we serve as a dedicated guardian and growth vehicle for your products across online channels.</p>
             </div>
             <div class="features-grid">
+                
+                <!-- FEATURE 1: SHIELD CHECK (MAP) -->
                 <div class="feature-card">
-                    <div class="feature-icon-wrapper" style="background-color: #ECFDF5;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #10B981; fill: none; stroke-width: 2;">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
                     <h3>Strict MAP Protection</h3>
                     <p>We use automated pricing safeguards tied directly to manufacturer agreements. We never breach MAP thresholds or drive price erosion.</p>
                 </div>
+
+                <!-- FEATURE 2: PACKAGE / BOX LOGISTICS (FBA PREP) -->
                 <div class="feature-card">
-                    <div class="feature-icon-wrapper" style="background-color: #F0F9FF;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #0284C7; fill: none; stroke-width: 2;">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                     </div>
                     <h3>FBA Prep & Warehousing</h3>
                     <p>Full-service prep center processing, custom bundling, barcoding, and compliant pallet shipments directly to Amazon centers.</p>
                 </div>
+
+                <!-- FEATURE 3: TRENDING GROWTH (PREDICTABLE RE-ORDERS) -->
                 <div class="feature-card">
-                    <div class="feature-icon-wrapper" style="background-color: #FEF3C7;">
-                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="stroke: #D97706; fill: none; stroke-width: 2;">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                     </div>
                     <h3>Predictable Re-Orders</h3>
                     <p>Algorithmic inventory planning guarantees timely, recurring wholesale purchase orders that keep product velocity consistent.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -802,7 +854,7 @@
         </div>
     </section>
 
-    <!-- PROCESS SECTION -->
+    <!-- PROCESS SECTION - ANIMATED STEPS -->
     <section class="process-section">
         <div class="container">
             <div class="section-title-block">
