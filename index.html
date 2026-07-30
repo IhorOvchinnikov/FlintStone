@@ -457,24 +457,28 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ОРИГИНАЛЬНЫЙ ШРИФТ INTER И ТОЧКА, ПРОИЗВЕДЕННЫЕ ЧЕРЕЗ МАСКУ С ЧИСТЫМ РАЗРЫВОМ -->
+                    <!-- ЛОГОТИП С ЧЕТКИМ И ГАРАНТИРОВАННЫМ СКВОЗНЫМ РАЗРЫВОМ КОНТУРА O -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Точка над буквой I строго по центру -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
+                        <!-- Маска для точного сквозного вырезания шрифта -->
                         <mask id="text-o-cut-index">
-                            <!-- Базовая буква O исходным шрифтом Inter -->
-                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
+                            <!-- Белый прямоугольник закрывает всё, кроме того, что вырезается черным -->
+                            <rect x="0" y="0" width="205" height="34" fill="white"/>
                             
-                            <!-- Вырез внутри O (отверстие) -->
-                            <circle cx="21" cy="17.5" r="3.2" fill="black"/>
+                            <!-- Внутреннее отверстие буквы O -->
+                            <circle cx="21" cy="17.5" r="4.2" fill="black"/>
                             
-                            <!-- Разрывающий круг, который рассекает контур буквы O насквозь вверху-справа -->
-                            <circle cx="26" cy="11.5" r="2.5" fill="black"/>
+                            <!-- Четкий разрывающий круг, который рассекает правую стенку буквы O насквозь -->
+                            <circle cx="26.5" cy="11.5" r="3.2" fill="black"/>
                         </mask>
+                        
+                        <!-- Оригинальная буква O под маской -->
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
+                        <!-- Текст Wholesale Group -->
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
