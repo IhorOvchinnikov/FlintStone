@@ -435,8 +435,8 @@
             box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
         }
 
-        /* ONBOARDING STEPS WITH HOVER ANIMATION */
-        .steps-section {
+        /* NEW UNIQUE CHECKLIST SECTION FOR CONTACTS */
+        .checklist-section {
             background-color: var(--slate-dark);
             color: #FFFFFF;
             border-radius: 16px;
@@ -445,31 +445,31 @@
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
         }
 
-        .steps-header {
+        .checklist-header {
             text-align: center;
             margin-bottom: 35px;
         }
 
-        .steps-header h2 {
+        .checklist-header h2 {
             font-size: 26px;
             font-weight: 800;
             margin: 0 0 8px 0;
             color: #FFFFFF;
         }
 
-        .steps-header p {
+        .checklist-header p {
             font-size: 14px;
             color: #94A3B8;
             margin: 0;
         }
 
-        .steps-grid {
+        .checklist-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .step-card {
+        .check-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -479,14 +479,14 @@
             cursor: pointer;
         }
 
-        .step-card:hover {
+        .check-card:hover {
             transform: translateY(-6px);
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--neon-green);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
-        .step-number {
+        .check-tag {
             display: inline-block;
             font-size: 11px;
             font-weight: 800;
@@ -494,25 +494,25 @@
             background-color: rgba(16, 185, 129, 0.15);
             padding: 4px 12px;
             border-radius: 20px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             margin-bottom: 14px;
             transition: all 0.3s ease;
         }
 
-        .step-card:hover .step-number {
+        .check-card:hover .check-tag {
             background-color: var(--neon-green);
             color: var(--slate-dark);
         }
 
-        .step-card h3 {
+        .check-card h3 {
             font-size: 17px;
             font-weight: 700;
             margin: 0 0 8px 0;
             color: #FFFFFF;
         }
 
-        .step-card p {
+        .check-card p {
             font-size: 13px;
             color: #94A3B8;
             margin: 0;
@@ -619,12 +619,12 @@
                 margin-bottom: 30px;
             }
 
-            .steps-grid, .faq-grid {
+            .checklist-grid, .faq-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
 
-            .steps-section {
+            .checklist-section {
                 padding: 30px 20px;
             }
 
@@ -766,27 +766,27 @@
 
             </div>
 
-            <!-- ONBOARDING STEPS SECTION WITH HOVER ANIMATION -->
-            <div class="steps-section">
-                <div class="steps-header">
-                    <h2>How We Onboard Brand Partners</h2>
-                    <p>Transparent three-step process designed for seamless vendor integration.</p>
+            <!-- NEW VENDOR ONBOARDING CHECKLIST SECTION -->
+            <div class="checklist-section">
+                <div class="checklist-header">
+                    <h2>Vendor Onboarding Readiness</h2>
+                    <p>What we provide for rapid wholesale agreement execution.</p>
                 </div>
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">Step 01</div>
-                        <h3>Submit Catalog & Inquiry</h3>
-                        <p>Share your wholesale catalog or product sheet. Our purchasing team evaluates potential volume and marketplace strategy within 24 hours.</p>
+                <div class="checklist-grid">
+                    <div class="check-card">
+                        <span class="check-tag">Verified</span>
+                        <h3>U.S. Tax ID & Resale Permits</h3>
+                        <p>We supply active Wyoming state resale certificates and EIN for rapid tax-exempt B2B account creation.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">Step 02</div>
-                        <h3>Review & Agreement</h3>
-                        <p>We review and sign your brand policies, Resale Agreements, and MAP guidelines to ensure full pricing alignment.</p>
+                    <div class="check-card">
+                        <span class="check-tag">Compliance</span>
+                        <h3>Signed MAP Agreements</h3>
+                        <p>We execute standard Dealer Agreements and strict MAP compliance policies before issuing opening POs.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">Step 03</div>
-                        <h3>PO Execution & Logistics</h3>
-                        <p>Initial Purchase Orders (PO) are issued with fast payment terms and direct shipment to our certified U.S. 3PL prep network.</p>
+                    <div class="check-card">
+                        <span class="check-tag">Operations</span>
+                        <h3>Standard NDA & 3PL Logistics</h3>
+                        <p>Fully equipped for mutual NDA sign-offs and immediate routing to our compliant U.S. 3PL prep network.</p>
                     </div>
                 </div>
             </div>
