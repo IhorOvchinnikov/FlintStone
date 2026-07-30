@@ -6,7 +6,7 @@
     <title>IO Wholesale Group LLC | Authorized U.S. Wholesale Distributor</title>
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8.5' cy='7' r='2.5' fill='%2310B981'/><text x='5' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>I</text><text x='13' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>O</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>I</text><text x='13' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>O</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -457,21 +457,23 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- УВЕЛИЧЕННЫЕ БУКВЫ I И O (22px), ВЫРОВНЕННЫЕ ПО ЕДИНОЙ БАЗОВОЙ ЛИНИИ -->
+                    <!-- ТОЧКА ВЫРОВНЕНА, КОНТУР 'O' ЧИСТО РАЗОРВАН -->
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Точка над увеличенной буквой I (откалибрована по центру) -->
-                        <circle cx="8.5" cy="5.5" r="2.2" fill="#10B981"/>
+                        <!-- Точка над I строго центрирована (cx="8") -->
+                        <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
                         <mask id="text-o-cut-index">
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                            <!-- Вырезы, идентичные по размеру точке над I (r=2.2) -->
-                            <circle cx="20.5" cy="18" r="2.2" fill="black"/>
-                            <circle cx="26" cy="12" r="2.2" fill="black"/>
+                            
+                            <!-- Вырез внутри О -->
+                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            
+                            <!-- Разрывающий контур вырез (сделан чуть больше r="2.8", чтобы чисто прорезать толстую линию шрифта) -->
+                            <circle cx="26.5" cy="11.5" r="2.8" fill="black"/>
                         </mask>
                         <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
-                        <!-- Обычный текст Wholesale Group (18.5px) -->
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
