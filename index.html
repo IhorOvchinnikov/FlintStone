@@ -457,35 +457,25 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ЛОГОТИП С ВЫРЕЗАМИ НА ВСЕХ БУКВАХ О (IO WHOLESALE GROUP) -->
-                    <svg width="345" height="34" viewBox="0 0 345 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- ЧИСТЫЙ ЛОГОТИП С ИДЕАЛЬНОЙ ПРАВИЛЬНОЙ МАСКОЙ НА БУКВЕ O -->
+                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Точка над буквой I строго по центру -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
-                        <mask id="text-all-o-cut">
-                            <rect x="0" y="0" width="345" height="34" fill="white"/>
+                        <mask id="text-o-cut-index">
+                            <!-- Базовая буква O исходным шрифтом Inter -->
+                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             
-                            <!-- Внутренние отверстия и разрывы для каждой буквы O -->
-                            <!-- 1. Буква O в IO -->
+                            <!-- Внутренний вырез O (отверстие) -->
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            
+                            <!-- Разрывающий круг точно по центру обводки -->
                             <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
-                            
-                            <!-- 2. Первая буква O в WHOLESALE -->
-                            <circle cx="68.8" cy="17.5" r="2.2" fill="black"/>
-                            <circle cx="73" cy="11.8" r="2.8" fill="black"/>
-                            
-                            <!-- 3. Вторая буква O в WHOLESALE -->
-                            <circle cx="110.8" cy="17.5" r="2.2" fill="black"/>
-                            <circle cx="115" cy="11.8" r="2.8" fill="black"/>
-                            
-                            <!-- 4. Буква O в GROUP -->
-                            <circle cx="304.8" cy="17.5" r="2.2" fill="black"/>
-                            <circle cx="309" cy="11.8" r="2.8" fill="black"/>
                         </mask>
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
                         
-                        <!-- Единый текст под маской -->
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px" mask="url(#text-all-o-cut)">IO Wholesale Group</text>
+                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
 
