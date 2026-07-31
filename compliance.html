@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAP Compliance | IO Wholesale Group LLC</title>
+    <title>Contact Us | IO Wholesale Group LLC</title>
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
@@ -129,39 +129,78 @@
 
         .content-section { padding: 60px 0; }
 
-        .policy-grid {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: flex-start;
         }
 
-        .policy-card {
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 32px;
+            border-radius: 12px;
+            padding: 24px;
         }
 
-        .policy-card h3 {
-            font-size: 20px; font-weight: 700;
-            color: var(--slate-dark); margin: 0 0 12px 0;
+        .info-card h3 {
+            font-size: 18px; font-weight: 700;
+            color: var(--slate-dark); margin: 0 0 8px 0;
         }
 
-        .policy-card p {
+        .info-card p {
             color: var(--slate-gray); font-size: 14px; margin: 0; line-height: 1.6;
         }
 
-        .banner-box {
-            background-color: var(--slate-dark);
-            color: #FFFFFF;
+        .contact-form-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 40px;
-            text-align: center;
+            padding: 35px;
         }
 
-        .banner-box h2 { font-size: 26px; font-weight: 800; margin: 0 0 10px 0; color: #FFFFFF; }
-        .banner-box p { color: #94A3B8; font-size: 15px; max-width: 700px; margin: 0 auto; }
+        .contact-form-card h2 {
+            font-size: 24px; font-weight: 800;
+            color: var(--slate-dark); margin: 0 0 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--slate-gray); margin-bottom: 6px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px;
+            border-radius: 8px; border: 1px solid var(--border);
+            background-color: #FFFFFF; color: var(--slate-dark);
+            font-family: inherit; font-size: 14px;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--neon-green);
+        }
+
+        .btn-submit {
+            background-color: var(--slate-dark);
+            color: #FFFFFF; font-weight: 700; font-size: 14px;
+            padding: 14px; border: none; border-radius: 8px;
+            width: 100%; cursor: pointer; transition: all 0.25s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #1E293B; transform: translateY(-2px);
+        }
 
         footer {
             background-color: var(--slate-dark);
@@ -174,7 +213,7 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .policy-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -185,8 +224,8 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="compliance.html" class="active">MAP Compliance</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html" class="active">Contact Us</a>
     </div>
 
     <header>
@@ -197,12 +236,12 @@
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
-                        <mask id="text-o-cut-compliance">
+                        <mask id="text-o-cut-contact">
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
                             <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
                         </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-compliance)">O</text>
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-contact)">O</text>
                         
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
@@ -211,8 +250,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="compliance.html" class="active">MAP Compliance</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
 
                 <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
@@ -226,38 +265,53 @@
 
     <div class="page-header">
         <div class="container">
-            <h1>MAP & Policy Compliance</h1>
-            <p>Rigorously safeguarding brand equity through automated pricing controls and strict policy enforcement.</p>
+            <h1>Contact Procurement & Sales</h1>
+            <p>Get in touch with our team to open a wholesale account or submit brand partnership inquiries.</p>
         </div>
     </div>
 
     <section class="content-section">
         <div class="container">
-            <div class="policy-grid">
-                <div class="policy-card">
-                    <h3>Automated Price Safeguards</h3>
-                    <p>We integrate algorithmic pricing restrictions mapped directly to your Minimum Advertised Price (MAP) schedule. We never trigger automated price wars or undercut authorized channels.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Registered Corporate Address</h3>
+                        <p><strong>IO Wholesale Group LLC</strong><br>1309 Coffeen Ave<br>Sheridan, WY 82801<br>United States of America</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Procurement & B2B Inquiries</h3>
+                        <p>Our procurement team reviews catalog applications and wholesale opportunities promptly. All inquiries receive a response within 24 business hours.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Operating Hours</h3>
+                        <p>Monday – Friday: 9:00 AM – 5:00 PM EST<br>Saturday & Sunday: Closed</p>
+                    </div>
                 </div>
 
-                <div class="policy-card">
-                    <h3>Authorized Channel Control</h3>
-                    <p>Uncontrolled resale causes catalog fragmentation and customer confusion. We strictly abide by authorized reseller agreements, keeping listing quality uniform and accurate.</p>
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="POST" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name / Job Title</label>
+                            <input type="text" placeholder="e.g. John Doe / Director of Sales" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company / Brand Name</label>
+                            <input type="text" placeholder="e.g. Acma Goods Corp" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Email Address</label>
+                            <input type="email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Details</label>
+                            <textarea rows="4" placeholder="Please describe your product catalog, MAP requirements, or partnership request..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
                 </div>
-
-                <div class="policy-card">
-                    <h3>Listing Optimization & Maintenance</h3>
-                    <p>Our team assists in eliminating suppressed listings, fixing incorrect product variations, and updating brand assets so product pages present your brand in the best possible light.</p>
-                </div>
-
-                <div class="policy-card">
-                    <h3>Counterfeiting & Unauthorized Monitoring</h3>
-                    <p>We work collaboratively with manufacturers to identify gray-market inventory, unauthorized buy-box hijackers, and fraudulent sellers destabilizing your brand ecosystem.</p>
-                </div>
-            </div>
-
-            <div class="banner-box">
-                <h2>Protect Your Price Integrity Today</h2>
-                <p>Partner with a wholesale distributor that treats your MAP policy with the highest level of priority. Contact our compliance department for custom agreement terms.</p>
             </div>
         </div>
     </section>
@@ -275,6 +329,12 @@
             const overlay = document.getElementById('mobileOverlay');
             drawer.classList.toggle('active');
             overlay.classList.toggle('active');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message. Our procurement team will respond shortly.');
+            e.target.reset();
         }
     </script>
 </body>
