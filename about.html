@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | IO Wholesale Group LLC</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-dark: #0F172A;
+            --slate-gray: #334155;
+            --text-gray: #64748B;
+            --neon-green: #10B981;
+            --background: #FFFFFF;
+            --card-bg: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--background);
+            color: var(--slate-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--neon-green);
+            padding: 14px 0;
+            position: sticky; top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo-block {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .brand-logo-block:hover { transform: scale(1.02); }
+
+        .nav-links {
+            display: flex; gap: 28px;
+            list-style: none; margin: 0; padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-gray);
+            font-size: 14px; font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
+
+        .menu-toggle {
+            display: none; background: none; border: none; cursor: pointer; padding: 5px;
+        }
+
+        .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
+
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
+            z-index: 1002; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-overlay.active { opacity: 1; visibility: visible; }
+
+        .mobile-drawer {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background-color: #FFFFFF; z-index: 1003;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px; display: flex; flex-direction: column; gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.active { right: 0; }
+        .mobile-drawer-close {
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
+        }
+        .mobile-drawer a {
+            text-decoration: none; color: var(--slate-dark); font-size: 16px; font-weight: 600;
+            padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
+        }
+        .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
+
+        .page-header {
+            padding: 70px 0 40px 0;
+            text-align: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 38px; font-weight: 800;
+            margin: 0 0 10px 0; color: var(--slate-dark);
+        }
+
+        .page-header p {
+            color: var(--text-gray); font-size: 16px;
+            max-width: 600px; margin: 0 auto;
+        }
+
+        .content-section { padding: 60px 0; }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .about-text h2 { font-size: 26px; font-weight: 800; margin-top: 0; color: var(--slate-dark); }
+        .about-text p { color: var(--slate-gray); font-size: 15px; margin-bottom: 20px; line-height: 1.7; }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .value-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .value-card h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px 0; color: var(--slate-dark); }
+        .value-card p { font-size: 14px; color: var(--text-gray); margin: 0; }
+
+        footer {
+            background-color: var(--slate-dark);
+            color: #94A3B8;
+            padding: 40px 0;
+            text-align: center; font-size: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
+                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
+                        <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
+                        
+                        <mask id="text-o-cut-about">
+                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
+                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
+                        </mask>
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-about)">O</text>
+                        
+                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
+                    </svg>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>About IO Wholesale Group</h1>
+            <p>Your value-added partner in authorized U.S. wholesale distribution and digital growth.</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Empowering Brands in Modern Retail</h2>
+                    <p><strong>IO Wholesale Group LLC</strong> is a legally registered U.S. wholesale distributor and retail growth partner based in Sheridan, Wyoming. We act as a critical bridge between premium product manufacturers and rapidly growing digital market channels.</p>
+                    <p>Unlike traditional distributors who simply move boxes, we function as brand guardians. Our team combines supply chain efficiency with advanced pricing compliance, ensuring that your products achieve high sales velocity without risking brand integrity or price stability.</p>
+                    <p>We work exclusively with authorized manufacturers, verified B2B vendors, and brand owners who demand operational transparency, reliable purchase orders, and complete channel control.</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Direct B2B Supply Chain</h3>
+                        <p>We order inventory directly from brand owners and authorized master distributors, streamlining logistics and eliminating gray-market risks.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Capital & Cash-Flow Reliability</h3>
+                        <p>We place consistent, recurring wholesale purchase orders that give brand manufacturers predictable cash flow and dependable inventory forecasting.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>End-to-End Fulfillment Integration</h3>
+                        <p>Equipped with specialized prep center capabilities, we handle custom bundling, FN-SKU labeling, palletization, and direct-to-FBA logistics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>IO WHOLESALE GROUP LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+            <p>&copy; 2026 IO Wholesale Group LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
