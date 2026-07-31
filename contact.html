@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | IO Wholesale Group LLC</title>
-    
-    <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
-
+    <title>Contact Us | Flint & Stone Commerce LLC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,12 +18,15 @@
             --border: #E2E8F0;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0; padding: 0;
-            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
             color: var(--slate-dark);
             line-height: 1.6;
         }
@@ -39,14 +38,17 @@
             padding: 0 20px;
         }
 
+        /* HEADER & NAV (GLASSMORPHISM STYLE) */
         header {
-            background-color: rgba(255, 255, 255, 0.92);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
-            padding: 14px 0;
-            position: sticky; top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
 
         nav {
@@ -55,107 +57,435 @@
             align-items: center;
         }
 
-        .brand-logo-block {
+        .logo-group {
             display: flex;
             align-items: center;
             text-decoration: none;
+            gap: 12px;
             transition: transform 0.2s ease;
         }
 
-        .brand-logo-block:hover { transform: scale(1.02); }
+        .logo-group:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-spark-1 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-dark);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 2px;
+        }
+
+        .logo-spark-2 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-gray);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 12px;
+        }
+
+        .logo-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .logo-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text-main {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-text-sub {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-gray);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
 
         .nav-links {
-            display: flex; gap: 28px;
-            list-style: none; margin: 0; padding: 0;
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--slate-gray);
-            font-size: 14px; font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
-
-        .menu-toggle {
-            display: none; background: none; border: none; cursor: pointer; padding: 5px;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-green);
         }
 
-        .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
 
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--slate-dark);
+        }
+
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #FFFFFF;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--slate-gray);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--slate-dark);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease;
+        }
+
+        .mobile-drawer a.active, .mobile-drawer a:hover {
+            color: var(--neon-green);
+        }
+
+        /* PAGE HEADER */
         .page-header {
-            padding: 70px 0 40px 0;
-            text-align: center;
+            padding: 60px 0 40px 0;
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--border);
+            text-align: center;
         }
 
         .page-header h1 {
-            font-size: 38px; font-weight: 800;
-            margin: 0 0 10px 0; color: var(--slate-dark);
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: var(--slate-dark);
         }
 
         .page-header p {
-            color: var(--text-gray); font-size: 16px;
-            max-width: 600px; margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 16px;
+            max-width: 650px;
+            margin: 0 auto;
         }
 
-        .content-section { padding: 60px 0; }
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 60px 0;
+        }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 40px;
+            align-items: start;
         }
 
-        .info-box {
+        /* INFO CARDS */
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 30px;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
         }
 
-        .info-box h3 { font-size: 18px; margin-top: 0; }
-        .info-box p { color: var(--text-gray); font-size: 14px; }
+        .info-card:hover {
+            border-color: var(--neon-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
+        }
 
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--neon-green);
+        }
+
+        .info-details h3 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--slate-dark);
+        }
+
+        .info-details p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        .info-details a {
+            color: var(--slate-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .info-details a:hover {
+            color: var(--neon-green);
+        }
+
+        /* FORM STYLES */
+        .contact-form-wrapper {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+        }
+
+        .contact-form-wrapper h2 {
+            margin: 0 0 8px 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--slate-dark);
+        }
+
+        .contact-form-wrapper p {
+            margin: 0 0 25px 0;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--slate-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--slate-dark);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--neon-green);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--slate-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #1E293B;
+            transform: translateY(-1px);
+        }
+
+        .form-status {
+            margin-top: 15px;
+            font-size: 13px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            color: var(--neon-green);
+            font-weight: 600;
+        }
+
+        /* FOOTER */
         footer {
             background-color: var(--slate-dark);
             color: #94A3B8;
             padding: 40px 0;
-            text-align: center; font-size: 12px;
+            text-align: center;
+            font-size: 12px;
             border-top: 1px solid var(--border);
         }
 
+        /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: block; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- OVERLAY & MOBILE DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="contact.html" class="active">Contact Us</a>
+    </div>
+
+    <!-- HEADER -->
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
-                        <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
-                        
-                        <mask id="text-o-cut-contact">
-                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                            <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
-                        </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-contact)">O</text>
-                        
-                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
-                    </svg>
+                <a href="index.html" class="logo-group">
+                    <div class="logo-icon">
+                        <div class="logo-spark-1"></div>
+                        <div class="logo-spark-2"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    <div class="logo-text-block">
+                        <span class="logo-text-main">Flint & Stone</span>
+                        <span class="logo-text-sub">COMMERCE</span>
+                    </div>
                 </a>
-
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -163,7 +493,7 @@
                     <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
 
-                <button class="menu-toggle" aria-label="Open menu">
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -172,34 +502,128 @@
         </div>
     </header>
 
-    <div class="page-header">
+    <!-- PAGE HEADER -->
+    <section class="page-header">
         <div class="container">
-            <h1>Contact Procurement & Sales</h1>
-            <p>Get in touch with our team for wholesale opportunities.</p>
+            <h1>Contact Our Procurement Team</h1>
+            <p>Get in touch with Flint & Stone Commerce LLC for wholesale inquiries, brand partnerships, or catalog requests.</p>
         </div>
-    </div>
+    </section>
 
-    <section class="content-section">
+    <!-- CONTACT CONTENT -->
+    <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="info-box">
-                    <h3>Corporate Office</h3>
-                    <p><strong>IO Wholesale Group LLC</strong><br>1309 Coffeen Ave<br>Sheridan, WY 82801, USA</p>
+                
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info-list">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="info-details">
+                            <h3>Headquarters</h3>
+                            <p><strong>Flint & Stone Commerce LLC</strong><br>1309 Coffeen Ave<br>Sheridan, WY 82801, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="info-details">
+                            <h3>Email Inquiries</h3>
+                            <p>Procurement & B2B Partnerships:<br>
+                            <a href="mailto:contact@flintstonecommerce.com">contact@flintstonecommerce.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="info-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday – Friday: 9:00 AM – 5:00 PM (MST)<br>
+                            Response time: Within 24 business hours</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-box">
-                    <h3>Direct Inquiries</h3>
-                    <p>Email: <strong>contact@iowholesalegroup.com</strong><br>Response time: Within 24 business hours.</p>
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our procurement team will get back to you shortly.</p>
+                    
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyName">Company / Brand Name</label>
+                                <input type="text" id="companyName" placeholder="Brand Inc.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" required placeholder="john@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" required placeholder="Wholesale Inquiry / MAP Policy">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" required placeholder="Tell us about your product catalog or wholesale requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send Message</button>
+                        <div class="form-status" id="formStatus">Thank you! Your message has been sent successfully.</div>
+                    </form>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p><strong>IO WHOLESALE GROUP LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
-            <p>&copy; 2026 IO Wholesale Group LLC. All rights reserved.</p>
+            <p><strong>FLINT & STONE COMMERCE LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+            <p>&copy; 2026 Flint & Stone Commerce LLC. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const status = document.getElementById('formStatus');
+            status.classList.add('success');
+            document.getElementById('contactForm').reset();
+            
+            setTimeout(() => {
+                status.classList.remove('success');
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
