@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IO Wholesale Group LLC | Authorized U.S. Wholesale Distributor</title>
+    <title>Flint & Stone Commerce LLC | Authorized U.S. Wholesale Distributor</title>
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>I</text><text x='13' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='20'>O</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F172A'/><rect x='8' y='8' width='5' height='16' rx='2' fill='%23FFFFFF' transform='rotate(-20 10.5 16)'/><rect x='15' y='8' width='5' height='16' rx='2' fill='%2394A3B8' transform='rotate(-20 17.5 16)'/><circle cx='24' cy='7' r='3.5' fill='%2310B981'/></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +44,16 @@
 
         /* HEADER & NAV */
         header {
-            background-color: rgba(255, 255, 255, 0.92);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--neon-green);
-            padding: 14px 0;
+            padding: 16px 0;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
 
         nav {
@@ -62,21 +62,81 @@
             align-items: center;
         }
 
-        /* BRAND LOGO SVG WRAPPER */
-        .brand-logo-block {
+        .logo-group {
             display: flex;
             align-items: center;
             text-decoration: none;
+            gap: 12px;
             transition: transform 0.2s ease;
         }
 
-        .brand-logo-block:hover {
+        .logo-group:hover {
             transform: scale(1.02);
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-spark-1 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-dark);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 2px;
+        }
+
+        .logo-spark-2 {
+            width: 8px;
+            height: 20px;
+            background-color: var(--slate-gray);
+            border-radius: 2px;
+            transform: rotate(-20deg);
+            position: absolute;
+            left: 12px;
+        }
+
+        .logo-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .logo-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text-main {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--slate-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-text-sub {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-gray);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 25px;
             list-style: none;
             margin: 0;
             padding: 0;
@@ -87,7 +147,7 @@
             text-decoration: none;
             color: var(--slate-gray);
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.2s ease;
         }
 
@@ -146,7 +206,9 @@
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mobile-drawer.active { right: 0; }
+        .mobile-drawer.active {
+            right: 0;
+        }
 
         .mobile-drawer-close {
             position: absolute;
@@ -264,9 +326,7 @@
             margin: 0;
         }
 
-        /* FEATURES SECTION */
-        .features { padding: 20px 0 80px 0; }
-
+        /* SECTION TITLES */
         .section-title-block {
             text-align: center;
             margin-bottom: 45px;
@@ -284,6 +344,11 @@
             font-size: 16px;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* FEATURES SECTION - IMPROVED ICONS & EFFECTS */
+        .features {
+            padding: 20px 0 80px 0;
         }
 
         .features-grid {
@@ -337,7 +402,9 @@
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover .feature-icon-wrapper svg { stroke: #FFFFFF; }
+        .feature-card:hover .feature-icon-wrapper svg {
+            stroke: #FFFFFF;
+        }
 
         .feature-card h3 {
             font-size: 19px;
@@ -353,8 +420,156 @@
             line-height: 1.6;
         }
 
+        /* CATEGORIES SECTION */
+        .categories-section {
+            padding: 60px 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--neon-green);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.08);
+        }
+
+        .category-icon-wrapper {
+            width: 48px;
+            height: 48px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-icon-wrapper {
+            background-color: #ECFDF5;
+            border-color: var(--neon-green);
+            transform: scale(1.1);
+        }
+
+        .category-icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--slate-dark);
+            transition: fill 0.3s ease;
+        }
+
+        .category-card:hover .category-icon-wrapper svg {
+            fill: var(--neon-green);
+        }
+
+        .category-icon-wrapper svg.stroke-icon {
+            fill: none;
+            stroke: var(--slate-dark);
+            stroke-width: 1.8;
+            transition: stroke 0.3s ease;
+        }
+
+        .category-card:hover .category-icon-wrapper svg.stroke-icon {
+            fill: none;
+            stroke: var(--neon-green);
+        }
+
+        .category-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 8px 0;
+        }
+
+        .category-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* PROCESS SECTION - ANIMATED STEP CARDS */
+        .process-section {
+            padding: 80px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .process-step {
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 32px 26px;
+            border-radius: 14px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .process-step:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-green);
+            background-color: #FFFFFF;
+            box-shadow: 0 16px 32px rgba(16, 185, 129, 0.14);
+        }
+
+        .step-number {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--neon-green);
+            background-color: #ECFDF5;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 18px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .process-step:hover .step-number {
+            background-color: var(--neon-green);
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--slate-dark);
+            margin: 0 0 10px 0;
+        }
+
+        .process-step p {
+            font-size: 13.5px;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
         /* INTAKE BANNER FORM */
-        .intake-section { padding: 60px 0 90px 0; }
+        .intake-section {
+            padding: 60px 0 90px 0;
+        }
 
         .intake-card {
             background-color: var(--slate-dark);
@@ -429,14 +644,38 @@
             border-top: 1px solid var(--border);
         }
 
+        /* RESPONSIVE MEDIA QUERIES */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: block; }
-            .hero h1 { font-size: 28px; }
-            .btn-group-hero { flex-direction: column; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: 1fr; }
-            .intake-card { grid-template-columns: 1fr; padding: 30px 20px; }
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .btn-group-hero {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .categories-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intake-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -445,7 +684,7 @@
     <!-- OVERLAY & MOBILE DRAWER -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
     <div class="mobile-drawer" id="mobileDrawer">
-        <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+        <button class="mobile-drawer-close" onclick="toggleMenu()">&times;</button>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
         <a href="compliance.html">MAP Compliance</a>
@@ -456,27 +695,16 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ЧИСТЫЙ И ИСХОДНЫЙ ЛОГОТИП С ВЫРЕЗОМ ТОЛЬКО НА ЗАГЛАВНОЙ O -->
-                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Точка над буквой I строго по центру -->
-                        <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
-                        <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
-                        
-                        <mask id="text-o-cut-index">
-                            <!-- Базовая буква O исходным шрифтом Inter -->
-                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                            
-                            <!-- Внутренний вырез O (отверстие) -->
-                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                            
-                            <!-- Разрывающий круг точно по центру обводки -->
-                            <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
-                        </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
-                        
-                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
-                    </svg>
+                <a href="index.html" class="logo-group">
+                    <div class="logo-icon">
+                        <div class="logo-spark-1"></div>
+                        <div class="logo-spark-2"></div>
+                        <div class="logo-dot"></div>
+                    </div>
+                    <div class="logo-text-block">
+                        <span class="logo-text-main">Flint & Stone</span>
+                        <span class="logo-text-sub">COMMERCE</span>
+                    </div>
                 </a>
 
                 <ul class="nav-links">
@@ -500,7 +728,7 @@
         <div class="container">
             <p class="hero-tagline">AUTHORIZED U.S. WHOLESALE DISTRIBUTOR</p>
             <h1>Connecting Quality Brands with Scalable Digital Growth</h1>
-            <p class="hero-description">IO Wholesale Group LLC is a registered U.S. wholesale distributor and value-added retail partner. We help brand owners expand marketplace volume while rigorously enforcing price stability and brand policy.</p>
+            <p class="hero-description">Flint & Stone Commerce LLC is a registered U.S. wholesale distributor and value-added retail partner. We help brand owners expand marketplace volume while rigorously enforcing price stability and brand policy.</p>
             <div class="btn-group-hero">
                 <a href="about.html" class="btn-primary">Learn About Us</a>
                 <a href="contact.html" class="btn-primary">Partner With Us</a>
@@ -532,7 +760,7 @@
         </div>
     </div>
 
-    <!-- FEATURES -->
+    <!-- FEATURES - WITH PREMIUM ICONS & HOVER EFFECTS -->
     <section class="features">
         <div class="container">
             <div class="section-title-block">
@@ -540,6 +768,8 @@
                 <p>We do not just buy inventory; we serve as a dedicated guardian and growth vehicle for your products across online channels.</p>
             </div>
             <div class="features-grid">
+                
+                <!-- FEATURE 1: SHIELD CHECK (MAP) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -550,6 +780,7 @@
                     <p>We use automated pricing safeguards tied directly to manufacturer agreements. We never breach MAP thresholds or drive price erosion.</p>
                 </div>
 
+                <!-- FEATURE 2: PACKAGE / BOX LOGISTICS (FBA PREP) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -560,6 +791,7 @@
                     <p>Full-service prep center processing, custom bundling, barcoding, and compliant pallet shipments directly to Amazon centers.</p>
                 </div>
 
+                <!-- FEATURE 3: TRENDING GROWTH (PREDICTABLE RE-ORDERS) -->
                 <div class="feature-card">
                     <div class="feature-icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -568,6 +800,82 @@
                     </div>
                     <h3>Predictable Re-Orders</h3>
                     <p>Algorithmic inventory planning guarantees timely, recurring wholesale purchase orders that keep product velocity consistent.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2>Core Wholesale Categories</h2>
+                <p>We specialize in fast-moving consumer goods (FMCG) with proven consumer demand in North America.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon-wrapper">
+                        <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h4>Home & Kitchen</h4>
+                    <p>Cookware, organization, seasonal goods, and small home accessories.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M6 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1zm12 0a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1zM3 8a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1zm18 0a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1zM7 11h10v2H7v-2z"/>
+                        </svg>
+                    </div>
+                    <h4>Sports & Outdoors</h4>
+                    <p>Fitness gear, outdoor accessories, travel, and recreation items.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 2h4a1 1 0 011 1v2H9V3a1 1 0 011-1zm-2 5h8a1 1 0 011 1v13a2 2 0 01-2 2H9a2 2 0 01-2-2V8a1 1 0 011-1zm2 3a1 1 0 100 2h4a1 1 0 100-2h-4z"/>
+                        </svg>
+                    </div>
+                    <h4>Beauty & Personal Care</h4>
+                    <p>Skincare, grooming tools, wellness, and everyday bath essentials.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 11.5c-2.48 0-4.5 1.79-4.5 4 0 2.21 2.02 4 4.5 4s4.5-1.79 4.5-4c0-2.21-2.02-4-4.5-4zm-6.25-1.75c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm12.5 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-9.5-3.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6.5 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                        </svg>
+                    </div>
+                    <h4>Pet Supplies</h4>
+                    <p>Grooming supplies, feeding equipment, toys, and pet accessories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION - ANIMATED STEPS -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2>Our Seamless Partnership Process</h2>
+                <p>How we onboard new brands and transition into long-term wholesale purchasing.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <span class="step-number">STEP 01</span>
+                    <h3>Account & MAP Setup</h3>
+                    <p>We review your product catalog, sign your dealer agreements, and formalize MAP policies before placing initial orders.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">STEP 02</span>
+                    <h3>Wholesale Purchase Order</h3>
+                    <p>We submit opening Purchase Orders (PO) with rapid payment terms and direct freight routing to our logistics hubs.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">STEP 03</span>
+                    <h3>Market Optimization</h3>
+                    <p>We inspect, package, and list inventory in accordance with strict marketplace standards, ensuring steady re-order volume.</p>
                 </div>
             </div>
         </div>
@@ -597,8 +905,8 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p><strong>IO WHOLESALE GROUP LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
-            <p>&copy; 2026 IO Wholesale Group LLC. All rights reserved.</p>
+            <p><strong>FLINT & STONE COMMERCE LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+            <p>&copy; 2026 Flint & Stone Commerce LLC. All rights reserved.</p>
         </div>
     </footer>
 
