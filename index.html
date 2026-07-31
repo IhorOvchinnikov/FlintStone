@@ -457,46 +457,25 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                    <!-- ТОЧНО НАСТРОЕННЫЕ МАСКИ ДЛЯ КАЖДОЙ БУКВЫ O -->
-                    <svg width="215" height="34" viewBox="0 0 215 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        
-                        <!-- 1. БУКВА I С ТОЧКОЙ -->
+                    <!-- ЧИСТЫЙ И ИСХОДНЫЙ ЛОГОТИП С ВЫРЕЗОМ ТОЛЬКО НА ЗАГЛАВНОЙ O -->
+                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Точка над буквой I строго по центру -->
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
                         
-                        <!-- 2. БУКВА O В "IO" -->
-                        <mask id="cut-o-main">
+                        <mask id="text-o-cut-index">
+                            <!-- Базовая буква O исходным шрифтом Inter -->
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
+                            
+                            <!-- Внутренний вырез O (отверстие) -->
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            
+                            <!-- Разрывающий круг точно по центру обводки -->
                             <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
                         </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#cut-o-main)">O</text>
-
-                        <!-- 3. ТЕКСТ "Wh" -->
-                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wh</text>
-
-                        <!-- 4. БУКВА O В "WHOLESALE" -->
-                        <mask id="cut-o-wholesale">
-                            <text x="63.5" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">o</text>
-                            <circle cx="69.5" cy="18.8" r="1.8" fill="black"/>
-                            <circle cx="72.8" cy="14.2" r="2.2" fill="black"/>
-                        </mask>
-                        <text x="63.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px" mask="url(#cut-o-wholesale)">o</text>
-
-                        <!-- 5. ТЕКСТ "lesale Gr" -->
-                        <text x="74" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">lesale Gr</text>
-
-                        <!-- 6. БУКВА O В "GROUP" -->
-                        <mask id="cut-o-group">
-                            <text x="160.5" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">o</text>
-                            <circle cx="166.5" cy="18.8" r="1.8" fill="black"/>
-                            <circle cx="169.8" cy="14.2" r="2.2" fill="black"/>
-                        </mask>
-                        <text x="160.5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px" mask="url(#cut-o-group)">o</text>
-
-                        <!-- 7. ОСТАТОК ТЕКСТА "up" -->
-                        <text x="171" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">up</text>
-
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-index)">O</text>
+                        
+                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
 
