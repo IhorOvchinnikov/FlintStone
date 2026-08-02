@@ -1,5 +1,4 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,51 +70,31 @@
         }
         .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
 
-       <!-- MOBILE DRAWER & OVERLAY -->
-<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-    <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="fba.html">Amazon FBA</a>
-    <a href="compliance.html">MAP Compliance</a>
-    <a href="contact.html">Contact Us</a>
-</div>
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
+            z-index: 1002; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-overlay.active { opacity: 1; visibility: visible; }
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
-                    <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
-                    <mask id="text-o-cut-nav">
-                        <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                        <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                        <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
-                    </mask>
-                    <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-nav)">O</text>
-                    <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
-                </svg>
-            </a>
-
-            <!-- ДЕСКТОПНОЕ МЕНЮ (ПК) -->
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="fba.html">Amazon FBA</a></li>
-                <li><a href="compliance.html">MAP Compliance</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-
-            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </nav>
-    </div>
-</header>
+        .mobile-drawer {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background-color: #FFFFFF; z-index: 1003;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px; display: flex; flex-direction: column; gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.active { right: 0; }
+        .mobile-drawer-close {
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
+        }
+        .mobile-drawer a {
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
+            padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
+        }
+        .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
 
         /* HERO SECTION */
         .hero { padding: 85px 0 60px 0; text-align: center; }
@@ -322,7 +301,7 @@
             <p class="hero-description">IO Wholesale Group LLC is a U.S.-based wholesale partner specializing in Amazon FBA distribution, marketplace compliance, and brand price protection.</p>
             <div class="btn-group-hero">
                 <a href="contact.html" class="btn-primary">Partner With Us</a>
-                <a href="application.html" class="btn-secondary">Submit Your Catalog</a>
+                <a href="#intake-form" class="btn-secondary">Submit Your Catalog</a>
             </div>
         </div>
     </section>
@@ -451,13 +430,13 @@
                 <p>We are currently expanding our portfolio of established U.S. consumer product brands. Submit your catalog or reseller requirements today.</p>
             </div>
             <div style="text-align: right;">
-                <a href="application.html" class="btn-primary">Become a Brand Partner &rarr;</a>
+                <a href="contact.html" class="btn-primary">Become a Brand Partner &rarr;</a>
             </div>
         </div>
     </div>
 
     <!-- INTAKE FORM BANNER -->
-    <section class="intake-section">
+    <section class="intake-section" id="intake-form">
         <div class="container">
             <div class="intake-card">
                 <div class="intake-text">
