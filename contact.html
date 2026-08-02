@@ -106,18 +106,20 @@
 
         /* CONTACT SECTION */
         .contact-wrapper { padding: 60px 0 90px 0; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
 
         .info-card {
             background-color: #FFFFFF; border: 1px solid var(--border);
             border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             display: flex; flex-direction: column; justify-content: space-between;
         }
-        .info-card h2 { font-size: 22px; font-weight: 800; color: var(--slate-dark); margin: 0 0 15px 0; }
+        .info-card h2 { font-size: 22px; font-weight: 800; color: var(--slate-dark); margin: 0 0 25px 0; }
         
-        .contact-detail-item { margin-bottom: 25px; }
-        .contact-detail-item strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 4px; }
+        .contact-detail-item { margin-bottom: 30px; }
+        .contact-detail-item strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 8px; }
         .contact-detail-item p { margin: 0; font-size: 15px; color: var(--slate-dark); font-weight: 600; }
+        .contact-detail-item a { color: var(--slate-dark); text-decoration: none; transition: color 0.2s ease; }
+        .contact-detail-item a:hover { color: var(--neon-green); }
 
         .form-card {
             background-color: var(--card-bg); border: 1px solid var(--border);
@@ -212,12 +214,13 @@
                     <div>
                         <h2>Procurement Department</h2>
                         <div class="contact-detail-item">
-                            <strong>Corporate Address</strong>
-                            <p>1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+                            <strong>Corporate Office</strong>
+                            <p>1309 Coffeen Ave<br>Sheridian, WY 82801, USA</p>
                         </div>
                         <div class="contact-detail-item">
-                            <strong>Official Business Registration</strong>
-                            <p>IO Wholesale Group LLC (State of Wyoming, USA)</p>
+                            <strong>Direct Email</strong>
+                            <!-- Замените purchasing@iowholesalegroup.com на вашу реальную корпоративную почту после покупки домена -->
+                            <p><a href="mailto:purchasing@iowholesalegroup.com">purchasing@iowholesalegroup.com</a></p>
                         </div>
                         <div class="contact-detail-item">
                             <strong>B2B Inquiry Response Time</strong>
@@ -225,29 +228,36 @@
                         </div>
                     </div>
 
+                    <!-- Если у вас нет страницы application.html, оставьте этот блок закомментированным -->
+                    <!-- 
                     <div style="padding-top: 20px; border-top: 1px solid var(--border);">
                         <p style="font-size: 13px; color: var(--text-gray); margin: 0;">For wholesale account applications with catalog file attachments, please use our <a href="application.html" style="color: var(--neon-green); font-weight: 700; text-decoration: none;">Brand Application Portal &rarr;</a></p>
-                    </div>
+                    </div> 
+                    -->
                 </div>
 
                 <div class="form-card">
-                    <form action="#" method="POST" onsubmit="handleContactSubmit(event)">
+                    <!-- Замените ссылку в action на ваш реальный Formspree Endpoint -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
                             <label for="contactName">Full Name *</label>
-                            <input type="text" id="contactName" placeholder="e.g., Sarah Jenkins" required>
+                            <input type="text" id="contactName" name="Name" placeholder="e.g., Sarah Jenkins" required>
                         </div>
                         <div class="form-group">
                             <label for="companyName">Company / Brand Name *</label>
-                            <input type="text" id="companyName" placeholder="e.g., Apex Gear LLC" required>
+                            <input type="text" id="companyName" name="Company" placeholder="e.g., Apex Gear LLC" required>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Work Email *</label>
-                            <input type="email" id="contactEmail" placeholder="sarah@apexgear.com" required>
+                            <input type="email" id="contactEmail" name="Email" placeholder="sarah@apexgear.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Inquiry Details *</label>
-                            <textarea id="message" rows="4" placeholder="Describe your brand, wholesale opening terms, or purchasing requirements..." required></textarea>
+                            <textarea id="message" name="Message" rows="4" placeholder="Describe your brand, wholesale terms, or purchasing requirements..." required></textarea>
                         </div>
+                        <!-- Formspree Honeypot (Anti-spam) -->
+                        <input type="text" name="_gotcha" style="display:none" />
+                        
                         <button type="submit" class="btn-submit-contact">Send Procurement Inquiry</button>
                     </form>
                 </div>
@@ -269,12 +279,6 @@
             const overlay = document.getElementById('mobileOverlay');
             drawer.classList.toggle('active');
             overlay.classList.toggle('active');
-        }
-
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            alert('Thank you for contacting IO Wholesale Group LLC. Our procurement team will review your inquiry and respond within 24 business hours.');
-            e.target.reset();
         }
     </script>
 </body>
