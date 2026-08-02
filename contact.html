@@ -104,37 +104,46 @@
         .page-hero h1 { font-size: 38px; font-weight: 800; color: var(--slate-dark); margin: 0 0 12px 0; }
         .page-hero p { font-size: 16px; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
 
-        /* CONTACT LAYOUT */
+        /* CONTACT LAYOUT - EQUAL HEIGHT & EFFECTS */
         .contact-wrapper { padding: 60px 0; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
 
-        .contact-info-card {
-            background-color: var(--card-bg); border: 1px solid var(--border);
-            border-radius: 14px; padding: 36px;
+        .contact-info-card, .contact-form-card {
+            background-color: #FFFFFF; border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .contact-info-card h2 { font-size: 22px; font-weight: 700; color: var(--slate-dark); margin: 0 0 20px 0; }
-        .info-item { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+        
+        .contact-info-card:hover, .contact-form-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--neon-green);
+            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
+        }
+
+        .contact-info-card h2, .contact-form-card h2 { font-size: 22px; font-weight: 700; color: var(--slate-dark); margin: 0 0 15px 0; }
+        .contact-form-card p { font-size: 14px; color: var(--text-gray); margin-bottom: 24px; }
+
+        .info-item { display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start; }
         .info-icon {
             width: 42px; height: 42px; border-radius: 10px; background-color: #ECFDF5;
             border: 1px solid rgba(16, 185, 129, 0.2); display: flex; align-items: center;
-            justify-content: center; flex-shrink: 0;
+            justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
         }
-        .info-icon svg { width: 20px; height: 20px; stroke: var(--neon-green); fill: none; stroke-width: 2; }
+        .contact-info-card:hover .info-icon {
+            background-color: var(--neon-green); border-color: var(--neon-green); transform: scale(1.05);
+        }
+        .info-icon svg { width: 20px; height: 20px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
+        .contact-info-card:hover .info-icon svg { stroke: #FFFFFF; }
+        
         .info-text h4 { font-size: 13px; font-weight: 700; color: var(--text-gray); text-transform: uppercase; margin: 0 0 4px 0; letter-spacing: 0.5px; }
         .info-text p, .info-text a { font-size: 15px; font-weight: 600; color: var(--slate-dark); margin: 0; text-decoration: none; }
         .info-text a:hover { color: var(--neon-green); }
 
-        .contact-form-card {
-            background-color: #FFFFFF; border: 1px solid var(--border);
-            border-radius: 14px; padding: 40px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-        }
-        .contact-form-card h2 { font-size: 22px; font-weight: 700; color: var(--slate-dark); margin: 0 0 8px 0; }
-        .contact-form-card p { font-size: 14px; color: var(--text-gray); margin-bottom: 28px; }
-
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 16px; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--slate-gray); margin-bottom: 6px; }
         .form-group input, .form-group textarea, .form-group select {
-            width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+            width: 100%; padding: 11px 14px; border: 1px solid var(--border);
             border-radius: 8px; font-family: inherit; font-size: 14px; color: var(--slate-dark);
             background-color: #F8FAFC; transition: all 0.2s ease;
         }
@@ -145,15 +154,15 @@
 
         .btn-submit {
             width: 100%; background-color: var(--slate-dark); color: #FFFFFF;
-            padding: 14px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700;
-            cursor: pointer; transition: all 0.25s ease; margin-top: 10px;
+            padding: 13px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700;
+            cursor: pointer; transition: all 0.25s ease; margin-top: 5px;
         }
         .btn-submit:hover {
             background-color: var(--neon-green); color: var(--slate-dark);
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); transform: translateY(-2px);
         }
 
-        /* OUR COMMITMENTS SECTION (REPLACES NUMBERED STEPS) */
+        /* OUR COMMITMENTS SECTION */
         .expectations-section {
             padding: 70px 0; background-color: var(--card-bg);
             border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
@@ -249,102 +258,106 @@
             <div class="contact-grid">
                 
                 <div class="contact-info-card">
-                    <h2>Corporate Information</h2>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
+                    <div>
+                        <h2>Corporate Information</h2>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Registered Entity</h4>
+                                <p>IO Wholesale Group LLC</p>
+                            </div>
                         </div>
-                        <div class="info-text">
-                            <h4>Registered Entity</h4>
-                            <p>IO Wholesale Group LLC</p>
-                        </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Principal Address</h4>
+                                <p>1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+                            </div>
                         </div>
-                        <div class="info-text">
-                            <h4>Principal Address</h4>
-                            <p>1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
-                        </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Wholesale Department</h4>
+                                <p><a href="mailto:wholesale@iowholesalegroup.com">wholesale@iowholesalegroup.com</a></p>
+                            </div>
                         </div>
-                        <div class="info-text">
-                            <h4>Wholesale Department</h4>
-                            <p><a href="mailto:wholesale@iowholesalegroup.com">wholesale@iowholesalegroup.com</a></p>
-                        </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div class="info-text">
-                            <h4>Business Hours</h4>
-                            <p>Monday – Friday: 9:00 AM – 5:00 PM (EST)</p>
+                        <div class="info-item" style="margin-bottom: 0;">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday – Friday: 9:00 AM – 5:00 PM (EST)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form-card">
-                    <h2>Submit an Inquiry</h2>
-                    <p>Fill out the form below to connect directly with our brand onboarding managers.</p>
-                    
-                    <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" placeholder="e.g., Sarah Jenkins" required>
-                        </div>
+                    <div>
+                        <h2>Submit an Inquiry</h2>
+                        <p>Fill out the form below to connect directly with our brand onboarding managers.</p>
+                        
+                        <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" placeholder="e.g., Sarah Jenkins" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="companyName">Company / Brand Name *</label>
-                            <input type="text" id="companyName" placeholder="e.g., Apex Gear Co." required>
-                        </div>
+                            <div class="form-group">
+                                <label for="companyName">Company / Brand Name *</label>
+                                <input type="text" id="companyName" placeholder="e.g., Apex Gear Co." required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">Work Email *</label>
-                            <input type="email" id="email" placeholder="sarah@apexgear.com" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="email">Work Email *</label>
+                                <input type="email" id="email" placeholder="sarah@apexgear.com" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="inquiryType">Inquiry Type</label>
-                            <select id="inquiryType">
-                                <option value="brand">New Brand Onboarding & Wholesale</option>
-                                <option value="map">MAP Compliance & Authorized Reseller</option>
-                                <option value="catalog">Product Catalog & PO Inquiry</option>
-                                <option value="general">General Support</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="inquiryType">Inquiry Type</label>
+                                <select id="inquiryType">
+                                    <option value="brand">New Brand Onboarding & Wholesale</option>
+                                    <option value="map">MAP Compliance & Authorized Reseller</option>
+                                    <option value="catalog">Product Catalog & PO Inquiry</option>
+                                    <option value="general">General Support</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="message">Message / Details *</label>
-                            <textarea id="message" rows="4" placeholder="Tell us about your brand or catalog specifications..." required></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="message">Message / Details *</label>
+                                <textarea id="message" rows="3" placeholder="Tell us about your brand or catalog specifications..." required></textarea>
+                            </div>
 
-                        <button type="submit" class="btn-submit">Submit Inquiry</button>
-                    </form>
+                            <button type="submit" class="btn-submit">Submit Inquiry</button>
+                        </form>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- OUR COMMITMENTS SECTION (REPLACES NUMBERED STEPS) -->
+    <!-- OUR COMMITMENTS SECTION -->
     <section class="expectations-section">
         <div class="container">
             <div class="expectations-header">
@@ -360,7 +373,7 @@
                 <div class="expectation-card">
                     <span class="badge-tag">Compliance</span>
                     <h3>MAP Protection First</h3>
-                    <p>We review and execute your official dealer agreements, guaranteeing 100% adherence to Minimum Advertised Price guidelines from day one.</p>
+                    <p>Теперь мы проверяем и подписываем ваши официальные дилерские соглашения, гарантируя 100% соблюдение цен.</p>
                 </div>
                 <div class="expectation-card">
                     <span class="badge-tag">Reliability</span>
