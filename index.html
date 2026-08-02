@@ -149,7 +149,7 @@
             padding: 28px 22px; border-radius: 14px; text-align: left;
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
             box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
-            display: flex; flex-direction: column; justify-content: space-between;
+            display: flex; flex-direction: column; justify-content: flex-start;
         }
         .pillar-card:hover {
             transform: translateY(-6px); border-color: var(--neon-green);
@@ -175,12 +175,14 @@
         }
         .journey-flow {
             display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px;
-            align-items: center; text-align: center; margin-top: 40px;
+            align-items: stretch; /* ИСПРАВЛЕНИЕ: карточки теперь одинаковой высоты */
+            text-align: center; margin-top: 40px;
         }
         .flow-step {
             background: #FFFFFF; border: 1px solid var(--border); border-radius: 12px;
             padding: 24px 15px; position: relative; transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+            display: flex; flex-direction: column; align-items: center; /* Центрируем контент */
         }
         .flow-step:hover {
             border-color: var(--neon-green); transform: translateY(-4px); box-shadow: 0 10px 24px rgba(16, 185, 129, 0.1);
@@ -193,19 +195,8 @@
         .flow-step h4 { font-size: 15px; font-weight: 700; color: var(--slate-dark); margin: 0 0 6px 0; }
         .flow-step p { font-size: 12px; color: var(--text-gray); margin: 0; line-height: 1.4; }
 
-        /* BRAND PARTNER INVITATION BANNER */
-        .brand-partner-banner {
-            margin: 70px 0 30px 0; padding: 45px; background: #FFFFFF;
-            border: 1px solid var(--border); border-radius: 16px;
-            display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); transition: all 0.3s ease;
-        }
-        .brand-partner-banner:hover { border-color: var(--neon-green); }
-        .brand-partner-text h3 { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .brand-partner-text p { color: var(--text-gray); font-size: 14.5px; margin: 0; }
-
         /* INTAKE FORM BANNER */
-        .intake-section { padding: 40px 0 90px 0; }
+        .intake-section { padding: 80px 0; } /* Увеличил отступы после удаления лишнего баннера */
         .intake-card {
             background-color: var(--slate-dark); color: #FFFFFF; border-radius: 16px;
             padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
@@ -227,13 +218,12 @@
 
         footer {
             background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
-            text-align: center; font-size: 12px; border-top: 1px solid var(--border);
+            text-align: center; font-size: 12px; border-top: 1px solid #1E293B; /* Сделал границу футера темнее */
         }
 
         @media (max-width: 900px) {
             .journey-flow { grid-template-columns: 1fr; gap: 15px; }
             .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-            .brand-partner-banner { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -422,20 +412,7 @@
         </div>
     </section>
 
-    <!-- BRANDS WE WORK WITH / INVITATION BANNER -->
-    <div class="container">
-        <div class="brand-partner-banner">
-            <div class="brand-partner-text">
-                <h3>Looking to Become Our Next Brand Partner?</h3>
-                <p>We are currently expanding our portfolio of established U.S. consumer product brands. Submit your catalog or reseller requirements today.</p>
-            </div>
-            <div style="text-align: right;">
-                <a href="contact.html" class="btn-primary">Become a Brand Partner &rarr;</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- INTAKE FORM BANNER -->
+    <!-- INTAKE FORM BANNER (Осталась только одна, главная форма заявки) -->
     <section class="intake-section" id="intake-form">
         <div class="container">
             <div class="intake-card">
@@ -471,9 +448,6 @@
             drawer.classList.toggle('active');
             overlay.classList.toggle('active');
         }
-        
-        // Removed the old alert() function for the form. 
-        // The form now uses standard HTML action POST (e.g. Formspree) which is much more professional.
     </script>
 </body>
 </html>
