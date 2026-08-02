@@ -55,12 +55,12 @@
         .brand-logo-block:hover { transform: scale(1.02); }
 
         .nav-links {
-            display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
         }
 
         .nav-links a {
             text-decoration: none; color: var(--slate-gray);
-            font-size: 14px; font-weight: 500; transition: color 0.2s ease;
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
@@ -91,28 +91,28 @@
             background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
         }
         .mobile-drawer a {
-            text-decoration: none; color: var(--slate-dark); font-size: 16px; font-weight: 600;
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
             padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
         }
         .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
 
         /* HERO SECTION */
-        .hero { padding: 80px 0 60px 0; text-align: center; }
+        .hero { padding: 85px 0 60px 0; text-align: center; }
         .hero-tagline {
-            font-size: 13px; font-weight: 700; letter-spacing: 2.5px;
+            font-size: 12.5px; font-weight: 700; letter-spacing: 2.5px;
             color: var(--neon-green); text-transform: uppercase; margin-bottom: 15px;
         }
         .hero h1 {
-            font-size: 42px; font-weight: 800; letter-spacing: -1px;
-            margin: 0 0 20px 0; color: var(--slate-dark);
-            max-width: 820px; margin-left: auto; margin-right: auto; line-height: 1.25;
+            font-size: 44px; font-weight: 800; letter-spacing: -1px;
+            margin: 0 0 18px 0; color: var(--slate-dark);
+            max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.2;
         }
         .hero-description {
-            font-size: 17px; color: var(--text-gray); max-width: 720px; margin: 0 auto 35px auto;
+            font-size: 16.5px; color: var(--text-gray); max-width: 720px; margin: 0 auto 35px auto;
         }
         .btn-group-hero { display: flex; gap: 15px; justify-content: center; }
         .btn-primary {
-            background-color: var(--slate-dark); color: #FFFFFF; padding: 13px 28px;
+            background-color: var(--slate-dark); color: #FFFFFF; padding: 13px 26px;
             border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none;
             transition: all 0.25s ease; box-shadow: 0 2px 5px rgba(15, 23, 42, 0.08); display: inline-block;
         }
@@ -120,20 +120,26 @@
             background-color: var(--neon-green); color: var(--slate-dark);
             transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
         }
+        .btn-secondary {
+            background-color: var(--card-bg); color: var(--slate-dark); padding: 13px 26px;
+            border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none;
+            border: 1px solid var(--border); transition: all 0.25s ease; display: inline-block;
+        }
+        .btn-secondary:hover { border-color: var(--neon-green); transform: translateY(-2px); }
 
         /* TRUST STATS BAR */
         .stats-bar {
             background-color: var(--card-bg); border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border); padding: 28px 0; margin-bottom: 70px;
+            border-bottom: 1px solid var(--border); padding: 26px 0; margin-bottom: 70px;
         }
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-        .stat-item h3 { font-size: 26px; font-weight: 800; color: var(--slate-dark); margin: 0 0 4px 0; }
-        .stat-item p { font-size: 12px; font-weight: 700; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+        .stat-item h3 { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin: 0 0 4px 0; }
+        .stat-item p { font-size: 11.5px; font-weight: 700; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; margin: 0; }
 
         /* SECTION HEADERS */
         .section-title-block { text-align: center; margin-bottom: 45px; }
         .section-title-block h2 { font-size: 30px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .section-title-block p { color: var(--text-gray); font-size: 16px; max-width: 620px; margin: 0 auto; }
+        .section-title-block p { color: var(--text-gray); font-size: 15.5px; max-width: 620px; margin: 0 auto; }
 
         /* WHY SELL TO IO WHOLESALE GRID */
         .pillars-section { padding: 10px 0 70px 0; }
@@ -187,31 +193,19 @@
         .flow-step h4 { font-size: 15px; font-weight: 700; color: var(--slate-dark); margin: 0 0 6px 0; }
         .flow-step p { font-size: 12px; color: var(--text-gray); margin: 0; line-height: 1.4; }
 
-        /* WHAT WE LOOK FOR SECTION */
-        .criteria-section { padding: 80px 0; }
-        .criteria-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-        .criteria-card {
-            background-color: #FFFFFF; border: 1px solid var(--border);
-            border-radius: 14px; padding: 30px; display: flex; gap: 20px; align-items: flex-start;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
-            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+        /* BRAND PARTNER INVITATION BANNER */
+        .brand-partner-banner {
+            margin: 70px 0 30px 0; padding: 45px; background: #FFFFFF;
+            border: 1px solid var(--border); border-radius: 16px;
+            display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); transition: all 0.3s ease;
         }
-        .criteria-card:hover {
-            transform: translateY(-4px); border-color: var(--neon-green);
-            box-shadow: 0 12px 28px rgba(16, 185, 129, 0.1);
-        }
-        .criteria-icon-wrapper {
-            width: 44px; height: 44px; background-color: #ECFDF5; border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
-        }
-        .criteria-card:hover .criteria-icon-wrapper { background-color: var(--neon-green); border-color: var(--neon-green); }
-        .criteria-icon-wrapper svg { width: 22px; height: 22px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
-        .criteria-card:hover .criteria-icon-wrapper svg { stroke: #FFFFFF; }
-        .criteria-text h4 { margin: 0 0 6px 0; font-size: 17px; font-weight: 700; color: var(--slate-dark); }
-        .criteria-text p { margin: 0; font-size: 13.5px; color: var(--text-gray); line-height: 1.5; }
+        .brand-partner-banner:hover { border-color: var(--neon-green); }
+        .brand-partner-text h3 { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
+        .brand-partner-text p { color: var(--text-gray); font-size: 14.5px; margin: 0; }
 
         /* INTAKE / CATALOG SUBMISSION BANNER */
-        .intake-section { padding: 10px 0 90px 0; }
+        .intake-section { padding: 40px 0 90px 0; }
         .intake-card {
             background-color: var(--slate-dark); color: #FFFFFF; border-radius: 16px;
             padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
@@ -239,14 +233,16 @@
         @media (max-width: 900px) {
             .journey-flow { grid-template-columns: 1fr; gap: 15px; }
             .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .brand-partner-banner { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .hero h1 { font-size: 30px; }
+            .hero h1 { font-size: 32px; }
+            .btn-group-hero { flex-direction: column; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .pillars-grid, .criteria-grid { grid-template-columns: 1fr; }
+            .pillars-grid { grid-template-columns: 1fr; }
             .intake-card { grid-template-columns: 1fr; padding: 30px 20px; }
         }
     </style>
@@ -258,7 +254,9 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
+        <a href="fba.html">Amazon FBA</a>
         <a href="compliance.html">MAP Compliance</a>
+        <a href="application.html">Apply for Account</a>
         <a href="contact.html">Contact Us</a>
     </div>
 
@@ -282,7 +280,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="fba.html">Amazon FBA</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="application.html">Apply for Account</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
 
@@ -295,15 +295,15 @@
         </div>
     </header>
 
-    <!-- HERO SECTION REFINED FOR FBA WHOLESALE -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <p class="hero-tagline">U.S. WHOLESALE & AMAZON FBA PARTNER</p>
-            <h1>Your Brand. Our Distribution. Sustainable Marketplace Growth.</h1>
-            <p class="hero-description">IO Wholesale Group LLC is a U.S.-based wholesale buyer specializing in Amazon FBA distribution. We purchase inventory directly via B2B purchase orders, enforce strict MAP compliance, and manage end-to-end e-commerce logistics.</p>
+            <p class="hero-tagline">U.S.-BASED WHOLESALE & AMAZON FBA PARTNER</p>
+            <h1>Your Brand. Our Distribution. Sustainable Growth.</h1>
+            <p class="hero-description">IO Wholesale Group LLC is a U.S.-based wholesale partner specializing in Amazon FBA distribution, marketplace compliance, and brand price protection.</p>
             <div class="btn-group-hero">
-                <a href="contact.html" class="btn-primary">Submit Your Catalog</a>
-                <a href="about.html" class="btn-primary" style="background-color: var(--card-bg); color: var(--slate-dark); border: 1px solid var(--border);">Company Profile</a>
+                <a href="contact.html" class="btn-primary">Partner With Us</a>
+                <a href="application.html" class="btn-secondary">Submit Your Catalog</a>
             </div>
         </div>
     </section>
@@ -313,8 +313,8 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>MAP Enforced</p>
+                    <h3>Strict MAP</h3>
+                    <p>Price Policy Enforcement</p>
                 </div>
                 <div class="stat-item">
                     <h3>U.S. Entity</h3>
@@ -322,11 +322,11 @@
                 </div>
                 <div class="stat-item">
                     <h3>FBA Prep</h3>
-                    <p>Certified Processing</p>
+                    <p>Compliant Prep Logistics</p>
                 </div>
                 <div class="stat-item">
                     <h3>Direct POs</h3>
-                    <p>Recurring Orders</p>
+                    <p>Structured B2B Orders</p>
                 </div>
             </div>
         </div>
@@ -336,8 +336,8 @@
     <section class="pillars-section">
         <div class="container">
             <div class="section-title-block">
-                <h2>Why Brands Sell To IO Wholesale Group</h2>
-                <p>We are not a traditional retail buyer. We serve as a value-added distribution partner focused on price stability and seamless fulfillment.</p>
+                <h2>Built for Brands That Want to Grow on Amazon</h2>
+                <p>We serve as a value-added distribution partner focused on price stability, reliable purchasing, and compliant marketplace fulfillment.</p>
             </div>
             <div class="pillars-grid">
                 <div class="pillar-card">
@@ -346,8 +346,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
-                    <h3>Direct B2B Purchasing</h3>
-                    <p>We issue upfront wholesale Purchase Orders (POs) with prompt payment terms, establishing reliable cash flow for manufacturers.</p>
+                    <h3>Wholesale Purchasing</h3>
+                    <p>Direct B2B purchasing via upfront Purchase Orders (POs) establishing reliable cash flow for manufacturers.</p>
                 </div>
 
                 <div class="pillar-card">
@@ -356,8 +356,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h3>100% MAP Protection</h3>
-                    <p>We use strict repricing guardrails. Your minimum advertised prices are locked to prevent marketplace price erosion.</p>
+                    <h3>MAP Protection</h3>
+                    <p>We enforce minimum advertised pricing to protect brand equity and eliminate unauthorized price erosion.</p>
                 </div>
 
                 <div class="pillar-card">
@@ -366,8 +366,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
                     </div>
-                    <h3>FBA Prep & Warehousing</h3>
-                    <p>We process all inventory through certified U.S. 3PL prep centers for FNSKU labeling, inspection, and compliant Amazon routing.</p>
+                    <h3>Amazon FBA</h3>
+                    <p>Professional inventory preparation, FNSKU barcoding, and compliant Amazon FBA fulfillment center shipping.</p>
                 </div>
 
                 <div class="pillar-card">
@@ -376,128 +376,82 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                     </div>
-                    <h3>Recurring Re-Orders</h3>
-                    <p>Our algorithmic inventory planning ensures predictable stock turnover, leading to recurring B2B orders without supply gaps.</p>
+                    <h3>Long-Term Growth</h3>
+                    <p>Our objective is recurring B2B purchasing and sustainable brand presence across North American digital sales channels.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- YOUR PRODUCT'S JOURNEY (SUPPLY CHAIN FLOW) -->
+    <!-- YOUR PRODUCT'S JOURNEY -->
     <section class="journey-section">
         <div class="container">
             <div class="section-title-block">
                 <h2>Your Product's Journey</h2>
-                <p>A transparent, fully compliant U.S. supply chain framework designed for Amazon marketplace success.</p>
+                <p>A transparent, fully traceable U.S. supply chain framework designed for marketplace compliance.</p>
             </div>
             <div class="journey-flow">
                 <div class="flow-step">
                     <span class="flow-num">STEP 01</span>
                     <h4>Brand / Manufacturer</h4>
-                    <p>Direct B2B Purchase Order & Invoice Issuance</p>
+                    <p>Direct B2B Wholesale Purchase Order</p>
                 </div>
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 02</span>
                     <h4>IO Wholesale Hub</h4>
-                    <p>Freight Reception & Traceable Order Verification</p>
+                    <p>Freight Reception & Order Verification</p>
                 </div>
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 03</span>
-                    <h4>FBA Prep Center</h4>
-                    <p>Inspection, Custom Bundling & FNSKU Barcoding</p>
+                    <h4>Quality & Prep Center</h4>
+                    <p>Inspection, Custom Prep & FNSKU Barcoding</p>
                 </div>
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 04</span>
                     <h4>Amazon FBA</h4>
-                    <p>Compliant Pallet Routing to Amazon Warehouses</p>
+                    <p>Pallet Shipment to Amazon Warehouses</p>
                 </div>
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 05</span>
                     <h4>End Customer</h4>
-                    <p>Prime Delivery & MAP-Compliant Retail Sale</p>
+                    <p>Prime Delivery & MAP-Compliant Sale</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHAT WE LOOK FOR IN A BRAND PARTNER -->
-    <section class="criteria-section">
-        <div class="container">
-            <div class="section-title-block">
-                <h2>What We Look For</h2>
-                <p>We selectively partner with brand owners to build long-term, mutually profitable wholesale relationships.</p>
+    <!-- BRANDS WE WORK WITH / INVITATION BANNER -->
+    <div class="container">
+        <div class="brand-partner-banner">
+            <div class="brand-partner-text">
+                <h3>Looking to Become Our Next Brand Partner?</h3>
+                <p>We are actively expanding our portfolio of established U.S. consumer product brands. Submit your product catalog or reseller requirements today.</p>
             </div>
-            <div class="criteria-grid">
-                <div class="criteria-card">
-                    <div class="criteria-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="criteria-text">
-                        <h4>Established Products & Demand</h4>
-                        <p>We seek brand owners with proven sales velocity and established product lines in consumer categories across North America.</p>
-                    </div>
-                </div>
-
-                <div class="criteria-card">
-                    <div class="criteria-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <div class="criteria-text">
-                        <h4>MAP-Friendly Policies</h4>
-                        <p>We actively prioritize manufacturers who enforce Minimum Advertised Price (MAP) guidelines to protect retail channel harmony.</p>
-                    </div>
-                </div>
-
-                <div class="criteria-card">
-                    <div class="criteria-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <div class="criteria-text">
-                        <h4>Amazon FBA Potential</h4>
-                        <p>Products suitable for Amazon Prime fulfillment, clean catalog listings, and consistent brand messaging.</p>
-                    </div>
-                </div>
-
-                <div class="criteria-card">
-                    <div class="criteria-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <div class="criteria-text">
-                        <h4>Long-Term Partnership Vision</h4>
-                        <p>We prefer recurring, predictable wholesale accounts rather than one-off closeout or liquidation deals.</p>
-                    </div>
-                </div>
+            <div style="text-align: right;">
+                <a href="contact.html" class="btn-primary">Submit Your Catalog</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- B2B INTAKE FORM BANNER -->
+    <!-- INTAKE FORM BANNER -->
     <section class="intake-section">
         <div class="container">
             <div class="intake-card">
                 <div class="intake-text">
-                    <h2>Open a Wholesale Account With Us</h2>
-                    <p>Are you a brand manufacturer or primary authorized distributor? Send us your wholesale catalog or inquiry details for rapid onboarding.</p>
+                    <h2>Initiate a Brand Partnership</h2>
+                    <p>Are you a manufacturer or primary authorized distributor? Contact our procurement department to discuss catalog onboarding and wholesale terms.</p>
                 </div>
                 <div class="intake-form">
                     <form action="#" method="POST" onsubmit="handleIntakeSubmit(event)">
                         <input type="text" placeholder="Your Name / Title" required>
                         <input type="text" placeholder="Brand / Company Name" required>
                         <input type="email" placeholder="Work Email" required>
-                        <textarea rows="3" placeholder="Brand website or catalog link / SKU requirements..." required></textarea>
-                        <button type="submit" class="btn-intake">Submit Catalog Inquiry</button>
+                        <textarea rows="3" placeholder="Brand website or catalog link / SKU details..." required></textarea>
+                        <button type="submit" class="btn-intake">Request Partnership Call</button>
                     </form>
                 </div>
             </div>
@@ -521,7 +475,7 @@
 
         function handleIntakeSubmit(e) {
             e.preventDefault();
-            alert('Catalog inquiry received! Our brand onboarding team will review your details within 24 business hours.');
+            alert('Partnership request received! Our brand managers will respond within 24 business hours.');
             e.target.reset();
         }
     </script>
