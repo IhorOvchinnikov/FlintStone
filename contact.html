@@ -55,12 +55,12 @@
         .brand-logo-block:hover { transform: scale(1.02); }
 
         .nav-links {
-            display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
         }
 
         .nav-links a {
             text-decoration: none; color: var(--slate-gray);
-            font-size: 14px; font-weight: 500; transition: color 0.2s ease;
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
@@ -91,102 +91,53 @@
             background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
         }
         .mobile-drawer a {
-            text-decoration: none; color: var(--slate-dark); font-size: 16px; font-weight: 600;
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
             padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
         }
         .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
 
         /* HERO HEADER */
-        .page-hero {
-            padding: 70px 0 40px 0; text-align: center; background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border);
+        .page-header {
+            padding: 70px 0 40px 0; background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border); text-align: center;
         }
-        .page-hero h1 { font-size: 38px; font-weight: 800; color: var(--slate-dark); margin: 0 0 12px 0; }
-        .page-hero p { font-size: 16px; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+        .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; color: var(--slate-dark); }
+        .page-header p { color: var(--text-gray); font-size: 16px; max-width: 680px; margin: 0 auto; }
 
-        /* CONTACT LAYOUT - EQUAL HEIGHT & EFFECTS */
-        .contact-wrapper { padding: 60px 0; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+        /* CONTACT SECTION */
+        .contact-wrapper { padding: 60px 0 90px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 
-        .contact-info-card, .contact-form-card {
+        .info-card {
             background-color: #FFFFFF; border: 1px solid var(--border);
             border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             display: flex; flex-direction: column; justify-content: space-between;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .info-card h2 { font-size: 22px; font-weight: 800; color: var(--slate-dark); margin: 0 0 15px 0; }
         
-        .contact-info-card:hover, .contact-form-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--neon-green);
-            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
-        }
+        .contact-detail-item { margin-bottom: 25px; }
+        .contact-detail-item strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-green); margin-bottom: 4px; }
+        .contact-detail-item p { margin: 0; font-size: 15px; color: var(--slate-dark); font-weight: 600; }
 
-        .contact-info-card h2, .contact-form-card h2 { font-size: 22px; font-weight: 700; color: var(--slate-dark); margin: 0 0 15px 0; }
-        .contact-form-card p { font-size: 14px; color: var(--text-gray); margin-bottom: 24px; }
-
-        .info-item { display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start; }
-        .info-icon {
-            width: 42px; height: 42px; border-radius: 10px; background-color: #ECFDF5;
-            border: 1px solid rgba(16, 185, 129, 0.2); display: flex; align-items: center;
-            justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
+        .form-card {
+            background-color: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px;
         }
-        .contact-info-card:hover .info-icon {
-            background-color: var(--neon-green); border-color: var(--neon-green); transform: scale(1.05);
-        }
-        .info-icon svg { width: 20px; height: 20px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
-        .contact-info-card:hover .info-icon svg { stroke: #FFFFFF; }
-        
-        .info-text h4 { font-size: 13px; font-weight: 700; color: var(--text-gray); text-transform: uppercase; margin: 0 0 4px 0; letter-spacing: 0.5px; }
-        .info-text p, .info-text a { font-size: 15px; font-weight: 600; color: var(--slate-dark); margin: 0; text-decoration: none; }
-        .info-text a:hover { color: var(--neon-green); }
-
-        .form-group { margin-bottom: 16px; }
+        .form-group { margin-bottom: 18px; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--slate-gray); margin-bottom: 6px; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px 14px; border: 1px solid var(--border);
             border-radius: 8px; font-family: inherit; font-size: 14px; color: var(--slate-dark);
-            background-color: #F8FAFC; transition: all 0.2s ease;
+            background-color: #FFFFFF; transition: border-color 0.2s ease;
         }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none; border-color: var(--neon-green); background-color: #FFFFFF;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
-        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--neon-green); }
 
-        .btn-submit {
+        .btn-submit-contact {
             width: 100%; background-color: var(--slate-dark); color: #FFFFFF;
-            padding: 13px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700;
-            cursor: pointer; transition: all 0.25s ease; margin-top: 5px;
+            padding: 14px; border: none; border-radius: 8px; font-size: 14.5px; font-weight: 700;
+            cursor: pointer; transition: all 0.25s ease;
         }
-        .btn-submit:hover {
-            background-color: var(--neon-green); color: var(--slate-dark);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); transform: translateY(-2px);
-        }
-
-        /* OUR COMMITMENTS SECTION */
-        .expectations-section {
-            padding: 70px 0; background-color: var(--card-bg);
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-        }
-        .expectations-header { text-align: center; margin-bottom: 40px; }
-        .expectations-header h2 { font-size: 28px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .expectations-header p { font-size: 15px; color: var(--text-gray); max-width: 580px; margin: 0 auto; }
-
-        .expectations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .expectation-card {
-            background-color: #FFFFFF; border: 1px solid var(--border);
-            border-radius: 12px; padding: 28px; transition: all 0.3s ease; cursor: pointer;
-        }
-        .expectation-card:hover {
-            transform: translateY(-4px); border-color: var(--neon-green);
-            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.08);
-        }
-        .badge-tag {
-            display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--neon-green); background-color: #ECFDF5;
-            padding: 4px 10px; border-radius: 6px; margin-bottom: 16px; border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-        .expectation-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .expectation-card p { font-size: 13.5px; color: var(--text-gray); margin: 0; line-height: 1.6; }
+        .btn-submit-contact:hover { background-color: var(--neon-green); color: var(--slate-dark); }
 
         footer {
             background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
@@ -196,9 +147,7 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-            .expectations-grid { grid-template-columns: 1fr; }
-            .contact-form-card, .contact-info-card { padding: 25px; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -209,7 +158,9 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
+        <a href="fba.html">Amazon FBA</a>
         <a href="compliance.html">MAP Compliance</a>
+        <a href="application.html">Apply for Account</a>
         <a href="contact.html" class="active">Contact Us</a>
     </div>
 
@@ -233,7 +184,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="fba.html">Amazon FBA</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="application.html">Apply for Account</a></li>
                     <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
 
@@ -246,10 +199,10 @@
         </div>
     </header>
 
-    <section class="page-hero">
+    <section class="page-header">
         <div class="container">
-            <h1>Partner With IO Wholesale Group</h1>
-            <p>Connect with our corporate procurement team to discuss wholesale distribution, MAP enforcement, or catalog inquiries.</p>
+            <h1>Get In Touch</h1>
+            <p>Direct B2B procurement inquiries, wholesale catalog submissions, and manufacturer partnership requests.</p>
         </div>
     </section>
 
@@ -257,129 +210,50 @@
         <div class="container">
             <div class="contact-grid">
                 
-                <div class="contact-info-card">
+                <div class="info-card">
                     <div>
-                        <h2>Corporate Information</h2>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <h4>Registered Entity</h4>
-                                <p>IO Wholesale Group LLC</p>
-                            </div>
+                        <h2>Procurement Department</h2>
+                        <div class="contact-detail-item">
+                            <strong>Corporate Address</strong>
+                            <p>1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
                         </div>
+                        <div class="contact-detail-item">
+                            <strong>Official Business Registration</strong>
+                            <p>IO Wholesale Group LLC (State of Wyoming, USA)</p>
+                        </div>
+                        <div class="contact-detail-item">
+                            <strong>B2B Inquiry Response Time</strong>
+                            <p>Within 24 Business Hours</p>
+                        </div>
+                    </div>
 
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <h4>Principal Address</h4>
-                                <p>1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <h4>Wholesale Department</h4>
-                                <p><a href="mailto:wholesale@iowholesalegroup.com">wholesale@iowholesalegroup.com</a></p>
-                            </div>
-                        </div>
-
-                        <div class="info-item" style="margin-bottom: 0;">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <h4>Business Hours</h4>
-                                <p>Monday – Friday: 9:00 AM – 5:00 PM (EST)</p>
-                            </div>
-                        </div>
+                    <div style="padding-top: 20px; border-top: 1px solid var(--border);">
+                        <p style="font-size: 13px; color: var(--text-gray); margin: 0;">For wholesale account applications with catalog file attachments, please use our <a href="application.html" style="color: var(--neon-green); font-weight: 700; text-decoration: none;">Brand Application Portal &rarr;</a></p>
                     </div>
                 </div>
 
-                <div class="contact-form-card">
-                    <div>
-                        <h2>Submit an Inquiry</h2>
-                        <p>Fill out the form below to connect directly with our brand onboarding managers.</p>
-                        
-                        <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
-                            <div class="form-group">
-                                <label for="fullName">Full Name *</label>
-                                <input type="text" id="fullName" placeholder="e.g., Sarah Jenkins" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="companyName">Company / Brand Name *</label>
-                                <input type="text" id="companyName" placeholder="e.g., Apex Gear Co." required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Work Email *</label>
-                                <input type="email" id="email" placeholder="sarah@apexgear.com" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inquiryType">Inquiry Type</label>
-                                <select id="inquiryType">
-                                    <option value="brand">New Brand Onboarding & Wholesale</option>
-                                    <option value="map">MAP Compliance & Authorized Reseller</option>
-                                    <option value="catalog">Product Catalog & PO Inquiry</option>
-                                    <option value="general">General Support</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message / Details *</label>
-                                <textarea id="message" rows="3" placeholder="Tell us about your brand or catalog specifications..." required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn-submit">Submit Inquiry</button>
-                        </form>
-                    </div>
+                <div class="form-card">
+                    <form action="#" method="POST" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" placeholder="e.g., Sarah Jenkins" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyName">Company / Brand Name *</label>
+                            <input type="text" id="companyName" placeholder="e.g., Apex Gear LLC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Work Email *</label>
+                            <input type="email" id="contactEmail" placeholder="sarah@apexgear.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Inquiry Details *</label>
+                            <textarea id="message" rows="4" placeholder="Describe your brand, wholesale opening terms, or purchasing requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit-contact">Send Procurement Inquiry</button>
+                    </form>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR COMMITMENTS SECTION -->
-    <section class="expectations-section">
-        <div class="container">
-            <div class="expectations-header">
-                <h2>Our Partnership Commitments</h2>
-                <p>What brand owners can count on when initiating a relationship with IO Wholesale Group.</p>
-            </div>
-            <div class="expectations-grid">
-                <div class="expectation-card">
-                    <span class="badge-tag">Responsiveness</span>
-                    <h3>Rapid Intake Review</h3>
-                    <p>Our procurement team reviews incoming catalog inquiries within 24 business hours to evaluate brand compatibility and inventory fit.</p>
-                </div>
-                <div class="expectation-card">
-                    <span class="badge-tag">Compliance</span>
-                    <h3>MAP Protection First</h3>
-                    <p>We review and execute your official dealer agreements, guaranteeing 100% adherence to Minimum Advertised Price guidelines from day one.</p>
-                </div>
-                <div class="expectation-card">
-                    <span class="badge-tag">Reliability</span>
-                    <h3>Structured Purchasing</h3>
-                    <p>We establish recurring purchase orders with prompt payment schedules and streamlined routing directly to our U.S. logistics hubs.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -399,9 +273,9 @@
             overlay.classList.toggle('active');
         }
 
-        function handleFormSubmit(e) {
+        function handleContactSubmit(e) {
             e.preventDefault();
-            alert('Thank you for contacting IO Wholesale Group LLC! Your inquiry has been submitted and assigned to our procurement department.');
+            alert('Thank you for contacting IO Wholesale Group LLC. Our procurement team will review your inquiry and respond within 24 business hours.');
             e.target.reset();
         }
     </script>
