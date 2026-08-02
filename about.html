@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | IO Wholesale Group LLC</title>
-
+    
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
 
@@ -55,12 +55,12 @@
         .brand-logo-block:hover { transform: scale(1.02); }
 
         .nav-links {
-            display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
         }
 
         .nav-links a {
             text-decoration: none; color: var(--slate-gray);
-            font-size: 14px; font-weight: 500; transition: color 0.2s ease;
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
@@ -70,54 +70,31 @@
         }
         .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
 
-        <!-- MOBILE DRAWER & OVERLAY -->
-<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
-<div class="mobile-drawer" id="mobileDrawer">
-    <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="fba.html">Amazon FBA</a>
-    <a href="compliance.html">MAP Compliance</a>
-    <a href="application.html">Apply for Account</a>
-    <a href="contact.html">Contact Us</a>
-</div>
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
+            z-index: 1002; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-overlay.active { opacity: 1; visibility: visible; }
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
-                <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
-                    <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
-                    <mask id="text-o-cut-nav">
-                        <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
-                        <circle cx="21" cy="17.5" r="2.2" fill="black"/>
-                        <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
-                    </mask>
-                    <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-nav)">O</text>
-                    <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
-                </svg>
-            </a>
-
-            <!-- ДЕDesktop MENU (ПК) -->
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="fba.html">Amazon FBA</a></li>
-                <li><a href="compliance.html">MAP Compliance</a></li>
-                <li><a href="application.html">Apply for Account</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-
-            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </nav>
-    </div>
-</header>
-
+        .mobile-drawer {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background-color: #FFFFFF; z-index: 1003;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px; display: flex; flex-direction: column; gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.active { right: 0; }
+        .mobile-drawer-close {
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
+        }
+        .mobile-drawer a {
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
+            padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
+        }
+        .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
 
         /* HERO HEADER */
         .page-header {
@@ -125,113 +102,56 @@
             border-bottom: 1px solid var(--border); text-align: center;
         }
         .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; color: var(--slate-dark); }
-        .page-header p { color: var(--text-gray); font-size: 16px; max-width: 650px; margin: 0 auto; }
+        .page-header p { color: var(--text-gray); font-size: 16px; max-width: 680px; margin: 0 auto; }
 
-        /* ABOUT SECTION & TOP CARDS */
-        .about-section { padding: 60px 0; }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; margin-bottom: 60px; }
-
-        .about-card {
+        /* ABOUT CONTENT SECTION */
+        .about-section { padding: 60px 0 90px 0; }
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; align-items: center; }
+        
+        .content-card {
             background-color: #FFFFFF; border: 1px solid var(--border);
             border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-            display: flex; flex-direction: column; justify-content: space-between;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
         }
+        .content-card h2 { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin: 0 0 16px 0; }
+        .content-card p { font-size: 14.5px; color: var(--text-gray); margin-bottom: 16px; line-height: 1.7; }
+        .content-card p:last-child { margin-bottom: 0; }
 
-        .about-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--neon-green);
-            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
-        }
-
-        .about-card h2 { font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 15px; color: var(--slate-dark); }
-        .about-card p { color: var(--text-gray); font-size: 14.5px; line-height: 1.6; margin: 0 0 15px 0; }
-        .about-card p:last-child { margin-bottom: 0; }
-
-        .about-icon-box {
-            width: 48px; height: 48px; border-radius: 12px; background-color: #ECFDF5;
-            border: 1px solid rgba(16, 185, 129, 0.2); display: flex; align-items: center;
-            justify-content: center; margin-bottom: 22px; transition: all 0.3s ease;
-        }
-        .about-card:hover .about-icon-box {
-            background-color: var(--neon-green); border-color: var(--neon-green); transform: scale(1.08) rotate(3deg);
-        }
-        .about-icon-box svg { width: 24px; height: 24px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
-        .about-card:hover .about-icon-box svg { stroke: #FFFFFF; }
-
-        /* TRUST / COMPANY VERIFICATION GRID */
-        .trust-wrapper { margin: 20px 0 60px 0; padding: 40px 0; }
-        .section-title { text-align: center; font-size: 28px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .section-subtitle { text-align: center; font-size: 15px; color: var(--text-gray); margin-bottom: 40px; }
-
-        .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .trust-card {
-            background-color: #FFFFFF; border: 1px solid var(--border); border-radius: 14px;
-            padding: 32px 26px; position: relative; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex; flex-direction: column; cursor: pointer;
-        }
-        .trust-card:hover { transform: translateY(-6px); border-color: var(--neon-green); box-shadow: 0 16px 32px rgba(16, 185, 129, 0.12); }
-        .trust-badge {
-            display: inline-flex; align-items: center; justify-content: center; background-color: #ECFDF5;
-            color: var(--neon-green); font-size: 11px; font-weight: 800; letter-spacing: 1.2px; padding: 5px 12px;
-            border-radius: 20px; width: fit-content; margin-bottom: 20px; transition: all 0.3s ease; border: 1px solid rgba(16, 185, 129, 0.2); text-transform: uppercase;
-        }
-        .trust-card:hover .trust-badge { background-color: var(--neon-green); color: #FFFFFF; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
-        .trust-icon {
-            width: 48px; height: 48px; background-color: #ECFDF5; border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; transition: all 0.3s ease;
-        }
-        .trust-card:hover .trust-icon { border-color: var(--neon-green); transform: scale(1.08) rotate(3deg); background-color: var(--neon-green); }
-        .trust-icon svg { width: 24px; height: 24px; stroke: var(--neon-green); fill: none; transition: stroke 0.3s ease; }
-        .trust-card:hover .trust-icon svg { stroke: #FFFFFF; }
-        .trust-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .trust-card p { font-size: 13.5px; color: var(--text-gray); margin: 0; line-height: 1.6; }
-
-        /* OPERATIONAL PILLARS */
-        .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 60px; }
+        /* VALUES / PILLARS */
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 40px; }
         .value-card {
-            background: #FFFFFF; border: 1px solid var(--border); padding: 30px; border-radius: 14px;
-            display: flex; gap: 20px; align-items: flex-start; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+            background-color: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 12px; padding: 30px 24px; text-align: left; transition: all 0.3s ease;
         }
-        .value-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(16, 185, 129, 0.1); border-color: var(--neon-green); }
-        .value-icon-wrapper {
-            width: 44px; height: 44px; background-color: #ECFDF5; border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
-        }
-        .value-card:hover .value-icon-wrapper { background-color: var(--neon-green); border-color: var(--neon-green); }
-        .value-icon-wrapper svg { width: 22px; height: 22px; stroke: var(--neon-green); fill: none; transition: stroke 0.3s ease; }
-        .value-card:hover .value-icon-wrapper svg { stroke: #FFFFFF; }
-        .value-text h4 { margin: 0 0 8px 0; font-size: 17px; font-weight: 700; color: var(--slate-dark); }
-        .value-text p { margin: 0; font-size: 13px; color: var(--text-gray); line-height: 1.6; }
+        .value-card:hover { border-color: var(--neon-green); transform: translateY(-4px); }
+        .value-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
+        .value-card p { font-size: 13.5px; color: var(--text-gray); margin: 0; line-height: 1.6; }
 
-        /* COMPANY PROFILE BANNER */
-        .infra-banner {
-            background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-            padding: 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04); transition: all 0.3s ease;
+        /* CTA BANNER */
+        .about-cta-banner {
+            background-color: var(--slate-dark); color: #FFFFFF; border-radius: 16px;
+            padding: 45px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12); margin-top: 60px;
         }
-        .infra-banner:hover { border-color: var(--neon-green); }
-        .infra-text h3 { font-size: 22px; font-weight: 700; color: var(--slate-dark); margin: 0 0 12px 0; }
-        .infra-text p { color: var(--text-gray); font-size: 14px; margin: 0; }
-        .infra-btn-wrapper { text-align: right; }
-        .btn-infra {
-            background-color: var(--slate-dark); color: #FFFFFF; padding: 13px 26px; border-radius: 8px;
-            text-decoration: none; font-size: 14px; font-weight: 700; display: inline-block; transition: all 0.25s ease;
+        .about-cta-text h3 { font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; }
+        .about-cta-text p { color: #94A3B8; font-size: 14.5px; margin: 0; }
+        .btn-about-cta {
+            background-color: var(--neon-green); color: var(--slate-dark); padding: 14px 28px; border-radius: 8px;
+            text-decoration: none; font-size: 14px; font-weight: 800; display: inline-block; transition: all 0.25s ease;
+            text-transform: uppercase; letter-spacing: 0.5px; text-align: center;
         }
-        .btn-infra:hover { background-color: var(--neon-green); color: var(--slate-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
+        .btn-about-cta:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
 
         footer {
             background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
             text-align: center; font-size: 12px; border-top: 1px solid var(--border);
         }
 
-        @media (max-width: 868px) { .trust-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) {
+            .grid-2col, .values-grid, .about-cta-banner { grid-template-columns: 1fr; gap: 20px; }
+        }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .about-grid, .values-grid, .infra-banner { grid-template-columns: 1fr; gap: 20px; }
-            .infra-btn-wrapper { text-align: left; }
-            .about-card { padding: 28px; }
         }
     </style>
 </head>
@@ -242,7 +162,9 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About Us</a>
+        <a href="fba.html">Amazon FBA</a>
         <a href="compliance.html">MAP Compliance</a>
+        <a href="application.html">Apply for Account</a>
         <a href="contact.html">Contact Us</a>
     </div>
 
@@ -266,7 +188,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="fba.html">Amazon FBA</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="application.html">Apply for Account</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
 
@@ -281,145 +205,51 @@
 
     <section class="page-header">
         <div class="container">
-            <h1>About IO Wholesale Group</h1>
-            <p>A U.S. wholesale enterprise dedicated to transparent B2B purchasing, traceable supply chains, and Amazon marketplace growth.</p>
+            <h1>About IO Wholesale Group LLC</h1>
+            <p>A U.S. wholesale enterprise focused on brand partnership, compliant marketplace distribution, and long-term commercial growth.</p>
         </div>
     </section>
 
     <section class="about-section">
         <div class="container">
-            <div class="about-grid">
-                
-                <div class="about-card">
-                    <div>
-                        <div class="about-icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                        </div>
-                        <h2>Your U.S. Wholesale Partner</h2>
-                        <p><strong>IO Wholesale Group LLC</strong> is a legally registered U.S. wholesale enterprise headquartered in Sheridan, Wyoming. We specialize in sourcing high-quality consumer goods directly from brand owners and primary authorized distributors.</p>
-                        <p>We operate as a value-added B2B buyer. Instead of speculative online retailing, we purchase inventory via formal Purchase Orders and manage compliant Amazon FBA distribution while preserving brand pricing integrity.</p>
-                    </div>
+            <div class="grid-2col">
+                <div class="content-card">
+                    <h2>Our Corporate Purpose</h2>
+                    <p>IO Wholesale Group LLC operates as an authorized B2B wholesale partner for brand manufacturers and authorized distributors looking to expand their presence in the U.S. e-commerce ecosystem.</p>
+                    <p>We do not operate as a speculative marketplace seller. Instead, we purchase inventory upfront via standard Purchase Orders (POs) and manage the logistical complexity of preparing and routing products to Amazon FBA fulfillment networks in complete compliance with brand guidelines.</p>
                 </div>
-
-                <div class="about-card">
-                    <div>
-                        <div class="about-icon-box">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h2>Our Mission & Strategic Focus</h2>
-                        <p>Our core mission is to enable brand manufacturers to scale sales volume across top digital sales channels while completely eliminating price erosion and unauthorized resellers.</p>
-                        <p>We strictly honor dealer agreements, enforce Minimum Advertised Price (MAP) guidelines, and deliver consistent, recurring purchase orders that strengthen supply chain predictability.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="trust-wrapper">
-                <h2 class="section-title">Built on Verifiable Compliance</h2>
-                <p class="section-subtitle">How we provide brand partners with complete transparency, legal compliance, and supply chain auditability.</p>
-
-                <div class="trust-grid">
-                    <div class="trust-card">
-                        <span class="trust-badge">Legality</span>
-                        <div class="trust-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h3>Registered U.S. Entity</h3>
-                        <p>Fully compliant U.S. LLC structure with Federal EIN, State Resale Certificates, and legal standing for official dealer authorizations.</p>
-                    </div>
-
-                    <div class="trust-card">
-                        <span class="trust-badge">Traceability</span>
-                        <div class="trust-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                        </div>
-                        <h3>Traceable Invoices</h3>
-                        <p>We maintain end-to-end B2B invoice documentation required by Amazon for product authenticity and supply chain verification.</p>
-                    </div>
-
-                    <div class="trust-card">
-                        <span class="trust-badge">Logistics</span>
-                        <div class="trust-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                            </svg>
-                        </div>
-                        <h3>Certified 3PL Infrastructure</h3>
-                        <p>All shipments pass through certified U.S. prep facilities for inspection, FNSKU barcoding, and compliant Amazon FBA routing.</p>
-                    </div>
+                <div class="content-card">
+                    <h2>Transparent Supply Chain</h2>
+                    <p>We believe that sustainable marketplace distribution requires total transparency between brands and their wholesale partners. Every unit purchased by IO Wholesale Group LLC is handled with full invoice traceability and quality assurance.</p>
+                    <p>Through our U.S. prep network, we enforce strict packaging standards, accurate barcoding, and disciplined price policy compliance to protect brand equity across digital channels.</p>
                 </div>
             </div>
 
-            <h2 class="section-title">Our Operational Pillars</h2>
-            <p class="section-subtitle">How we maintain standard-setting performance for our brand partners.</p>
-            
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <div class="value-text">
-                        <h4>Strict MAP Policy Enforcement</h4>
-                        <p>We respect your pricing guidelines. We lock price floors algorithmically so your brand equity is protected against price erosion.</p>
-                    </div>
+                    <h3>Structured Purchasing</h3>
+                    <p>Direct B2B purchase orders with transparent payment terms and predictable replenishment cycles.</p>
                 </div>
-
                 <div class="value-card">
-                    <div class="value-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                    </div>
-                    <div class="value-text">
-                        <h4>Certified Prep & Inspection</h4>
-                        <p>Every shipment is processed through compliant U.S. prep centers for inspection, barcoding, and marketplace-ready freight forwarding.</p>
-                    </div>
+                    <h3>Brand Protection</h3>
+                    <p>Adherence to Minimum Advertised Price (MAP) policies to safeguard offline and online pricing structures.</p>
                 </div>
-
                 <div class="value-card">
-                    <div class="value-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                    </div>
-                    <div class="value-text">
-                        <h4>Data-Driven Inventory Planning</h4>
-                        <p>We employ demand planning software to project inventory turnover rates, ensuring prompt re-orders before stockouts occur.</p>
-                    </div>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                    </div>
-                    <div class="value-text">
-                        <h4>Responsive B2B Communication</h4>
-                        <p>We maintain clear lines of communication with vendor accounts. Our procurement team is accessible for order coordination and updates.</p>
-                    </div>
+                    <h3>Compliant Logistics</h3>
+                    <p>Professional inspection, FNSKU barcoding, and palletization executed through U.S. 3PL prep facilities.</p>
                 </div>
             </div>
 
-            <div class="infra-banner">
-                <div class="infra-text">
-                    <h3>Request Our Corporate Verification Profile</h3>
-                    <p>We are fully equipped with State Resale Certificates, Federal EIN, and standard NDA agreements for rapid vendor onboarding.</p>
+            <div class="about-cta-banner">
+                <div class="about-cta-text">
+                    <h3>Expand Your Wholesale Distribution</h3>
+                    <p>Submit your brand credentials and catalog details for evaluation by our procurement department.</p>
                 </div>
-                <div class="infra-btn-wrapper">
-                    <a href="contact.html" class="btn-infra">Contact Procurement</a>
+                <div>
+                    <a href="application.html" class="btn-about-cta">Become a Brand Partner &rarr;</a>
                 </div>
             </div>
+
         </div>
     </section>
 
