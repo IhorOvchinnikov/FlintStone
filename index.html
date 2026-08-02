@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IO Wholesale Group LLC | U.S. Wholesale & Amazon FBA Partner</title>
+    <title>IO Wholesale Group LLC | Independent B2B Retail & E-Commerce Partner</title>
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
@@ -297,8 +297,8 @@
     <section class="hero">
         <div class="container">
             <p class="hero-tagline">U.S. WHOLESALE & AMAZON FBA PARTNER</p>
-            <h1>Your Brand. Our Distribution. Sustainable Marketplace Growth.</h1>
-            <p class="hero-description">IO Wholesale Group LLC is a U.S.-based wholesale partner specializing in Amazon FBA distribution, marketplace compliance, and brand price protection.</p>
+            <h1>Protect Your Buy Box. Expand Your Reach. We handle the Amazon logistics.</h1>
+            <p class="hero-description">IO Wholesale Group is an independent retail partner focused on purchasing inventory upfront, strictly enforcing MAP, and executing flawless Amazon FBA fulfillment.</p>
             <div class="btn-group-hero">
                 <a href="contact.html" class="btn-primary">Partner With Us</a>
                 <a href="#intake-form" class="btn-secondary">Submit Your Catalog</a>
@@ -315,8 +315,8 @@
                     <p>Price Policy Enforcement</p>
                 </div>
                 <div class="stat-item">
-                    <h3>U.S. Entity</h3>
-                    <p>Registered Enterprise</p>
+                    <h3>Net 30 Ready</h3>
+                    <p>Flexible Payment Terms</p>
                 </div>
                 <div class="stat-item">
                     <h3>FBA Prep</h3>
@@ -397,14 +397,14 @@
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 02</span>
-                    <h4>IO Wholesale Group</h4>
-                    <p>Freight Reception & Traceable Order Verification</p>
+                    <h4>Inbound & Inspection</h4>
+                    <p>Freight reception at our partnered 3PL facilities for rigorous quality control.</p>
                 </div>
 
                 <div class="flow-step">
                     <span class="flow-num">STEP 03</span>
-                    <h4>Quality & Prep Center</h4>
-                    <p>Inspection, Custom Prep & FNSKU Barcoding</p>
+                    <h4>FBA Preparation</h4>
+                    <p>Compliant FNSKU barcoding, poly-bagging, and strict adherence to Amazon packaging guidelines.</p>
                 </div>
 
                 <div class="flow-step">
@@ -444,11 +444,12 @@
                     <p>Are you a brand manufacturer or authorized wholesale distributor? Contact our procurement department to discuss catalog onboarding and wholesale terms.</p>
                 </div>
                 <div class="intake-form">
-                    <form action="#" method="POST" onsubmit="handleIntakeSubmit(event)">
-                        <input type="text" placeholder="Your Name / Title" required>
-                        <input type="text" placeholder="Brand / Company Name" required>
-                        <input type="email" placeholder="Work Email" required>
-                        <textarea rows="3" placeholder="Brand website or catalog link / SKU details..." required></textarea>
+                    <!-- Replace YOUR_FORM_ID with your actual Formspree ID to make this form work -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <input type="text" name="Name" placeholder="Your Name / Title" required>
+                        <input type="text" name="Company" placeholder="Brand / Company Name" required>
+                        <input type="email" name="Email" placeholder="Work Email" required>
+                        <textarea name="Message" rows="3" placeholder="Brand website or catalog link / SKU details..." required></textarea>
                         <button type="submit" class="btn-intake">Request Partnership Call</button>
                     </form>
                 </div>
@@ -470,12 +471,9 @@
             drawer.classList.toggle('active');
             overlay.classList.toggle('active');
         }
-
-        function handleIntakeSubmit(e) {
-            e.preventDefault();
-            alert('Partnership request received! Our brand managers will respond within 24 business hours.');
-            e.target.reset();
-        }
+        
+        // Removed the old alert() function for the form. 
+        // The form now uses standard HTML action POST (e.g. Formspree) which is much more professional.
     </script>
 </body>
 </html>
