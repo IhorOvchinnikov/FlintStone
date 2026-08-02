@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | IO Wholesale Group LLC</title>
+    <title>Page Not Found | IO Wholesale Group LLC</title>
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='12' y='25' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +38,7 @@
             margin: 0 auto; padding: 0 20px;
         }
 
+        /* HEADER & NAV */
         header {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -55,21 +56,22 @@
         .brand-logo-block:hover { transform: scale(1.02); }
 
         .nav-links {
-            display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
         }
 
         .nav-links a {
             text-decoration: none; color: var(--slate-gray);
-            font-size: 14px; font-weight: 500; transition: color 0.2s ease;
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
         }
 
-        .nav-links a:hover { color: var(--neon-green); }
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
 
         .menu-toggle {
             display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001;
         }
         .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
 
+        /* MOBILE DRAWER & OVERLAY */
         .mobile-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
@@ -90,65 +92,42 @@
             background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
         }
         .mobile-drawer a {
-            text-decoration: none; color: var(--slate-dark); font-size: 16px; font-weight: 600;
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
             padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
         }
-        .mobile-drawer a:hover { color: var(--neon-green); }
+        .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
 
+        /* 404 CONTENT */
         .error-section {
             flex: 1; display: flex; align-items: center; justify-content: center;
-            padding: 60px 0; text-align: center;
+            text-align: center; padding: 80px 0;
         }
-
         .error-card {
-            background-color: var(--card-bg); border: 1px solid var(--border);
-            border-radius: 16px; padding: 60px 40px; max-width: 620px; width: 100%; margin: 0 auto;
-            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04); transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: #FFFFFF; border: 1px solid var(--border);
+            border-radius: 16px; padding: 50px 30px; max-width: 550px; margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
         }
-
-        .error-card:hover {
-            border-color: var(--neon-green); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.12); transform: translateY(-4px);
-        }
-
-        .error-code {
-            font-size: 80px; font-weight: 800; letter-spacing: -2px; color: var(--slate-dark);
-            line-height: 1; margin: 0 0 10px 0; position: relative; display: inline-block;
-        }
-        .error-code span { color: var(--neon-green); }
-
-        .error-title { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin: 0 0 15px 0; }
-        .error-description { font-size: 15px; color: var(--text-gray); margin: 0 0 30px 0; line-height: 1.6; }
-
-        .btn-group-404 { display: flex; gap: 15px; justify-content: center; }
-
+        .error-code { font-size: 72px; font-weight: 800; color: var(--neon-green); line-height: 1; margin-bottom: 10px; }
+        .error-title { font-size: 24px; font-weight: 800; color: var(--slate-dark); margin-bottom: 12px; }
+        .error-desc { font-size: 14.5px; color: var(--text-gray); margin-bottom: 30px; }
         .btn-home {
-            background-color: var(--slate-dark); color: #FFFFFF; padding: 12px 28px;
-            border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none;
-            transition: all 0.25s ease; display: inline-block;
+            background-color: var(--slate-dark); color: #FFFFFF; padding: 13px 26px;
+            border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none;
+            display: inline-block; transition: all 0.25s ease;
         }
         .btn-home:hover {
-            background-color: var(--neon-green); color: #FFFFFF; transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+            background-color: var(--neon-green); color: var(--slate-dark);
+            transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
         }
-
-        .btn-contact {
-            background-color: #FFFFFF; color: var(--slate-dark); border: 1px solid var(--border);
-            padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 600;
-            text-decoration: none; transition: all 0.25s ease; display: inline-block;
-        }
-        .btn-contact:hover { border-color: var(--slate-dark); transform: translateY(-2px); }
 
         footer {
             background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
-            text-align: center; font-size: 12px; border-top: 1px solid var(--border); margin-top: auto;
+            text-align: center; font-size: 12px; border-top: 1px solid var(--border);
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .error-code { font-size: 60px; }
-            .error-card { padding: 40px 20px; }
-            .btn-group-404 { flex-direction: column; }
         }
     </style>
 </head>
@@ -159,6 +138,7 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
+        <a href="fba.html">Amazon FBA</a>
         <a href="compliance.html">MAP Compliance</a>
         <a href="contact.html">Contact Us</a>
     </div>
@@ -183,6 +163,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="fba.html">Amazon FBA</a></li>
                     <li><a href="compliance.html">MAP Compliance</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -199,13 +180,10 @@
     <section class="error-section">
         <div class="container">
             <div class="error-card">
-                <div class="error-code">4<span>0</span>4</div>
+                <div class="error-code">404</div>
                 <h1 class="error-title">Page Not Found</h1>
-                <p class="error-description">The requested URL was not found on this server. The link may be broken, or the page might have been relocated within our distribution network.</p>
-                <div class="btn-group-404">
-                    <a href="index.html" class="btn-home">Return to Homepage</a>
-                    <a href="contact.html" class="btn-contact">Contact Procurement</a>
-                </div>
+                <p class="error-desc">The requested page has been moved or updated. Please return to the homepage or use the navigation menu above to access our wholesale portal.</p>
+                <a href="index.html" class="btn-home">Back to Home</a>
             </div>
         </div>
     </section>
