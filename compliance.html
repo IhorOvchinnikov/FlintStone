@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAP Compliance & Brand Protection | IO Wholesale Group LLC</title>
-
+    
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
 
@@ -55,12 +55,12 @@
         .brand-logo-block:hover { transform: scale(1.02); }
 
         .nav-links {
-            display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center;
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
         }
 
         .nav-links a {
             text-decoration: none; color: var(--slate-gray);
-            font-size: 14px; font-weight: 500; transition: color 0.2s ease;
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
         }
 
         .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
@@ -91,7 +91,7 @@
             background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
         }
         .mobile-drawer a {
-            text-decoration: none; color: var(--slate-dark); font-size: 16px; font-weight: 600;
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
             padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
         }
         .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
@@ -104,93 +104,45 @@
         .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; color: var(--slate-dark); }
         .page-header p { color: var(--text-gray); font-size: 16px; max-width: 680px; margin: 0 auto; }
 
-        /* MAP PRINCIPLES SECTION */
-        .compliance-section { padding: 60px 0; }
-        .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 60px; }
+        /* MAP COMPLIANCE CONTENT */
+        .compliance-section { padding: 60px 0 90px 0; }
+        .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 60px; }
 
-        .principle-card {
+        .comp-card {
             background-color: #FFFFFF; border: 1px solid var(--border);
-            border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-            display: flex; gap: 20px; align-items: flex-start;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+            border-radius: 14px; padding: 32px 24px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            transition: all 0.3s ease;
         }
+        .comp-card:hover { border-color: var(--neon-green); transform: translateY(-4px); }
+        .comp-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
+        .comp-card p { font-size: 13.5px; color: var(--text-gray); margin: 0; line-height: 1.6; }
 
-        .principle-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--neon-green);
-            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
-        }
-
-        .principle-icon {
-            width: 48px; height: 48px; border-radius: 12px; background-color: #ECFDF5;
-            border: 1px solid rgba(16, 185, 129, 0.2); display: flex; align-items: center;
-            justify-content: center; flex-shrink: 0; transition: all 0.3s ease;
-        }
-
-        .principle-card:hover .principle-icon {
-            background-color: var(--neon-green); border-color: var(--neon-green); transform: scale(1.08) rotate(3deg);
-        }
-
-        .principle-icon svg { width: 24px; height: 24px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
-        .principle-card:hover .principle-icon svg { stroke: #FFFFFF; }
-
-        .principle-text h3 { font-size: 19px; font-weight: 700; color: var(--slate-dark); margin: 0 0 8px 0; }
-        .principle-text p { font-size: 14px; color: var(--text-gray); margin: 0; line-height: 1.6; }
-
-        /* BRAND PROTECTION PROCESS */
-        .process-wrapper {
-            background-color: var(--card-bg); border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border); padding: 70px 0; margin-bottom: 60px;
-        }
-
-        .section-title { text-align: center; font-size: 28px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
-        .section-subtitle { text-align: center; font-size: 15px; color: var(--text-gray); margin-bottom: 40px; }
-
-        .protection-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .prot-step-card {
-            background: #FFFFFF; border: 1px solid var(--border); border-radius: 14px;
-            padding: 28px 20px; text-align: center; transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
-        }
-        .prot-step-card:hover {
-            transform: translateY(-5px); border-color: var(--neon-green);
-            box-shadow: 0 12px 28px rgba(16, 185, 129, 0.1);
-        }
-        .prot-step-badge {
-            font-size: 11px; font-weight: 800; color: var(--neon-green); background-color: #ECFDF5;
-            padding: 4px 10px; border-radius: 12px; display: inline-block; margin-bottom: 14px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-        .prot-step-card h4 { font-size: 16px; font-weight: 700; color: var(--slate-dark); margin: 0 0 8px 0; }
-        .prot-step-card p { font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.5; }
-
-        /* POLICY BANNER */
-        .policy-banner {
+        /* COMPLIANCE BANNER */
+        .comp-cta-banner {
             background-color: var(--slate-dark); color: #FFFFFF; border-radius: 16px;
             padding: 45px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
         }
-        .policy-text h3 { font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; }
-        .policy-text p { color: #94A3B8; font-size: 14.5px; margin: 0; line-height: 1.6; }
-        .policy-btn-wrapper { text-align: right; }
-        .btn-policy {
-            background-color: var(--neon-green); color: var(--slate-dark); padding: 13px 26px; border-radius: 8px;
-            text-decoration: none; font-size: 14px; font-weight: 700; display: inline-block; transition: all 0.25s ease;
+        .comp-cta-text h3 { font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; }
+        .comp-cta-text p { color: #94A3B8; font-size: 14.5px; margin: 0; }
+        .btn-comp-cta {
+            background-color: var(--neon-green); color: var(--slate-dark); padding: 14px 28px; border-radius: 8px;
+            text-decoration: none; font-size: 14px; font-weight: 800; display: inline-block; transition: all 0.25s ease;
+            text-transform: uppercase; letter-spacing: 0.5px; text-align: center;
         }
-        .btn-policy:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
+        .btn-comp-cta:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
 
         footer {
             background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
             text-align: center; font-size: 12px; border-top: 1px solid var(--border);
         }
 
-        @media (max-width: 900px) { .protection-steps { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 900px) {
+            .comp-grid, .comp-cta-banner { grid-template-columns: 1fr; gap: 20px; }
+        }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .menu-toggle { display: block; }
-            .principles-grid, .policy-banner { grid-template-columns: 1fr; gap: 20px; }
-            .policy-btn-wrapper { text-align: left; }
-            .protection-steps { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -201,7 +153,9 @@
         <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
+        <a href="fba.html">Amazon FBA</a>
         <a href="compliance.html" class="active">MAP Compliance</a>
+        <a href="application.html">Apply for Account</a>
         <a href="contact.html">Contact Us</a>
     </div>
 
@@ -212,12 +166,12 @@
                     <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
                         <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
-                        <mask id="text-o-cut-compliance">
+                        <mask id="text-o-cut-comp">
                             <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
                             <circle cx="21" cy="17.5" r="2.2" fill="black"/>
                             <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
                         </mask>
-                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-compliance)">O</text>
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-comp)">O</text>
                         <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
                     </svg>
                 </a>
@@ -225,7 +179,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="fba.html">Amazon FBA</a></li>
                     <li><a href="compliance.html" class="active">MAP Compliance</a></li>
+                    <li><a href="application.html">Apply for Account</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
 
@@ -241,106 +197,36 @@
     <section class="page-header">
         <div class="container">
             <h1>MAP Compliance & Brand Protection</h1>
-            <p>Your brand equity is our priority. We enforce zero-tolerance price protection policies to maintain retail channel integrity across online marketplaces.</p>
+            <p>Safeguarding brand equity, maintaining price stability, and helping prevent unauthorized price erosion across digital marketplaces.</p>
         </div>
     </section>
 
     <section class="compliance-section">
         <div class="container">
-            <div class="principles-grid">
-                
-                <div class="principle-card">
-                    <div class="principle-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <div class="principle-text">
-                        <h3>Hard Price Floors</h3>
-                        <p>We lock Minimum Advertised Price (MAP) thresholds directly into our inventory repricing software. Your listing price will never drop below your specified policy floor.</p>
-                    </div>
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <h3>Strict MAP Policy Adherence</h3>
+                    <p>We strictly honor Minimum Advertised Price (MAP) guidelines specified by brand manufacturers, ensuring consistent pricing that protects offline retail partners and brand positioning.</p>
                 </div>
 
-                <div class="principle-card">
-                    <div class="principle-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                        </svg>
-                    </div>
-                    <div class="principle-text">
-                        <h3>No Race-to-the-Bottom Repricing</h3>
-                        <p>Uncontrolled automated repricing destroys brand perception. We do not participate in destructive price wars that erode retail margin or brand prestige.</p>
-                    </div>
+                <div class="comp-card">
+                    <h3>Price Erosion Prevention</h3>
+                    <p>By preventing automated race-to-the-bottom repricing triggers, our distribution approach helps stabilize Buy Box prices and maintain target margin structures for manufacturers.</p>
                 </div>
 
-                <div class="principle-card">
-                    <div class="principle-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
-                    <div class="principle-text">
-                        <h3>Authorized Reseller Agreements</h3>
-                        <p>We sign and strictly follow your official Reseller Agreements, Authorized Dealer Policies, and non-liquidation terms prior to receiving inventory.</p>
-                    </div>
-                </div>
-
-                <div class="principle-card">
-                    <div class="principle-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </div>
-                    <div class="principle-text">
-                        <h3>Marketplace Leak Identification</h3>
-                        <p>We assist brand partners by flagging unauthorized liquidators and grey-market sellers who undercut official pricing on marketplace listings.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="process-wrapper">
-            <div class="container">
-                <h2 class="section-title">How We Enforce Price Compliance</h2>
-                <p class="section-subtitle">Our 4-step framework for maintaining marketplace channel stability.</p>
-
-                <div class="protection-steps">
-                    <div class="prot-step-card">
-                        <span class="prot-step-badge">PHASE 1</span>
-                        <h4>Policy Onboarding</h4>
-                        <p>We document your official MAP guidelines, minimum prices, and promotional calendars in our central system.</p>
-                    </div>
-
-                    <div class="prot-step-card">
-                        <span class="prot-step-badge">PHASE 2</span>
-                        <h4>System Integration</h4>
-                        <p>Price floors are programmed into our catalog management tools, blocking any sale below your threshold.</p>
-                    </div>
-
-                    <div class="prot-step-card">
-                        <span class="prot-step-badge">PHASE 3</span>
-                        <h4>Continuous Audit</h4>
-                        <p>We continuously monitor buy-box dynamics and notify brand managers of rogue unauthorized sellers.</p>
-                    </div>
-
-                    <div class="prot-step-card">
-                        <span class="prot-step-badge">PHASE 4</span>
-                        <h4>Long-Term Stability</h4>
-                        <p>By enforcing pricing, we preserve healthy retail margins for your brand across all distribution channels.</p>
-                    </div>
+                <div class="comp-card">
+                    <h3>Channel Integrity</h3>
+                    <p>We support brand owners in identifying unauthorized reseller activity, ensuring products flow strictly through authorized B2B wholesale channels with full traceability.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="policy-banner">
-                <div class="policy-text">
-                    <h3>Have Specific Dealer Guidelines?</h3>
-                    <p>Send us your Reseller Agreement or MAP Policy document. Our legal and procurement team will review and execute it within 24 business hours.</p>
+            <div class="comp-cta-banner">
+                <div class="comp-cta-text">
+                    <h3>Protect Your Brand On Marketplace Channels</h3>
+                    <p>Partner with a wholesale distributor committed to strict price compliance and transparent supply chain operations.</p>
                 </div>
-                <div class="policy-btn-wrapper">
-                    <a href="contact.html" class="btn-policy">Submit MAP Agreement</a>
+                <div>
+                    <a href="application.html" class="btn-comp-cta">Become a Brand Partner &rarr;</a>
                 </div>
             </div>
         </div>
