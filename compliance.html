@@ -106,12 +106,14 @@
 
         /* MAP COMPLIANCE CONTENT */
         .compliance-section { padding: 60px 0 90px 0; }
-        .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 60px; }
+        /* Исправлено выравнивание высоты карточек */
+        .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 60px; align-items: stretch; }
 
         .comp-card {
             background-color: #FFFFFF; border: 1px solid var(--border);
             border-radius: 14px; padding: 32px 24px; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; justify-content: flex-start;
         }
         .comp-card:hover { border-color: var(--neon-green); transform: translateY(-6px); box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12); }
         .comp-card h3 { font-size: 18px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
@@ -195,7 +197,7 @@
     <section class="page-header">
         <div class="container">
             <h1>MAP Compliance & Brand Protection</h1>
-            <p>Safeguarding brand equity, maintaining price stability, and helping prevent unauthorized price erosion across digital marketplaces.</p>
+            <p>Safeguarding brand equity, maintaining price stability, and enforcing margin protection across digital marketplaces.</p>
         </div>
     </section>
 
@@ -203,18 +205,18 @@
         <div class="container">
             <div class="comp-grid">
                 <div class="comp-card">
-                    <h3>Strict MAP Policy Adherence</h3>
-                    <p>We strictly honor Minimum Advertised Price (MAP) guidelines specified by brand manufacturers, ensuring consistent pricing that protects offline retail partners and brand positioning.</p>
+                    <h3>Minimum Advertised Price (MAP)</h3>
+                    <p>We honor MAP guidelines specified by brand manufacturers. We do not use algorithmic repricers designed to undercut authorized sellers, ensuring consistent pricing that protects your offline retail partners.</p>
                 </div>
 
                 <div class="comp-card">
                     <h3>Price Erosion Prevention</h3>
-                    <p>By preventing automated race-to-the-bottom repricing triggers, our distribution approach helps stabilize Buy Box prices and maintain target margin structures for manufacturers.</p>
+                    <p>By preventing automated race-to-the-bottom pricing wars, our distribution approach helps stabilize Buy Box prices and maintain the target profit margins established by the manufacturer.</p>
                 </div>
 
                 <div class="comp-card">
-                    <h3>Channel Integrity</h3>
-                    <p>We support brand owners in identifying unauthorized reseller activity, ensuring products flow strictly through authorized B2B wholesale channels with full traceability.</p>
+                    <h3>Supply Chain Integrity</h3>
+                    <p>We purchase directly through approved wholesale networks. We support brand owners by maintaining transparent invoices and traceability, ensuring products flow strictly through authorized B2B channels.</p>
                 </div>
             </div>
 
@@ -247,4 +249,3 @@
     </script>
 </body>
 </html>
-
