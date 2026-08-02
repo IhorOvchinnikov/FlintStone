@@ -1,1 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon FBA Distribution & Logistics | IO Wholesale Group LLC</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='6' r='2.5' fill='%2310B981'/><text x='5' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22'>I</text><mask id='m'><text x='13' y='26' fill='white' font-family='sans-serif' font-weight='800' font-size='22'>O</text><circle cx='21' cy='18.5' r='2.2' fill='black'/><circle cx='25.2' cy='12.8' r='2.8' fill='black'/></mask><text x='13' y='26' fill='%230F172A' font-family='sans-serif' font-weight='800' font-size='22' mask='url(%23m)'>O</text></svg>">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-dark: #0F172A;
+            --slate-gray: #334155;
+            --text-gray: #64748B;
+            --neon-green: #10B981;
+            --background: #FFFFFF;
+            --card-bg: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--background);
+            color: var(--slate-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%; max-width: 1100px;
+            margin: 0 auto; padding: 0 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--neon-green);
+            padding: 16px 0; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .brand-logo-block {
+            display: flex; align-items: center; text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .brand-logo-block:hover { transform: scale(1.02); }
+
+        .nav-links {
+            display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none; color: var(--slate-gray);
+            font-size: 13.5px; font-weight: 500; transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-green); }
+
+        .menu-toggle {
+            display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001;
+        }
+        .menu-toggle svg { width: 26px; height: 26px; stroke: var(--slate-dark); }
+
+        /* MOBILE DRAWER & OVERLAY */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px);
+            z-index: 1002; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .mobile-overlay.active { opacity: 1; visibility: visible; }
+
+        .mobile-drawer {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background-color: #FFFFFF; z-index: 1003;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            padding: 80px 30px 30px 30px; display: flex; flex-direction: column; gap: 20px;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-drawer.active { right: 0; }
+        .mobile-drawer-close {
+            position: absolute; top: 20px; right: 20px;
+            background: none; border: none; cursor: pointer; font-size: 24px; color: var(--slate-gray);
+        }
+        .mobile-drawer a {
+            text-decoration: none; color: var(--slate-dark); font-size: 15px; font-weight: 600;
+            padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease;
+        }
+        .mobile-drawer a.active, .mobile-drawer a:hover { color: var(--neon-green); }
+
+        /* HERO HEADER */
+        .page-header {
+            padding: 70px 0 40px 0; background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border); text-align: center;
+        }
+        .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; color: var(--slate-dark); }
+        .page-header p { color: var(--text-gray); font-size: 16px; max-width: 680px; margin: 0 auto; }
+
+        /* FBA OPERATIONS GRID */
+        .fba-section { padding: 60px 0; }
+        .fba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 60px; }
+
+        .fba-card {
+            background-color: #FFFFFF; border: 1px solid var(--border);
+            border-radius: 16px; padding: 35px 28px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+        }
+
+        .fba-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--neon-green);
+            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
+        }
+
+        .fba-icon {
+            width: 48px; height: 48px; border-radius: 12px; background-color: #ECFDF5;
+            border: 1px solid rgba(16, 185, 129, 0.2); display: flex; align-items: center;
+            justify-content: center; margin-bottom: 22px; transition: all 0.3s ease;
+        }
+
+        .fba-card:hover .fba-icon {
+            background-color: var(--neon-green); border-color: var(--neon-green); transform: scale(1.08) rotate(3deg);
+        }
+
+        .fba-icon svg { width: 24px; height: 24px; stroke: var(--neon-green); fill: none; stroke-width: 2; transition: stroke 0.3s ease; }
+        .fba-card:hover .fba-icon svg { stroke: #FFFFFF; }
+
+        .fba-card h3 { font-size: 19px; font-weight: 700; color: var(--slate-dark); margin: 0 0 10px 0; }
+        .fba-card p { font-size: 13.5px; color: var(--text-gray); margin: 0; line-height: 1.6; }
+
+        /* PROCESS FLOW SECTION */
+        .process-wrapper {
+            background-color: var(--card-bg); border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border); padding: 70px 0; margin-bottom: 60px;
+        }
+
+        .section-title { text-align: center; font-size: 28px; font-weight: 800; color: var(--slate-dark); margin: 0 0 10px 0; }
+        .section-subtitle { text-align: center; font-size: 15px; color: var(--text-gray); margin-bottom: 40px; }
+
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .process-card {
+            background: #FFFFFF; border: 1px solid var(--border); border-radius: 14px;
+            padding: 28px 20px; text-align: center; transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+        }
+        .process-card:hover {
+            transform: translateY(-5px); border-color: var(--neon-green);
+            box-shadow: 0 12px 28px rgba(16, 185, 129, 0.1);
+        }
+        .process-step-badge {
+            font-size: 11px; font-weight: 800; color: var(--neon-green); background-color: #ECFDF5;
+            padding: 4px 10px; border-radius: 12px; display: inline-block; margin-bottom: 14px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .process-card h4 { font-size: 16px; font-weight: 700; color: var(--slate-dark); margin: 0 0 8px 0; }
+        .process-card p { font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.5; }
+
+        /* FBA BANNER */
+        .fba-banner {
+            background-color: var(--slate-dark); color: #FFFFFF; border-radius: 16px;
+            padding: 45px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+        }
+        .fba-text h3 { font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; }
+        .fba-text p { color: #94A3B8; font-size: 14.5px; margin: 0; line-height: 1.6; }
+        .fba-btn-wrapper { text-align: right; }
+        .btn-fba {
+            background-color: var(--neon-green); color: var(--slate-dark); padding: 13px 26px; border-radius: 8px;
+            text-decoration: none; font-size: 14px; font-weight: 700; display: inline-block; transition: all 0.25s ease;
+        }
+        .btn-fba:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
+
+        footer {
+            background-color: var(--slate-dark); color: #94A3B8; padding: 40px 0;
+            text-align: center; font-size: 12px; border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 900px) {
+            .fba-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .fba-grid, .process-grid, .fba-banner { grid-template-columns: 1fr; gap: 20px; }
+            .fba-btn-wrapper { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="fba.html" class="active">Amazon FBA</a>
+        <a href="compliance.html">MAP Compliance</a>
+        <a href="application.html">Apply for Account</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="brand-logo-block" title="IO Wholesale Group LLC">
+                    <svg width="205" height="34" viewBox="0 0 205 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="5.5" r="2.2" fill="#10B981"/>
+                        <text x="5" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">I</text>
+                        <mask id="text-o-cut-fba">
+                            <text x="12" y="25" fill="white" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px">O</text>
+                            <circle cx="21" cy="17.5" r="2.2" fill="black"/>
+                            <circle cx="25.2" cy="11.8" r="2.8" fill="black"/>
+                        </mask>
+                        <text x="12" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22px" mask="url(#text-o-cut-fba)">O</text>
+                        <text x="35" y="25" fill="#0F172A" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="18.5px" letter-spacing="-0.2px">Wholesale Group</text>
+                    </svg>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="fba.html" class="active">Amazon FBA</a></li>
+                    <li><a href="compliance.html">MAP Compliance</a></li>
+                    <li><a href="application.html">Apply for Account</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Amazon FBA Logistics & Distribution</h1>
+            <p>End-to-end e-commerce supply chain management. We purchase inventory wholesale, handle compliant 3PL preparation, and manage Prime fulfillment routing.</p>
+        </div>
+    </section>
+
+    <section class="fba-section">
+        <div class="container">
+            <div class="fba-grid">
+                
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <h3>Certified FBA Prep</h3>
+                    <p>Every shipment is processed through certified U.S. prep facilities. We handle individual product inspection, bubble wrapping, and polybagging according to strict Amazon guidelines.</p>
+                </div>
+
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 12h10m-5 5h5M3 3h18v18H3V3z" />
+                        </svg>
+                    </div>
+                    <h3>FNSKU Barcoding</h3>
+                    <p>We apply individual FNSKU barcode labels over existing UPC codes, ensuring correct product identification, inventory isolation, and complete supply chain traceability.</p>
+                </div>
+
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                        </svg>
+                    </div>
+                    <h3>Bundling & Multi-Packs</h3>
+                    <p>We create compliant multi-pack configurations and custom product bundles to optimize shipping costs and increase average order values for your brand catalog.</p>
+                </div>
+
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3>Palletization & Freight Routing</h3>
+                    <p>Our logistics team coordinates master carton packing, LTL/FTL palletization, and Amazon Partnered Carrier shipping directly to assigned fulfillment centers.</p>
+                </div>
+
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3>Inventory Replenishment</h3>
+                    <p>We utilize demand forecasting software to maintain healthy inventory levels, avoiding stockouts while preventing long-term storage fee penalties.</p>
+                </div>
+
+                <div class="fba-card">
+                    <div class="fba-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3>Catalog & Listing Health</h3>
+                    <p>We actively monitor listing health, brand registry attributes, and Buy Box stability to ensure your brand maintains a professional marketplace presence.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="process-wrapper">
+            <div class="container">
+                <h2 class="section-title">The FBA Logistics Lifecycle</h2>
+                <p class="section-subtitle">How we transform wholesale inventory into marketplace-ready Amazon Prime listings.</p>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <span class="process-step-badge">STAGE 01</span>
+                        <h4>Inbound Freight Reception</h4>
+                        <p>Shipments arrive directly from manufacturers at our certified U.S. 3PL warehousing hub.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="process-step-badge">STAGE 02</span>
+                        <h4>Inspection & Labeling</h4>
+                        <p>Physical quality control check, packaging compliance, and FNSKU barcoding per SKU.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="process-step-badge">STAGE 03</span>
+                        <h4>Fulfillment Center Routing</h4>
+                        <p>Creation of Amazon shipment plans, pallet prep, and Partnered Carrier freight dispatch.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="process-step-badge">STAGE 04</span>
+                        <h4>Prime Inventory Active</h4>
+                        <p>Products go live for nationwide Amazon Prime 1-2 day delivery under strict MAP guidelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="fba-banner">
+                <div class="fba-text">
+                    <h3>Looking for a Compliant Amazon FBA Distribution Partner?</h3>
+                    <p>We purchase inventory upfront, eliminate logistics friction for brand owners, and maintain 100% price compliance.</p>
+                </div>
+                <div class="fba-btn-wrapper">
+                    <a href="contact.html" class="btn-fba">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>IO WHOLESALE GROUP LLC</strong> | 1309 Coffeen Ave, Sheridan, WY 82801, USA</p>
+            <p>&copy; 2026 IO Wholesale Group LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            drawer.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
